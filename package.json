@@ -1,0 +1,35 @@
+{
+  "name": "aqueduct-components",
+  "version": "0.1.0",
+  "description": "A collection of components to use in Aqueduct's project",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/eslint ./components && ./node_modules/.bin/jscs ./components"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vizzuality/aqueduct-components"
+  },
+  "author": "Óscar Ferrándiz <oscar.ferrandiz@vizzuality.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vizzuality/aqueduct-components"
+  },
+  "homepage": "https://github.com/Vizzuality/aqueduct-components",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "esri-leaflet": "^2.0.6",
+    "leaflet": "^1.0.2",
+    "lodash": "^4.17.2",
+    "react": "^15.0.2",
+    "react-router": "^2.5.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0",
+    "jscs": "^3.0.7"
+  }
+}
