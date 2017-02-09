@@ -17,9 +17,15 @@
   &.-hidden {
     opacity: 0;
     visibility: hidden;
+
+    .modal-container {
+      transform: translateY(-35px);
+    }
   }
 
   .modal-container {
+    transition: transform $animation-time-2 $ease-out-cubic;
+    transform: translateY(0);
     display: flex;
     position: relative;
     width: calc(100% - 50px);
