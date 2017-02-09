@@ -4,7 +4,7 @@
 import React from 'react';
 import L from 'leaflet/dist/leaflet';
 import isEqual from 'lodash/isEqual';
-import Spinner from 'components/ui/Spinner';
+import Spinner from '../ui/Spinner';
 
 const MAP_CONFIG = {
   zoom: 2,

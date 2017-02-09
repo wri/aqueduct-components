@@ -16,6 +16,16 @@
     }
   }
 
+  .select-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .icon-container {
+    display: inline-flex;
+  }
+
   .title-icon {
 
     @include only-mobile {
