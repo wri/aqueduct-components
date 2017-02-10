@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: path.join(rootPath, 'dist/'),
     filename: 'bundle.js',
-    library: 'AqueductComponents'
+    libraryTarget: 'commonjs'
   },
 
   module: {
