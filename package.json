@@ -1,10 +1,12 @@
 {
   "name": "aqueduct-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of components to use in Aqueduct's project",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
-    "test": "./node_modules/.bin/eslint --ext .js --ext .jsx ."
+    "test": "./node_modules/.bin/eslint --ext .js --ext .jsx .",
+    "build": "./node_modules/.bin/webpack",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,19 @@
     "leaflet": "^1.0.2",
     "lodash": "^4.17.2",
     "react": "^15.0.2",
-    "react-router": "^2.5.2"
+    "react-router": "^2.5.2",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0",
+    "jscs": "^3.0.7",
+    "webpack": "^1.14.0"
   },
   "devDependencies": {
     "eslint": "^3.15.0",
