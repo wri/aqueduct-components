@@ -4,7 +4,7 @@
   "description": "A collection of components to use in Aqueduct's project",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/eslint ./components && ./node_modules/.bin/jscs ./components"
+    "test": "./node_modules/.bin/eslint --ext .js --ext .jsx ."
   },
   "repository": {
     "type": "git",
@@ -25,11 +25,8 @@
     "react-router": "^2.5.2"
   },
   "devDependencies": {
-    "eslint": "^3.11.1",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.6.0",
+    "eslint": "^3.15.0",
+    "eslint-config-vizzuality": "^1.0.3",
     "jscs": "^3.0.7"
   }
 }

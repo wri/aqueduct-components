@@ -2,9 +2,7 @@ import React from 'react';
 import CustomSelect from '../ui/CustomSelect';
 
 export default function CountrySelect(props) {
-  const countryList = props.countries.list.map((item) => {
-    return { value: item.id, label: item.name };
-  });
+  const countryList = props.countries.list.map(item => ({ value: item.id, label: item.name }));
 
   let parsedProps = {
     options: countryList,

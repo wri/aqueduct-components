@@ -34,18 +34,16 @@ export default class CheckboxGroup extends React.Component {
   }
 
   getCheckbox() {
-    return this.props.items.map((item, i) => {
-      return (
-        <Checkbox
-          key={i}
-          name={this.props.name}
-          value={item.value}
-          checked={this.state.checked.includes(item.value)}
-          label={item.label}
-          onChange={newSelected => this.onChange(newSelected)}
-        />
-      );
-    });
+    return this.props.items.map((item, i) => (
+      <Checkbox
+        key={i}
+        name={this.props.name}
+        value={item.value}
+        checked={this.state.checked.includes(item.value)}
+        label={item.label}
+        onChange={newSelected => this.onChange(newSelected)}
+      />
+      ));
   }
 
   render() {
