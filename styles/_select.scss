@@ -27,19 +27,9 @@
   }
 
   .title-icon {
-
-    @include only-mobile {
-      width: 29px;
-      height: 29px;
-      padding: 2px;
-    }
-
-    @include only-desktop {
-      width: 20px;
-      height: 20px;
-      margin-left: $space-1 * 2;
-    }
-
+    width: 20px;
+    height: 20px;
+    margin-left: $space-1 * 2;
     fill: palette(blue, light);
     border: 1px solid palette(blue, light);
     margin-right: $space-1 * 2;
@@ -48,7 +38,8 @@
     transition: background-color .1s linear;
 
     &:hover {
-      background-color: (blue, lightest);
+      fill: palette(blue, primary);
+      background-color: palette(blue, light);
     }
   }
 }
