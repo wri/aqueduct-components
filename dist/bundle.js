@@ -4372,17 +4372,17 @@
 	          value = _ref.value;
 
 	      if (!(0, _isEqual2.default)(this.props.options, options)) {
-	        this.setState(Object.assign({}, this.state, {
+	        this.setState({
 	          filteredOptions: options,
 	          selectedItem: options.find(function (item) {
 	            return item.value === value;
 	          })
-	        }));
+	        });
 	      }
 	      if (this.props.value !== value) {
-	        this.setState(Object.assign({}, this.state, { selectedItem: this.props.options.find(function (item) {
+	        this.setState({ selectedItem: this.props.options.find(function (item) {
 	            return item.value === value;
-	          }) }));
+	          }) });
 	      }
 	    }
 	  }, {
@@ -4437,7 +4437,7 @@
 	              var filteredOptions = _this2.props.options.filter(function (item) {
 	                return item.label.toLowerCase().match(value.toLowerCase());
 	              });
-	              _this2.setState(Object.assign({}, _this2.state, { filteredOptions: filteredOptions }), _this2.resetSelectedIndex);
+	              _this2.setState({ filteredOptions: filteredOptions });
 	              return 'break';
 	            }();
 
@@ -4453,7 +4453,7 @@
 	  }, {
 	    key: 'setSelectedIndex',
 	    value: function setSelectedIndex(index) {
-	      this.setState(Object.assign({}, this.state, { selectedIndex: index }));
+	      this.setState({ selectedIndex: index });
 	    }
 
 	    // Event handler for enter event on search input
@@ -4461,9 +4461,7 @@
 	  }, {
 	    key: 'onEnterSearch',
 	    value: function onEnterSearch() {
-	      this.setState(Object.assign({}, this.state, {
-	        closed: false
-	      }));
+	      this.setState({ closed: false });
 	    }
 
 	    // Event handler for mouseup event on options list item
@@ -4494,7 +4492,7 @@
 	      // Close select when clicking outside it
 	      window.addEventListener('click', this.onScreenClick);
 
-	      this.setState(Object.assign({}, this.state, { closed: false }), function () {
+	      this.setState({ closed: false }, function () {
 	        _this3.input && _this3.input.focus();
 	      });
 	    }
@@ -4508,10 +4506,10 @@
 
 	      // NOTE: Without setTimeout function, state never mutates to closed: true. Bug?
 	      setTimeout(function () {
-	        _this4.setState(Object.assign({}, _this4.state, {
+	        _this4.setState({
 	          closed: true,
 	          filteredOptions: _this4.props.options
-	        }));
+	        });
 	        _this4.resetSelectedIndex();
 	        if (_this4.input) {
 	          _this4.input.value = '';
