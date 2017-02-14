@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Spinner({ isLoading, style }) {
+export default function Spinner({ isLoading, className, style }) {
   const loading = (isLoading) ? '-loading' : '';
   return (
-    <div className={`c-spinner ${loading}`}>
+    <div className={`c-spinner ${loading} ${className}`}>
       <div className="spinner-box" style={style}>
         <div className="icon" />
       </div>

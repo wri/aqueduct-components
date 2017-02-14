@@ -7728,12 +7728,13 @@
 
 	function Spinner(_ref) {
 	  var isLoading = _ref.isLoading,
+	      className = _ref.className,
 	      style = _ref.style;
 
 	  var loading = isLoading ? '-loading' : '';
 	  return _react2.default.createElement(
 	    'div',
-	    { className: 'c-spinner ' + loading },
+	    { className: 'c-spinner ' + loading + ' ' + className },
 	    _react2.default.createElement(
 	      'div',
 	      { className: 'spinner-box', style: style },
