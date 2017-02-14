@@ -23,13 +23,13 @@ export default class CustomSelect extends React.Component {
 
   componentWillReceiveProps({ options, value }) {
     if (!isEqual(this.props.options, options)) {
-      this.setState(Object.assign({}, this.state, {
+      this.setState({
         filteredOptions: options,
         selectedItem: options.find(item => item.value === value)
-      }));
+      });
     }
     if (this.props.value !== value) {
-      this.setState(Object.assign({}, this.state, { selectedItem: this.props.options.find(item => item.value === value) }));
+      this.setState({ selectedItem: this.props.options.find(item => item.value === value) });
     }
   }
 
@@ -70,7 +70,7 @@ export default class CustomSelect extends React.Component {
       default: {
         const value = evt.currentTarget.value;
         const filteredOptions = this.props.options.filter(item => item.label.toLowerCase().match(value.toLowerCase()));
-        this.setState(Object.assign({}, this.state, { filteredOptions }), this.resetSelectedIndex);
+        this.setState({ filteredOptions });
         break;
       }
     }
@@ -81,14 +81,12 @@ export default class CustomSelect extends React.Component {
   }
 
   setSelectedIndex(index) {
-    this.setState(Object.assign({}, this.state, { selectedIndex: index }));
+    this.setState({ selectedIndex: index });
   }
 
   // Event handler for enter event on search input
   onEnterSearch() {
-    this.setState(Object.assign({}, this.state, {
-      closed: false
-    }));
+    this.setState({ closed: false });
   }
 
   // Event handler for mouseup event on options list item
@@ -110,7 +108,7 @@ export default class CustomSelect extends React.Component {
     // Close select when clicking outside it
     window.addEventListener('click', this.onScreenClick);
 
-    this.setState(Object.assign({}, this.state, { closed: false }), () => {
+    this.setState({ closed: false }, () => {
       this.input && this.input.focus();
     });
   }
@@ -119,10 +117,10 @@ export default class CustomSelect extends React.Component {
   close() {
     // NOTE: Without setTimeout function, state never mutates to closed: true. Bug?
     setTimeout(() => {
-      this.setState(Object.assign({}, this.state, {
+      this.setState({
         closed: true,
         filteredOptions: this.props.options
-      }));
+      });
       this.resetSelectedIndex();
       if (this.input) {
         this.input.value = '';
