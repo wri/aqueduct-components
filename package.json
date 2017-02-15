@@ -19,28 +19,16 @@
   },
   "homepage": "https://github.com/Vizzuality/aqueduct-components",
   "dependencies": {
-    "classnames": "^2.2.5",
-    "esri-leaflet": "^2.0.6",
-    "leaflet": "^1.0.2",
-    "lodash": "^4.17.2",
-    "react": "^15.0.2",
-    "react-router": "^2.5.2",
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
-    "babel-preset-stage-3": "^6.22.0",
-    "eslint": "^3.11.1",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.6.0",
-    "jscs": "^3.0.7",
-    "webpack": "^1.14.0"
+    "react": "^15.4.2"
   },
   "devDependencies": {
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "del": "^2.2.2",
     "eslint": "^3.15.0",
     "eslint-config-vizzuality": "^1.0.3",
-    "jscs": "^3.0.7"
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
   }
 }
