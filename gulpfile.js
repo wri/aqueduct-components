@@ -14,7 +14,7 @@ gulp.task('clean', () => {
 gulp.task('dist', ['clean'], () => {
   gulp.src('src/**/*.{js,jsx}')
     .pipe(babel({
-      presets: ['es2015']
+      presets: ['react', 'latest', 'stage-3']
     }))
     .pipe(gulp.dest(CONFIG.dist));
 });
