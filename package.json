@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/eslint --ext .js --ext .jsx .",
-    "build": "./node_modules/.bin/webpack",
-    "dev": "./node_modules/.bin/webpack --watch"
+    "build": "./node_modules/.bin/gulp dist",
+    "dev": "./node_modules/.bin/gulp dev"
   },
   "repository": {
     "type": "git",
