@@ -90,16 +90,6 @@
     }
   }
 
-  &:not(.-search) {
-    .custom-select-options {
-      li {
-        &:hover {
-          background-color: palette(blue, lighter);
-        }
-      }
-    }
-  }
-
   .no-results {
     position: absolute;
     top: 100%;
@@ -123,6 +113,10 @@
     width: 100%;
     position: relative;
     min-height: 33px;
+
+    > span {
+      user-select: none;
+    }
   }
 
   .custom-select-options {
