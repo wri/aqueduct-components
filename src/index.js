@@ -1,6 +1,7 @@
 export default {};
 // Aqueduct components
 export { default as CountrySelect } from './components/CountrySelect';
+export { default as VegaChart } from './components/VegaChart';
 // Ui components
 export { default as Accordion } from './components/ui/Accordion';
 export { default as Checkbox } from './components/ui/Checkbox';
@@ -13,5 +14,8 @@ export { default as RadioGroup } from './components/ui/RadioGroup';
 export { default as SegmentedUi } from './components/ui/SegmentedUi';
 export { default as Timeline } from './components/ui/Timeline';
 export { default as Spinner } from './components/ui/Spinner';
+export { default as Sidebar } from './components/ui/Sidebar';
+export { default as Header } from './components/ui/Header';
+export { default as OnlyOn } from './components/ui/Responsive';
 // Reducers
 export { closeModal, toggleModal, modalLoading, setModalOptions, modalReducer } from './components/ui/Modal/reducer';
