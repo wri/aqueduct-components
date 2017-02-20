@@ -2,6 +2,7 @@ export default {};
 // Aqueduct components
 export { default as CountrySelect } from './components/CountrySelect';
 export { default as VegaChart } from './components/VegaChart';
+export { default as Map } from './components/Map';
 // Ui components
 export { default as Accordion } from './components/ui/Accordion';
 export { default as Checkbox } from './components/ui/Checkbox';
