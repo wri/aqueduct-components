@@ -19,9 +19,13 @@ export default class Checkbox extends React.Component {
   }
 
   render() {
-    const { value, name, label, checked } = this.props;
+    const { value, name, label, checked, className } = this.props;
+    const cNames = ['c-checkbox'];
+    if (className) {
+      cNames.push(className);
+    }
     return (
-      <div className="c-checkbox">
+      <div className={cNames.join(' ')}>
         <input
           type="checkbox"
           name={name}
@@ -45,6 +49,7 @@ Checkbox.propTypes = {
   name: React.PropTypes.string,
   value: React.PropTypes.string,
   label: React.PropTypes.string,
+  className: React.PropTypes.string,
   checked: React.PropTypes.bool,
   onChange: React.PropTypes.func
 };
