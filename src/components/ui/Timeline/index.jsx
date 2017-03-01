@@ -26,8 +26,12 @@ export default class Timeline extends React.Component {
 
   render() {
     const { items, selected } = this.props;
+    const cNames = ['c-timeline'];
+    if (this.props.className) {
+      cNames.push(this.props.className);
+    }
     return (
-      <div className="c-timeline">
+      <div className={cNames.join(' ')}>
         <ul className="timeline-list">
           {items.map((item, index) => {
             const selectedClass = (selected.value === item.value) ? '-selected' : '';
