@@ -18,5 +18,6 @@ export { default as Spinner } from './components/ui/Spinner';
 export { default as Sidebar } from './components/ui/Sidebar';
 export { default as Header } from './components/ui/Header';
 export { default as OnlyOn } from './components/ui/Responsive';
+export { default as DropdownButton } from './components/ui/DropdownButton';
 // Reducers
 export { closeModal, toggleModal, modalLoading, setModalOptions, modalReducer } from './components/ui/Modal/reducer';
