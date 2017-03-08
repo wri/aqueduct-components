@@ -49,7 +49,7 @@ export default class VegaChart extends React.Component {
       if (!err) {
         this.vis = chart({
           el: this.chart,
-          renderer: 'svg'
+          renderer: 'canvas'
         });
         this.vis.update();
       }
