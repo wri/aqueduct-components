@@ -113,6 +113,10 @@
     width: 100%;
     position: relative;
     min-height: 33px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: $space-1;
 
     > span {
       user-select: none;
