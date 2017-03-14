@@ -1,52 +1,30 @@
-import findIndex from 'lodash/findIndex';
 import React from 'react';
+import classnames from 'classnames';
 
-export default class Timeline extends React.Component {
+export default function Timeline(props) {
+  const { items, selected } = props;
+  const classList = classnames('c-timeline', {
+    [props.className]: props.className
+  });
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-    };
-
-    // BINDINGS
-    this.onClick = this.onClick.bind(this);
-  }
-
-  /**
-   * UI EVENTS
-   * - onChange
-   * - onDrag
-  */
-  onClick(e) {
-    // Send object
-    const index = findIndex(this.props.items, { value: e.currentTarget.dataset.value });
-    this.props.onChange(this.props.items[index]);
-  }
-
-  render() {
-    const { items, selected } = this.props;
-    const cNames = ['c-timeline'];
-    if (this.props.className) {
-      cNames.push(this.props.className);
-    }
-    return (
-      <div className={cNames.join(' ')}>
-        <ul className="timeline-list">
-          {items.map((item, index) => {
-            const selectedClass = (selected.value === item.value) ? '-selected' : '';
-            return (
-              <li className={`timeline-list-item ${selectedClass} ${this.props.className}`} key={index} data-value={item.value} onClick={this.onClick}>
-                <div className="timeline-label">
-                  {item.label}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
+  return (
+    <div className={classList}>
+      <ul className="timeline-list">
+        {items.map((item, index) => {
+          const itemClassList = classnames('timeline-list-item', {
+            '-selected': selected.value === item.value
+          });
+          return (
+            <li key={index} className={itemClassList} onClick={() => props.onChange && props.onChange(item)}>
+              <div className="timeline-label">
+                {item.label}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
 Timeline.propTypes = {

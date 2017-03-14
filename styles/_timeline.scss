@@ -14,14 +14,12 @@
 
   .timeline-list-item {
     list-style-type: none;
-    position: relative;
     width: 16px;
     height: 16px;
     background-color: palette(blue);
     border: 1px solid palette(blue, light);
     border-radius: 50%;
-    top: 50%;
-    transform: translate(0%, -50%);
+    transform: translateY(-50%);
     cursor: pointer;
     box-sizing: border-box;
     transition: all .1s $ease-in-cubic;
@@ -70,6 +68,15 @@
       transform: translate(-50%, -8px);
       padding: 2px 8px;
       transition: color .1s linear;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        height: 40px;
+      }
 
       &:hover {
         color: palette(white)
