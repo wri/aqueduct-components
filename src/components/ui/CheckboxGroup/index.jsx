@@ -1,4 +1,5 @@
 import React from 'react';
+import isEqual from 'lodash/isEqual';
 import Checkbox from '../Checkbox';
 
 export default class CheckboxGroup extends React.Component {
@@ -12,6 +13,14 @@ export default class CheckboxGroup extends React.Component {
     };
     // BINDINGS
     this.onChange = this.onChange.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!isEqual(nextProps.selected, this.props.selected)) {
+      this.setState({
+        checked: nextProps.selected
+      });
+    }
   }
 
   /**
