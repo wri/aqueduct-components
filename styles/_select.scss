@@ -116,7 +116,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding-right: $space-1;
+    padding-right: $space-1 * 3;
 
     > span {
       user-select: none;

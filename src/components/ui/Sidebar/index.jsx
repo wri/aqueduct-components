@@ -53,7 +53,7 @@ export default class Sidebar extends React.Component {
     return (
       <aside ref={(node) => { this.sidebarNode = node; }} className={asideCNames.join(' ')}>
         <button type="button" className={btnCNames.join(' ')} onClick={this.triggerToggle}>
-          <Icon className="-medium" name={this.state.opened ? 'icon-cross' : 'icon-arrow-right'} />
+          <Icon className="-medium" name={this.state.opened ? 'icon-arrow-left' : 'icon-arrow-right'} />
         </button>
         <div className="l-sidebar-content">
           {this.props.children}
