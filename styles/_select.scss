@@ -165,4 +165,17 @@
     z-index: 10;
   }
 
+  &.-country-compare {
+    padding: 0 #{$space-1 * 2};
+    border: 1px solid palette(blue, 'light');
+    border-radius: 3px;
+
+    &::after {
+      right: 24px;
+    }
+
+    > .custom-select-text {
+      color: palette(blue, 'light');
+    }
+  }
 }
