@@ -12,7 +12,7 @@ export default function Timeline(props) {
       <ul className="timeline-list">
         {items.map((item, index) => {
           const itemClassList = classnames('timeline-list-item', {
-            '-selected': selected.value === item.value
+            '-selected': (selected) ? selected.value === item.value : false
           });
           return (
             <li key={index} className={itemClassList} onClick={() => props.onChange && props.onChange(item)}>
