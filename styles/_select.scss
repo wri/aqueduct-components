@@ -1,49 +1,3 @@
-// Override React selectize styles
-.c-select {
-  position: relative;
-
-  .title {
-    color: palette(white);
-    font-size: $font-size-extrabig;
-    font-weight: 300;
-    display: flex;
-    align-items: center;
-    @include only-desktop {
-      justify-content: flex-start;
-    }
-    @include only-mobile {
-      justify-content: space-between;
-    }
-  }
-
-  .select-header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .icon-container {
-    display: inline-flex;
-  }
-
-  .title-icon {
-    width: 20px;
-    height: 20px;
-    margin-left: $space-1 * 2;
-    fill: palette(blue, light);
-    border: 1px solid palette(blue, light);
-    margin-right: $space-1 * 2;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color .1s linear;
-
-    &:hover {
-      fill: palette(blue, primary);
-      background-color: palette(blue, light);
-    }
-  }
-}
-
 .c-custom-select {
   position: relative;
   border-bottom: 1px solid palette(blue, light);
@@ -176,6 +130,30 @@
 
     > .custom-select-text {
       color: palette(blue, 'light');
+    }
+  }
+
+  // THEMES
+  &.-gray {
+    display: inline-block;
+    border-bottom: 0;
+
+    &::after {
+      border-bottom-color: palette(gray, 'light');
+    }
+
+    .custom-select-text {
+      max-height: 22px;
+      min-height: 22px;
+      padding-right: ($space-1 * 2);
+
+      line-height: 22px;
+      font-size: $font-size-default;
+      color: palette(gray, 'dark');
+
+      > input {
+        color: palette(gray, 'dark');
+      }
     }
   }
 }

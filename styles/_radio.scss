@@ -86,4 +86,27 @@
   &.-filters {
     margin: ($space-1 * 4) 0 0 ($space-1 * 3);
   }
+
+  // THEMES
+  &.-primary {
+    label {
+      color: palette(blue, 'light');
+      &:hover { color: palette(blue, 'lighter'); }
+    }
+
+    input[type="radio"]:checked + label {
+      color: palette(white);
+    }
+  }
+
+  &.-secondary {
+    label {
+      color: palette(gray, 'dark');
+      &:hover { color: palette(gray, 'primary'); }
+    }
+
+    input[type="radio"]:checked + label {
+      color: palette(blue, 'secondary');
+    }
+  }
 }
