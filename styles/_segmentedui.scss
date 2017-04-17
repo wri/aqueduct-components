@@ -5,51 +5,34 @@
   // Component themes
   // Tabs theme
   &.-tabs {
+    background-color: palette(blue, dark);
+
     .segmented-ui-item {
-      border: 0;
-      margin-right: 28px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
       &.-active {
         .segmented-ui-btn {
+          pointer-events: none;
+          background: palette(blue);
           color: palette(white);
-          &:after {
-            width: 100%;
-          }
         }
       }
     }
 
     .segmented-ui-btn {
-      position: relative;
-      font-size: $font-size-big;
-      transition: all $animation-time linear;
+      padding: #{($space-1 * 4)/2} #{$space-1 * 4};
       text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 14px 0;
-      color: palette(blue, light);
-
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0%;
-        height: 3px;
-        background: palette(blue, secondary);
-        transform: translate(-50%,0);
-        transition: all $animation-time $ease-in-out-cubic;
-      }
+      color: palette(blue, lightest);
+      font-size: $font-size-default;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      transition: all linear $animation-time;
 
       &:hover {
-        color: palette(blue, lighter);
+        color: palette(blue, light);
       }
     }
   }
 
+  // Stacked theme
   &.-stacked-tabs {
     .segmented-ui-item {
       flex: 1;
@@ -63,6 +46,7 @@
         }
       }
     }
+
     .segmented-ui-btn {
       display: block;
       width: 100%;
@@ -86,6 +70,7 @@
     justify-content: center;
     max-width: 400px;
     margin: 0 auto;
+
     .segmented-ui-item {
       flex-grow: 1;
       text-align: center;
@@ -93,15 +78,18 @@
       color: palette(gray);
       font-weight: 500;
       border: 1px solid palette(gray, light);
+
       &.-active {
         background-color: palette(blue, secondary);
         color: palette(white);
       }
+
       &:first-child {
         &, .segmented-ui-btn {
           border-radius: 3px 0 0 3px;
         }
       }
+
       &:last-child {
         &, .segmented-ui-btn {
           border-radius: 0 3px 3px 0;
@@ -109,6 +97,7 @@
         border-left: none;
       }
     }
+
     .segmented-ui-btn {
       padding: 2px 40px;
       display: inline-block;
