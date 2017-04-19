@@ -14,10 +14,9 @@ export default class Modal extends React.Component {
 
   // Close modal when esc key is pressed
   componentWillReceiveProps({ modal }) {
-    const self = this;
     function escKeyPressListener(evt) {
       document.removeEventListener('keydown', escKeyPressListener);
-      return evt.keyCode === 27 && self.props.toggleModal(false);
+      return evt.keyCode === 27 && this.props.toggleModal(false);
     }
     // if opened property has changed
     if (this.props.modal.opened !== modal.opened) {
