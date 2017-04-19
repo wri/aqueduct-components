@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 export default class RadioGroup extends React.Component {
 
@@ -34,10 +35,14 @@ export default class RadioGroup extends React.Component {
     const { name, items } = this.props;
     const { selected } = this.state;
 
+    const className = classnames({
+      [this.props.className]: !!this.props.className
+    });
+
     return (
-      <div className={`c-radio-box ${this.props.className}`}>
+      <div className={`c-radio-box ${className}`}>
         {items.map((item, i) => (
-          <div key={i} className="c-radio">
+          <div key={i} className={`c-radio ${className}`}>
             <input
               type="radio"
               name={name}

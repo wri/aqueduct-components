@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 export default class Radio extends React.Component {
 
@@ -19,8 +20,13 @@ export default class Radio extends React.Component {
 
   render() {
     const { value, name, label, selected } = this.props;
+
+    const className = classnames({
+      [this.props.className]: !!this.props.className
+    });
+
     return (
-      <div className="c-radio">
+      <div className={`c-radio ${className}`}>
         <input
           type="radio"
           name={name}
@@ -43,5 +49,6 @@ Radio.propTypes = {
   value: React.PropTypes.string,
   label: React.PropTypes.string,
   selected: React.PropTypes.string,
+  className: React.PropTypes.string,
   onChange: React.PropTypes.func
 };
