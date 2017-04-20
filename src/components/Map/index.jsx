@@ -74,6 +74,11 @@ class Map extends React.Component {
       this.removeLayers();
       this.addLayers(nextProps.layersActive, nextProps.filters);
     }
+
+    // Zoom
+    if (this.props.mapConfig.zoom !== nextProps.mapConfig.zoom) {
+      this.map.setZoom(nextProps.mapConfig.zoom);
+    }
   }
 
   shouldComponentUpdate(nextProps, nextState) {

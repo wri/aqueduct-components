@@ -1,0 +1,44 @@
+$zoom-size: 48px;
+
+.c-zoom-control {
+
+  > .zoom-control-list {
+    border: 1px solid palette(gray, light);
+    background-color: palette(white);
+  }
+
+  > .zoom-control-list > .zoom-control-item {
+
+    &:first-child {
+      border-bottom: 1px solid palette(gray, light);
+      border-radius: 3px 3px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 3px 3px;
+    }
+  }
+
+  .zoom-control-btn {
+    display: block;
+    width: $zoom-size;
+    height: $zoom-size;
+    padding: 0;
+
+    border: none;
+    user-select: none;
+
+    color: palette(gray, dark);
+    font-size: $font-size-extrabig;
+    text-align: center;
+    line-height: $zoom-size;
+
+    background-color: palette(white);
+    transition: background-color linear $animation-time;
+
+    &.-disabled {
+      pointer-events: none;
+      background-color: palette(gray, light);
+    }
+  }
+}

@@ -94,16 +94,8 @@
   }
 }
 
-.leaflet-control-zoom {
-  background-color: $color-white;
-}
-
-.leaflet-right .leaflet-control {
-  margin-right: $zoom-margin-right;
-}
-
-.leaflet-top .leaflet-control {
-  margin-top: $zoom-margin-top;
+.leaflet-control-container {
+  display: none;
 }
 
 /* Mobile */
