@@ -8,6 +8,7 @@ $zoom-size: 48px;
   }
 
   > .zoom-control-list > .zoom-control-item {
+    list-style-type: none;
 
     &:first-child {
       border-bottom: 1px solid palette(gray, light);
