@@ -196,10 +196,9 @@ class Map extends React.Component {
 
   // RENDER
   render() {
-    const spinnerStyles = { marginLeft: this.props.sidebar && +this.props.sidebar.width ? `${+this.props.sidebar.width / 2}px` : 0 };
     return (
       <div className="c-map">
-        {this.state.loading && <Spinner isLoading style={spinnerStyles} />}
+        {this.state.loading && <Spinner className="-map" isLoading />}
         <div ref={(node) => { this.mapNode = node; }} className="map-leaflet" />
       </div>
     );

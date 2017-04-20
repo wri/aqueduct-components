@@ -10,49 +10,62 @@
 
  **/
 
- .c-spinner {
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   z-index: 998;
-   background: rgba(white,0.75);
-   visibility: hidden;
-   opacity: 0;
+$spinner-size: 40px;
 
-   // Position
-   &.-fixed { position: fixed;}
-   &.-relative { position: relative;}
+.c-spinner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(palette(white), .75);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
 
-   // State
-   &.-loading {
-     visibility: visible;
-     opacity: 1;
-   }
+  // Position
+  &.-fixed { position: fixed;}
+  &.-relative { position: relative;}
 
-   // Colors
-   &.-transparent { background: rgba(white,0); }
 
-   .spinner-box {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%,-50%);
+  // Page
+  &.-map {
+    top: $space-1 * 5;
+    right: $space-1 * 13;
+    bottom: auto;
+    left: auto;
 
-     .icon {
-       position: relative;
-       width: 40px;
-       height: 40px;
-       margin: 0 auto;
-       border-radius: 50%;
-       border: 3px solid transparent;
-       border-top-color: $color-primary;
-       animation: rotate $animation-time-4 infinite $ease-in-out-sine;
-     }
+    background-color: transparent;
+  }
 
-     button {
-       margin: 10px 0 0;
-     }
-   }
- }
+  // State
+  &.-loading {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  // Colors
+  &.-transparent { background: rgba(palette(white), 0); }
+
+  > .spinner-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    > .icon {
+      position: relative;
+      width: $spinner-size;
+      height: $spinner-size;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: $color-primary;
+      animation: rotate $animation-time-4 infinite $ease-in-out-sine;
+    }
+
+    button {
+      margin: 10px 0 0;
+    }
+  }
+}
