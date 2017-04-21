@@ -26,3 +26,8 @@ export { default as Sidebar } from './components/ui/Sidebar';
 export { default as Header } from './components/ui/Header';
 export { default as OnlyOn } from './components/ui/Responsive';
 export { default as DropdownButton } from './components/ui/DropdownButton';
+export { default as MapControls } from './components/ui/MapControls';
+export { default as ZoomControl } from './components/ui/ZoomControl';
+
+// Reducers
+export { closeModal, toggleModal, modalLoading, setModalOptions, modalReducer } from './components/ui/Modal/reducer';

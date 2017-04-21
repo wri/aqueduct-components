@@ -15,5 +15,7 @@ export { default as SegmentedUi } from './components/ui/SegmentedUi';
 export { default as Timeline } from './components/ui/Timeline';
 export { default as Spinner } from './components/ui/Spinner';
 export { default as DropdownButton } from './components/ui/DropdownButton';
+export { default as MapControls } from './components/ui/MapControls';
+export { default as ZoomControl } from './components/ui/ZoomControl';
 // Reducers
 export { closeModal, toggleModal, modalLoading, setModalOptions, modalReducer } from './components/ui/Modal/reducer';
