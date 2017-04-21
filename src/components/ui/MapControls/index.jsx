@@ -4,7 +4,8 @@ import classNames from 'classnames';
 
 import ZoomControl from '../ZoomControl';
 
-export default function MapControls({ zoom, onZoomChange, zoomControl, className, actions }) {
+export default function MapControls({ zoom, onZoomChange, zoomControl, className, children }) {
+  const _children = (Array.isArray(children) || !children) ? children : [children];
   return (
     <div className={classNames('c-map-controls', { [className]: !!className })}>
       {zoomControl &&
@@ -13,11 +14,9 @@ export default function MapControls({ zoom, onZoomChange, zoomControl, className
           onZoomChange={onZoomChange}
         />}
 
-      {actions &&
+      {_children &&
         <ul className="map-actions-list">
-          {actions.map((action, i) =>
-            <li className="map-actions-item" key={i}><action.component {...action.componentProps} /></li>)
-          }
+          {_children.map((c, i) => <li className="map-actions-item" key={i}>{c}</li>)}
         </ul>
       }
     </div>
@@ -29,8 +28,8 @@ MapControls.defaultProps = {
 };
 
 MapControls.propTypes = {
-  actions: PropTypes.array,
   className: PropTypes.string,
+  children: PropTypes.any,
   onZoomChange: PropTypes.func,
   zoom: PropTypes.number,
   zoomControl: PropTypes.bool
