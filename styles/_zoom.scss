@@ -4,19 +4,16 @@ $zoom-size: 48px;
 
   > .zoom-control-list {
     border: 1px solid palette(gray, light);
+    border-radius: 3px;
+
     background-color: palette(white);
   }
 
   > .zoom-control-list > .zoom-control-item {
     list-style-type: none;
 
-    &:first-child {
-      border-bottom: 1px solid palette(gray, light);
-      border-radius: 3px 3px 0 0;
-    }
-
     &:last-child {
-      border-radius: 0 0 3px 3px;
+      border-top: 1px solid palette(gray, light);
     }
   }
 
