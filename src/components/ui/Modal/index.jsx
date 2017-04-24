@@ -20,12 +20,13 @@ export default class Modal extends React.Component {
     }
     // if opened property has changed
     if (this.props.modal.opened !== modal.opened) {
-      document[modal.opened ? 'addEventListener' : 'removeEventListener']('keydown', escKeyPressListener);
+      document[modal.opened ? 'addEventListener' : 'removeEventListener']('keydown', escKeyPressListener.bind(this));
     }
   }
 
   getContent() {
-    return this.props.modal.options.children ? <this.props.modal.options.children {...this.props.modal.options.childrenProps} /> : null;
+    return this.props.modal.options.children ?
+      <this.props.modal.options.children {...this.props.modal.options.childrenProps} /> : null;
   }
 
   render() {
