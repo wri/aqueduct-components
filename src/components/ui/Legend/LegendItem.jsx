@@ -110,7 +110,7 @@ class LegendItem extends React.Component {
 
   triggerAction(action) {
     if (action === 'info') {
-      this.props.toggleInfo && this.props.toggleInfo({
+      this.props.onToggleInfo && this.props.onToggleInfo({
         layer: this.props.layer
       });
     }
@@ -130,7 +130,8 @@ class LegendItem extends React.Component {
         </header>
         {!this.state.error ?
           <LegendGraph config={this.state.layer.legendConfig} /> :
-          <span className="error-message">{this.state.error}</span>}
+          <span className="error-message">{this.state.error}</span>
+        }
         <Spinner isLoading={this.state.loading} />
       </li>
     );
@@ -140,7 +141,7 @@ class LegendItem extends React.Component {
 LegendItem.propTypes = {
   layer: React.PropTypes.object,
   filters: React.PropTypes.object,
-  toggleInfo: React.PropTypes.func
+  onToggleInfo: React.PropTypes.func
 };
 
 export default LegendItem;

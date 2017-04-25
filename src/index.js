@@ -33,6 +33,7 @@ export { default as Legend } from './components/ui/Legend';
 // Modal
 export { default as Modal } from './components/ui/Modal';
 export { default as InfoModal } from './components/ui/Modal/InfoModal';
+export { default as SourceModal } from './components/ui/Modal/SourceModal';
 
 // Reducers
 export { closeModal, toggleModal, modalLoading, setModalOptions, modalReducer } from './components/ui/Modal/reducer';
@@ -40,5 +41,5 @@ export { closeModal, toggleModal, modalLoading, setModalOptions, modalReducer } 
 // Utils
 export { get, post, remove } from './utils/request';
 export { substitution, concatenation, capitalizeFirstLetter } from './utils/text';
-export { getObjectConversion } from './utils/filters';
+export { getObjectConversion, widgetsFilter } from './utils/filters';
 export { dataURItoBlob, saveAsFile } from './utils/image';

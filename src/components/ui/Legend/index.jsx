@@ -44,7 +44,7 @@ export default class Legend extends React.Component {
                 filters={this.props.filters}
                 layer={layer}
                 key={i}
-                toggleInfo={this.props.toggleInfo}
+                onToggleInfo={this.props.onToggleInfo}
               />
             )}
           </ul>
@@ -59,7 +59,7 @@ Legend.defaultProps = {
   filters: [],
   className: '',
   expanded: false,
-  toggleInfo: null
+  onToggleInfo: null
 };
 
 Legend.propTypes = {
@@ -67,5 +67,5 @@ Legend.propTypes = {
   filters: PropTypes.object,
   className: PropTypes.string,
   expanded: PropTypes.bool,
-  toggleInfo: PropTypes.func
+  onToggleInfo: PropTypes.func
 };

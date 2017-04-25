@@ -80,9 +80,11 @@ function getWaterColumn({ indicator, year, type }, sufix, widget) {
 }
 
 /**
- * obj is the object to be converted
- * filters
- * category is a string to split some conversions and dictionaries. It can be 'food', 'water', 'widget'
+ * getObjectConversion
+ * @param  {Object} [obj={}]     [object to be converted]
+ * @param  {Object} [filters={}] [filters]
+ * @param  {String} category     [category is a string to split some conversions and dictionaries. It can be 'food', 'water', 'widget']
+ * @return {[type]}              [description]
  */
 export function getObjectConversion(obj = {}, filters = {}, category) {
   const dictionaries = {
@@ -211,6 +213,14 @@ export function getObjectConversion(obj = {}, filters = {}, category) {
   return getConversion(obj, params || [], sqlParams || []);
 }
 
+/**
+ * widgetsFilter
+ * @param  {Object} widget      [Object to be converted]
+ * @param  {Object} filters     [Filters]
+ * @param  {Object} compare
+ * @param  {Array} datasetTags
+ * @return {Boolean}
+ */
 export function widgetsFilter(widget, { scope, crop, country, indicator }, compare, datasetTags) {
   const _crop = crop === 'all' ? 'all_crops' : 'one_crop';
   const _country = ((scope === 'country' && country) || compare.countries.length) ? 'country' : 'global';
