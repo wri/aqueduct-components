@@ -2,27 +2,19 @@ import React from 'react';
 import { format } from 'd3-format';
 import { isEqual, capitalize } from 'lodash';
 
-// Constants
+// Data
 import { LEGEND_OPACITY_RANGE } from '../../../data/legend';
+import { CATEGORIES, CROP_OPTIONS } from '../../../data/filters';
 
 // Utils
 import { get } from '../../../utils/request';
-import { getObjectConversion } from 'utils/filters/filters';
-
-// Data
-import { CROP_OPTIONS } from '../../../data/filters';
+import { getObjectConversion } from '../../../utils/filters';
 
 // Components
 import LegendButtons from './LegendButtons';
 import LegendGraph from './LegendGraph';
 import Spinner from '../Spinner';
 
-
-const categories = {
-  water: 'Water risk',
-  food: 'Food security',
-  crop: 'Crops'
-};
 
 class LegendItem extends React.Component {
   constructor(props) {
@@ -130,7 +122,7 @@ class LegendItem extends React.Component {
         <header className="legend-item-header">
           <h3>
             {this.state.layer.category &&
-              <span className="category">{categories[this.state.layer.category]} -</span>
+              <span className="category">{CATEGORIES[this.state.layer.category]} -</span>
             }
             <span className="name">{this.state.layer.name}</span>
           </h3>

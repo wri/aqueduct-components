@@ -40,4 +40,5 @@ export { closeModal, toggleModal, modalLoading, setModalOptions, modalReducer } 
 // Utils
 export { get, post, remove } from './utils/request';
 export { substitution, concatenation, capitalizeFirstLetter } from './utils/text';
+export { getObjectConversion } from './utils/filters';
 export { dataURItoBlob, saveAsFile } from './utils/image';

@@ -1,3 +1,9 @@
+const CATEGORIES = {
+  water: 'Water risk',
+  food: 'Food security',
+  crop: 'Crops'
+};
+
 const YEAR_OPTIONS = [
   { value: 'baseline', label: 'Baseline' },
   { value: '2020', label: '2020' },
@@ -48,4 +54,4 @@ const DATA_TYPE_OPTIONS = [
   { label: 'Change from baseline', value: 'change_from_baseline' }
 ];
 
-export { YEAR_OPTIONS, CROP_COLOR_DICTIONARY, CROP_OPTIONS, IRRIGATION_OPTIONS, DATA_TYPE_OPTIONS };
+export { CATEGORIES, YEAR_OPTIONS, CROP_COLOR_DICTIONARY, CROP_OPTIONS, IRRIGATION_OPTIONS, DATA_TYPE_OPTIONS };
