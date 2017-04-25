@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import React from 'react';
+import PropTypes from 'prop-types';
 import OnlyOn from '../Responsive';
 import Icon from '../Icon';
 import HeaderTools from './HeaderTools';
@@ -64,7 +65,8 @@ export default class Header extends React.Component {
       <header role="banner" className="l-header c-header">
         {/* LOGO */}
         <h1 className="c-header-logo">
-          <Link to="/">Logo</Link>
+          <Link className="header-logo" to="/">Logo</Link>
+          <Link className="header-title" to="/">{this.props.title}</Link>
         </h1>
         <OnlyOn device="desktop">
           {desktopNav}
@@ -77,3 +79,11 @@ export default class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = {
+  title: PropTypes.string
+};
+
+Header.defaultProps = {
+  title: ''
+};

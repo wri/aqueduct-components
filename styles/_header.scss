@@ -31,16 +31,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-indent: -9999px;
     padding: 0 ($space-1 * 2);
     margin: 0;
 
-    a {
+    .header-logo {
       display: block;
       width: 160px;
       height: $size-header;
       background: url('/images/logo.png') center no-repeat;
       background-size: contain;
+      text-indent: -9999px;
+    }
+
+    .header-title {
+      display: block;
+      padding: 0 0 0 ($space-1 * 2);
+      font-size: $font-size-small;
+      color: $color-primary;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      white-space: nowrap;
     }
   }
 
