@@ -28,6 +28,7 @@ export { default as OnlyOn } from './components/ui/Responsive';
 export { default as DropdownButton } from './components/ui/DropdownButton';
 export { default as MapControls } from './components/ui/MapControls';
 export { default as ZoomControl } from './components/ui/ZoomControl';
+export { default as MapHeader } from './components/ui/MapHeader';
 
 // Reducers
 export { closeModal, toggleModal, modalLoading, setModalOptions, modalReducer } from './components/ui/Modal/reducer';
