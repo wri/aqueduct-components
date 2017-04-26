@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import isEqual from 'lodash/isEqual';
-import { substitution } from 'utils/utils';
+import { substitution } from '../../../utils/text';
 
 export default class MapHeader extends React.Component {
 
@@ -22,10 +22,6 @@ export default class MapHeader extends React.Component {
     this.updateText(nextProps);
   }
 
-  shouldComponentUpdate(nextProps) {
-    return !isEqual(this.props.filters, nextProps.filters);
-  }
-
   updateText(props) {
     const params = this.parseFilters(props.filters);
 
@@ -39,7 +35,10 @@ export default class MapHeader extends React.Component {
 
     Object.keys(filters).forEach((key) => {
       if (Object.hasOwnProperty.call(this.props.dictionary, key)) {
-        parsedFilters.push({ key, value: this.props.dictionary[key](filters[key]) });
+        parsedFilters.push({
+          key,
+          value: this.props.dictionary[key](filters[key])
+        });
       }
     });
 
