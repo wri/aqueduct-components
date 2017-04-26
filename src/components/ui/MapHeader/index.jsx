@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import isEqual from 'lodash/isEqual';
-import { substitution } from 'utils/utils';
+import { substitution } from '../../../utils/text';
 
 export default class MapHeader extends React.Component {
 
