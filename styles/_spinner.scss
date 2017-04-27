@@ -11,6 +11,7 @@
  **/
 
 $spinner-size: 40px;
+$spinner-tiny-size: 20px;
 
 .c-spinner {
   position: absolute;
@@ -22,30 +23,6 @@ $spinner-size: 40px;
   visibility: hidden;
   opacity: 0;
   z-index: 1000;
-
-  // Position
-  &.-fixed { position: fixed;}
-  &.-relative { position: relative;}
-
-
-  // Page
-  &.-map {
-    top: $space-1 * 5;
-    right: $space-1 * 13;
-    bottom: auto;
-    left: auto;
-
-    background-color: transparent;
-  }
-
-  // State
-  &.-loading {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  // Colors
-  &.-transparent { background: rgba(palette(white), 0); }
 
   > .spinner-box {
     position: absolute;
@@ -68,4 +45,37 @@ $spinner-size: 40px;
       margin: 10px 0 0;
     }
   }
+
+  // Position
+  &.-fixed { position: fixed;}
+  &.-relative { position: relative;}
+
+  // Page
+  &.-map {
+    top: $space-1 * 5;
+    right: $space-1 * 13;
+    bottom: auto;
+    left: auto;
+
+    background-color: transparent;
+  }
+
+  // Sizes
+  &.-tiny {
+    > .spinner-box {
+      > .icon {
+        width: $spinner-tiny-size;
+        height: $spinner-tiny-size;
+      }
+    }
+  }
+
+  // State
+  &.-loading {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  // Colors
+  &.-transparent { background: rgba(palette(white), 0); }
 }

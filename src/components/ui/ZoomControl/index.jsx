@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import Icon from '../Icon';
 
 export default class ZoomControl extends React.Component {
 
@@ -41,14 +42,12 @@ export default class ZoomControl extends React.Component {
 
     return (
       <div className="c-zoom-control">
-        <ul className="zoom-control-list">
-          <li className="zoom-control-item">
-            <button className={zoomInClass} type="button" onClick={this.increaseZoom}>+</button>
-          </li>
-          <li className="zoom-control-item">
-            <button className={zoomOutClass} type="button" onClick={this.decreaseZoom}>-</button>
-          </li>
-        </ul>
+        <button className={zoomInClass} type="button" onClick={this.increaseZoom}>
+          <Icon name="icon-plus" />
+        </button>
+        <button className={zoomOutClass} type="button" onClick={this.decreaseZoom}>
+          <Icon name="icon-minus" />
+        </button>
       </div>
     );
   }
