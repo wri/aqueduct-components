@@ -1,6 +1,7 @@
 import React from 'react';
 import { format } from 'd3-format';
-import { isEqual, capitalize } from 'lodash';
+import isEqual from 'lodash/isEqual';
+import capitalize from 'lodash/capitalize';
 
 // Data
 import { LEGEND_OPACITY_RANGE } from '../../../data/legend';
