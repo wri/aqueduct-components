@@ -34,6 +34,7 @@ export default class Accordion extends React.Component {
           {this.props.title && <span className="accordion-title">{this.props.title}</span>}
           <button className="accordion-btn" type="button" onClick={this.toggle}>{this.props.toggleIcon}</button>
         </div>
+
         {this.props.contentPosition === 'bottom' &&
           <div className="accordion-content">
             {this.props.children}

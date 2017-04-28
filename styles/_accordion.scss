@@ -6,11 +6,13 @@
       fill: palette(blue, lighter);
     }
   }
+
   &.-closed {
     .accordion-content {
       display: none;
     }
   }
+
   &.-filters {
     .accordion-btn {
       display: flex;
@@ -18,11 +20,7 @@
       transition: transform $animation-time $ease-in-out-cubic;
       transform: rotate(0deg);
     }
-    &.-closed {
-      .accordion-btn {
-        transform: rotate(180deg);
-      }
-    }
+
     .accordion-header {
       display: flex;
       justify-content: center;
@@ -30,6 +28,12 @@
       @include only-mobile {
         display: none;
       };
+    }
+
+    &.-closed {
+      .accordion-btn {
+        transform: rotate(180deg);
+      }
     }
   }
 }
