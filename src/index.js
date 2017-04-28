@@ -31,10 +31,14 @@ export { default as Sidebar } from './components/ui/Sidebar';
 export { default as Timeline } from './components/ui/Timeline';
 export { default as ZoomControl } from './components/ui/ZoomControl';
 
+// Buttons
+export { default as ShareButton } from './components/ui/Buttons/ShareButton';
+
 // Modal
-export { default as InfoModal } from './components/ui/Modal/InfoModal';
 export { default as Modal } from './components/ui/Modal';
+export { default as InfoModal } from './components/ui/Modal/InfoModal';
 export { default as SourceModal } from './components/ui/Modal/SourceModal';
+export { default as ShareModal } from './components/ui/Modal/ShareModal';
 
 // Reducers
 export { closeModal, toggleModal, modalLoading, setModalOptions, modalReducer } from './components/ui/Modal/reducer';
