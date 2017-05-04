@@ -6,7 +6,7 @@ $button-size: 36px;
   right: $space-1 * 2;
   z-index: 999;
 
-  &.-right {
+  &.-left {
     top: $space-1 * 2;
     left: $space-1 * 2;
     right: auto;

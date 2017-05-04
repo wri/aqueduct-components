@@ -55,6 +55,7 @@ class Map extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.mapConfig.bounds && nextProps.mapConfig.bounds.id) {
       const sidebarWidth = (nextProps.sidebar && nextProps.sidebar.width) ? nextProps.sidebar.width : 0;
+
       if (this.props.mapConfig.bounds && this.props.mapConfig.bounds.id !== nextProps.mapConfig.bounds.id) {
         this.fitBounds(nextProps.mapConfig.bounds.geometry, sidebarWidth || 0);
       } else if (!this.props.mapConfig.bounds) {
