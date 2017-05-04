@@ -10,6 +10,14 @@ export default class SegmentedUi extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selected && (nextProps.selected !== this.state.selected)) {
+      this.setState({
+        selected: nextProps.selected
+      });
+    }
+  }
+
   onChange(item) {
     this.setState({
       selected: item.value
