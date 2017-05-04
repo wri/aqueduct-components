@@ -72,6 +72,7 @@ class LegendGraph extends React.Component {
       case 'choropleth': {
         return (
           <div className={`graph -${config.type}`}>
+            {config.units && <div className="graph-units">Units: {config.units}</div>}
             <OnlyOn device="desktop">
               <div>
                 <div className="graph-list">

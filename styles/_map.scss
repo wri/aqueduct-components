@@ -6,6 +6,10 @@
 .c-map-container {
   height: 100%;
   position: relative;
+
+  &.-relative {
+    height: 500px;
+  }
 }
 /*
   Leaflet overiding styles

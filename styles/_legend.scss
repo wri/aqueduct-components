@@ -177,13 +177,21 @@
 
 // GRAPH
 .c-legend-graph {
-
-
   .graph {
     margin: $space-1 0 0;
 
     // CHOROPLETH
     &.-choropleth {
+
+      .graph-units {
+        display: block;
+        line-height: 1.25;
+        color: $color-text-1;
+        font-size: $font-size-small;
+        font-weight: 500;
+        margin: 0 0 $space-1;
+      }
+
       .graph-list {
         @include only-desktop {
           display: flex;
