@@ -23,10 +23,12 @@ export default class Legend extends React.Component {
 
   render() {
     const layers = orderBy(this.props.layers, ['category'], ['desc']);
+    const isModal = this.props.isModal;
+
     return (
       <div className={`c-legend ${this.props.className} ${this.state.expanded ? '-expanded' : ''}`}>
-        <OnlyOn device="desktop">
-          <div>
+        {!isModal &&
+          <OnlyOn device="desktop">
             <div className="legend-header" onClick={() => this.toggleExpand()}>
               <span className="legend-header-title">{this.state.expanded ? 'Legend' : 'View Legend'}</span>
               <button className="legend-btn">
@@ -34,8 +36,8 @@ export default class Legend extends React.Component {
                 <Icon name="icon-arrow-down-2" className="legend-close-icon" />
               </button>
             </div>
-          </div>
-        </OnlyOn>
+          </OnlyOn>
+        }
         <div className="legend-content">
           <ul>
             {layers.map((layer, i) =>
@@ -67,5 +69,6 @@ Legend.propTypes = {
   filters: PropTypes.object,
   className: PropTypes.string,
   expanded: PropTypes.bool,
+  isModal: PropTypes.bool,
   onToggleInfo: PropTypes.func
 };

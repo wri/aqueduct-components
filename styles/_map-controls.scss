@@ -6,6 +6,12 @@ $button-size: 36px;
   right: $space-1 * 2;
   z-index: 999;
 
+  &.-right {
+    top: $space-1 * 2;
+    left: $space-1 * 2;
+    right: auto;
+  }
+
   .map-controls-item {
     display: flex;
     justify-content: center;

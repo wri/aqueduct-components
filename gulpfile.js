@@ -23,7 +23,7 @@ gulp.task('html', () => {
 gulp.task('js', () => {
   gulp.src('src/**/*.{js,jsx}')
     .pipe(babel({
-      presets: ['react', 'latest', 'stage-3']
+      presets: ['react', 'env', 'stage-3']
     }))
     .pipe(gulp.dest(CONFIG.dist));
 });
