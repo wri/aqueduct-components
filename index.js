@@ -6,6 +6,7 @@ export { default as Map } from './components/Map';
 export { default as Accordion } from './components/ui/Accordion';
 export { default as Checkbox } from './components/ui/Checkbox';
 export { default as CheckboxGroup } from './components/ui/CheckboxGroup';
+export { default as Sticky } from './components/ui/Sticky';
 export { default as Modal } from './components/ui/Modal';
 export { default as CustomSelect } from './components/ui/CustomSelect';
 export { default as Icon } from './components/ui/Icon';
