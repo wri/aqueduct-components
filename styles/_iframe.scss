@@ -1,0 +1,11 @@
+.c-iframe {
+  display: block;
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  &.-responsive {
+    height: 100%;
+  }
+}

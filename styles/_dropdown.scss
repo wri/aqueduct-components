@@ -4,26 +4,39 @@
 
   > .dropdown-menu {
     position: absolute;
-    bottom: (-$space-1 / 2);
+    top: 0;
     left: 0;
     width: 270px;
-    padding: ($space-1 * 2) 0 ($space-1 * 1);
-    transform: translateY(100%);
+    padding: ($space-1 * 2) 0;
     list-style: none;
     background-color: palette(white);
     box-shadow: 0 ($space-1 / 2) ($space-1) 0 rgba(palette(black), .2);
     z-index: 1;
 
+
+    // POSITION
+    // horizontal position
     &.-left {
       left: auto;
       right: 0;
     }
-
-    &.-top {
-      top: (-$space-1 / 2);
-      bottom: auto;
-      transform: none;
+    &.-right {
+      left: 0;
+      right: auto;
     }
+
+    // vertical position
+    &.-top {
+      top: auto;
+      bottom: 100%;
+      transform: translateY(-$space-1 / 2);
+    }
+    &.-bottom {
+      top: 100%;
+      bottom: auto;
+      transform: translateY($space-1 / 2);
+    }
+
 
     > li {
       padding: ($space-1) ($space-1 * 3);

@@ -99,4 +99,18 @@
       max-width: $max-width-modal-medium;
     }
   }
+
+  // SIZES
+  &.-full {
+    .modal-container {
+      max-width: none;
+      width: calc(100% - 120px);
+    }
+
+    .modal-content {
+      max-height: none;
+      height: calc(100vh - 120px);
+    }
+  }
+
 }
