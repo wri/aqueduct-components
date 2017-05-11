@@ -31,7 +31,8 @@ $palettes: (
   gray: (
     primary: #8a9da6,
     dark: #4a596a,
-    light: lighten(rgb(151, 151, 151), 20%)
+    light: lighten(rgb(151, 151, 151), 20%),
+    lightest: #f5f4f0
   )
 );
 
