@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 export default class DropdownButton extends React.Component {
 
@@ -132,9 +133,10 @@ export default class DropdownButton extends React.Component {
   }
 
   render() {
-    const dropdownClasses = ['dropdown-menu'];
-    if (this.props.top) dropdownClasses.push('-top');
-    if (this.props.left) dropdownClasses.push('-left');
+    const dropdownClasses = classnames({
+      'dropdown-menu': true,
+      [this.props.dropdownClassName]: !!this.props.dropdownClassName
+    });
 
     return (
       <div
@@ -143,11 +145,17 @@ export default class DropdownButton extends React.Component {
         onKeyDown={e => this.onKeydown(e)}
         tabIndex="0"
       >
-        <div role="button" aria-haspopup="true" aria-controls="test" aria-expanded={!this.state.closed} onClick={() => this.toggle()}>
+        <div
+          role="button"
+          aria-haspopup="true"
+          aria-controls="test"
+          aria-expanded={!this.state.closed}
+          onClick={() => this.toggle()}
+        >
           {this.props.children}
         </div>
         {this.state.closed ||
-          <ul id="test" role="menu" className={dropdownClasses.join(' ')}>
+          <ul id="test" role="menu" className={dropdownClasses}>
             {this.props.options.map((item, index) => {
               const className = index === this.state.activeIndex ? '-selected' : '';
               return (
@@ -162,7 +170,7 @@ export default class DropdownButton extends React.Component {
                   onMouseEnter={() => this.setActiveIndex(index)}
                   onClick={() => this.onSelectItem(item)}
                 >
-                  {item.label}
+                  {item.component ? <item.component {...item} /> : item.label }
                 </li>
               );
             })}
@@ -180,10 +188,8 @@ DropdownButton.propTypes = {
   onSelect: React.PropTypes.func,
   // Classes to append to the element
   className: React.PropTypes.string,
+  // Classes to append to the dropdown
+  dropdownClassName: React.PropTypes.string,
   // Actual button used to toggle the menu
-  children: React.PropTypes.object,
-  // Open the dropdown towards the top
-  top: React.PropTypes.bool,
-  // Open the dropdown towards the right
-  left: React.PropTypes.bool
+  children: React.PropTypes.object
 };
