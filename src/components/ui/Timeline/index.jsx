@@ -4,7 +4,8 @@ import classnames from 'classnames';
 export default function Timeline(props) {
   const { items, selected } = props;
   const classList = classnames('c-timeline', {
-    [props.className]: props.className
+    [props.className]: props.className,
+    '-disabled': props.disabled
   });
 
   return (
@@ -15,7 +16,11 @@ export default function Timeline(props) {
             '-selected': (selected) ? selected.value === item.value : false
           });
           return (
-            <li key={index} className={itemClassList} onClick={() => props.onChange && props.onChange(item)}>
+            <li
+              key={index}
+              className={itemClassList}
+              onClick={() => !props.disabled && props.onChange && props.onChange(item)}
+            >
               <div className="timeline-label">
                 {item.label}
               </div>
@@ -30,6 +35,7 @@ export default function Timeline(props) {
 Timeline.propTypes = {
   items: React.PropTypes.array.isRequired,
   selected: React.PropTypes.any.isRequired,
+  disabled: React.PropTypes.bool,
   onChange: React.PropTypes.func,
   className: React.PropTypes.string
 };

@@ -19,7 +19,7 @@ export default class Checkbox extends React.Component {
   }
 
   render() {
-    const { value, name, label, checked, className } = this.props;
+    const { value, name, label, checked, defaultChecked, className } = this.props;
     const cNames = ['c-checkbox'];
     if (className) {
       cNames.push(className);
@@ -31,6 +31,7 @@ export default class Checkbox extends React.Component {
           name={name}
           id={`checkbox-${name}-${value}`}
           value={value}
+          defaultChecked={defaultChecked}
           checked={checked}
           onChange={this.onChange}
         />
@@ -51,5 +52,6 @@ Checkbox.propTypes = {
   label: React.PropTypes.string,
   className: React.PropTypes.string,
   checked: React.PropTypes.bool,
+  defaultChecked: React.PropTypes.bool,
   onChange: React.PropTypes.func
 };

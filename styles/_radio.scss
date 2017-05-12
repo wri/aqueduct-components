@@ -88,6 +88,16 @@
         }
       }
     }
+
+    &.-disabled {
+      opacity: 0.5;
+
+      label {
+        cursor: default;
+        color: palette(blue, 'light');
+        &:hover { color: palette(blue, 'light'); }
+      }
+    }
   }
 
   &.-secondary {
@@ -112,6 +122,16 @@
         &:after {
           transform: translate(-50%,-50%) scale(1);
         }
+      }
+    }
+
+    &.-disabled {
+      opacity: 0.5;
+
+      label {
+        cursor: default;
+        color: palette(gray, 'dark');
+        &:hover { color: palette(gray, 'dark'); }
       }
     }
   }

@@ -19,10 +19,11 @@ export default class Radio extends React.Component {
   }
 
   render() {
-    const { value, name, label, selected } = this.props;
+    const { value, name, label, selected, disabled } = this.props;
 
     const className = classnames({
-      [this.props.className]: !!this.props.className
+      [this.props.className]: !!this.props.className,
+      '-disabled': disabled
     });
 
     return (
@@ -33,6 +34,7 @@ export default class Radio extends React.Component {
           id={`radio-${name}-${value}`}
           value={value}
           checked={value === selected}
+          disabled={disabled}
           onChange={this.onChange}
         />
         <label htmlFor={`radio-${name}-${value}`}>
@@ -50,5 +52,6 @@ Radio.propTypes = {
   label: React.PropTypes.string,
   selected: React.PropTypes.string,
   className: React.PropTypes.string,
+  disabled: React.PropTypes.bool,
   onChange: React.PropTypes.func
 };
