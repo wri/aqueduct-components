@@ -11,6 +11,7 @@
   text-transform: uppercase;
   border-width: 1px;
   border-style: solid;
+  white-space: nowrap;
 
   &.-disabled {
     pointer-events: none;

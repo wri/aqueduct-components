@@ -46,6 +46,7 @@ export { default as ShareModal } from './components/ui/Modal/ShareModal';
 export { closeModal, toggleModal, modalLoading, setModalOptions, modalReducer } from './components/ui/Modal/reducer';
 
 // Utils
+export { downloadFile } from './utils/download';
 export { get, post, remove } from './utils/request';
 export { substitution, concatenation, capitalizeFirstLetter } from './utils/text';
 export { getObjectConversion, widgetsFilter } from './utils/filters';
