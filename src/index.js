@@ -33,6 +33,12 @@ export { default as Sticky } from './components/ui/Sticky';
 export { default as Timeline } from './components/ui/Timeline';
 export { default as ZoomControl } from './components/ui/ZoomControl';
 
+// Form components
+export { default as Field } from './components/form/Field';
+export { default as FormElement } from './components/form/FormElement';
+export { default as Input } from './components/form/Input';
+export { default as TextArea } from './components/form/TextArea';
+
 // Buttons
 export { default as ShareButton } from './components/ui/Buttons/ShareButton';
 
