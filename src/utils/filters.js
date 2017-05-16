@@ -204,7 +204,7 @@ export function getObjectConversion(obj = {}, filters = {}, category) {
   });
 
   // Text widgets have a different parse
-  if (category === 'widget' && obj.type === 'text') {
+  if (obj.type === 'text') {
     return Object.assign({}, obj, {
       data: JSON.parse(getConversion(JSON.stringify(obj.data), params || [], sqlParams || []))
     });
