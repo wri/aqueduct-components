@@ -143,16 +143,18 @@ export function getObjectConversion(obj = {}, filters = {}, category) {
       key,
       value: filters.period_value || null
     }),
-    year: key => ({
-      key,
-      value: dictionary ? dictionary.yearOptions[filters[key]] : 'baseline'
-    }),
+    year: (key, dictionaryName) => {
+      return {
+        key,
+        value: dictionaries[dictionaryName || category].yearOptions[filters[key]] || 'baseline'
+      }
+    },
     irrigation: key => ({
       key,
       // We can't have a irrigation different from 1, in this case we don't need to add anything
       value: (!filters[key] || filters[key].length === 0 || filters[key].length === 2) ? null : filters[key]
     }),
-    commodity: (key, isSql) => ({
+    commodity: (key, dictionaryName, isSql) => ({
       key: (isSql) ? `lower(${key})` : key,
       value: filters.crop !== 'all' ? filters.crop : null
     }),
@@ -169,7 +171,7 @@ export function getObjectConversion(obj = {}, filters = {}, category) {
       value: filters.year === 'baseline' ? 'historic' : 'bau'
     }),
     // Old params. Keep them to add compatibility with old format
-    water_column: (param, isWidget = false) => ({
+    water_column: (param, dictionaryName, isWidget = false) => ({
       key: param.key,
       value: getWaterColumn(filters, param.sufix, isWidget)
     }),
@@ -186,19 +188,19 @@ export function getObjectConversion(obj = {}, filters = {}, category) {
     // Remove once water_column is not used anymore
     if (p.key === 'water_column') {
       if (category === 'widget') {
-        return conversions[p.key] ? conversions[p.key](p, true) : filters[p.key];
+        return conversions[p.key] ? conversions[p.key](p, p.dictionary, true) : filters[p.key];
       }
 
       return conversions[p.key] ? conversions[p.key](p) : filters[p.key];
     }
-    return conversions[p.key] ? conversions[p.key](p.key) : filters[p.key];
+    return conversions[p.key] ? conversions[p.key](p.key, p.dictionary) : filters[p.key];
   });
 
   const sqlParams = obj.sqlConfig && obj.sqlConfig.map((param) => {
     return {
       key: param.key,
       keyParams: param.keyParams.map((p) => {
-        return conversions[p.key] ? conversions[p.key](p.key, true) : filters[p.key];
+        return conversions[p.key] ? conversions[p.key](p.key, p.dictionary, true) : filters[p.key];
       })
     };
   });
