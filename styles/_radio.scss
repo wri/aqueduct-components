@@ -64,6 +64,12 @@
     }
   }
 
+  &.-small {
+    label {
+      font-size: $font-size-small;
+    }
+  }
+
   // THEMES
   &.-primary {
     font-weight: 500;
@@ -145,8 +151,18 @@
     }
   }
 
+  &.-small {
+    > * {
+      margin: 0 0 5px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
   &.-inline {
     display: flex;
+
     > * {
       margin: 0 ($space-1 * 2) 0 0;
       &:last-child {

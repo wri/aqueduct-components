@@ -33,7 +33,7 @@
   > input,
   > textarea {
     display: inline-block;
-    border: 1px solid $border-color-1;
+    border: 1px solid $border-color-2;
     box-shadow: none;
     outline: none;
     font-size: 16px;
@@ -45,7 +45,7 @@
     margin: 0;
 
     &:hover {
-      border-color: $border-color-2;
+      border-color: darken($border-color-2, 5%);
     }
   }
 
@@ -67,7 +67,6 @@
     }
   }
 
-
   &.-error {
     > input[type=text],
     > input[type=password],
@@ -83,6 +82,19 @@
     .Select-control,
     .ic-tokens {
       border-color: $color-error;
+    }
+  }
+
+  &.-inline {
+    display: flex;
+
+    .error {
+      display: none;
+    }
+
+    > * {
+      margin: 0 0 0 $space-1;
+      &:first-child { margin: 0; }
     }
   }
 }
