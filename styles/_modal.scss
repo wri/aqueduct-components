@@ -100,7 +100,12 @@
     }
   }
 
-  // SIZES
+  &.-auto {
+    .modal-content {
+      overflow: visible;
+    }
+  }
+
   &.-full {
     .modal-container {
       max-width: none;
