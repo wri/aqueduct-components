@@ -47,13 +47,14 @@ class Map extends React.Component {
     this.setBasemap();
     this.setMapEventListeners();
 
-
     // Add layers
     this.setLayerManager();
     this.addLayers(this.props.layersActive, this.props.filters);
-    if (this.props.layersActive && this.props.layersActive.length) {
-      if (this.props.filters.food !== 'none') {
-        this.addMarkers(this.props.layersActive[0].id, this.props.mapConfig.zoom);
+    if (this.props.layersActive.length && this.props.filters.food !== 'none') {
+      const foodLayer = this.props.layersActive.find(l => l.category === 'food');
+
+      if (foodLayer) {
+        this.addMarkers(foodLayer.id, this.props.mapConfig.zoom);
       }
     }
   }
@@ -89,10 +90,13 @@ class Map extends React.Component {
       this.map.setZoom(nextProps.mapConfig.zoom);
     }
 
-    if (nextProps.layersActive && nextProps.layersActive.length &&
-      this.props.filters.food !== 'none' &&
+    if (nextProps.layersActive.length && this.props.filters.food !== 'none' &&
       this.props.mapConfig.zoom !== nextProps.mapConfig.zoom) {
-      this.addMarkers(nextProps.layersActive[0].id, nextProps.mapConfig.zoom);
+      const foodLayer = nextProps.layersActive.find(l => l.category === 'food');
+
+      if (foodLayer) {
+        this.addMarkers(foodLayer.id, nextProps.mapConfig.zoom);
+      }
     }
   }
 
@@ -238,6 +242,10 @@ Map.propTypes = {
   layersActive: PropTypes.array,
   // ACTIONS
   setMapParams: PropTypes.func
+};
+
+Map.defaultProptypes = {
+  layersActive: []
 };
 
 export default Map;
