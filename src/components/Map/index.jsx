@@ -2,6 +2,7 @@
 /* eslint import/extensions: 0 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import L from 'leaflet/dist/leaflet';
 import isEqual from 'lodash/isEqual';
 import Spinner from '../ui/Spinner';
@@ -50,13 +51,20 @@ class Map extends React.Component {
     // Add layers
     this.setLayerManager();
     this.addLayers(this.props.layersActive, this.props.filters);
+    if (this.props.layersActive && this.props.layersActive.length) {
+      if (this.props.filters.food !== 'none') {
+        this.addMarkers(this.props.layersActive[0].id, this.props.mapConfig.zoom);
+      }
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.mapConfig.bounds && nextProps.mapConfig.bounds.id) {
-      const sidebarWidth = (nextProps.sidebar && nextProps.sidebar.width) ? nextProps.sidebar.width : 0;
+      const sidebarWidth = (nextProps.sidebar && nextProps.sidebar.width) ?
+        nextProps.sidebar.width : 0;
 
-      if (this.props.mapConfig.bounds && this.props.mapConfig.bounds.id !== nextProps.mapConfig.bounds.id) {
+      if (this.props.mapConfig.bounds &&
+          this.props.mapConfig.bounds.id !== nextProps.mapConfig.bounds.id) {
         this.fitBounds(nextProps.mapConfig.bounds.geometry, sidebarWidth || 0);
       } else if (!this.props.mapConfig.bounds) {
         this.fitBounds(nextProps.mapConfig.bounds.geometry, sidebarWidth || 0);
@@ -79,6 +87,12 @@ class Map extends React.Component {
     // Zoom
     if (this.props.mapConfig.zoom !== nextProps.mapConfig.zoom) {
       this.map.setZoom(nextProps.mapConfig.zoom);
+    }
+
+    if (nextProps.layersActive && nextProps.layersActive.length &&
+      this.props.filters.food !== 'none' &&
+      this.props.mapConfig.zoom !== nextProps.mapConfig.zoom) {
+      this.addMarkers(nextProps.layersActive[0].id, nextProps.mapConfig.zoom);
     }
   }
 
@@ -128,6 +142,15 @@ class Map extends React.Component {
     this.labelLayer = L.tileLayer(config.BASEMAP_LABEL_URL, {})
                        .addTo(this.map)
                        .setZIndex(1000);
+  }
+
+  addMarkers(layerId, zoom) {
+    const layerConfig = {
+      id: layerId,
+      zoom
+    };
+
+    this.layerManager._setMarkers(layerConfig);
   }
 
   // GETTERS
@@ -208,13 +231,13 @@ class Map extends React.Component {
 
 Map.propTypes = {
   // STORE
-  mapConfig: React.PropTypes.object,
-  filters: React.PropTypes.object,
-  sidebar: React.PropTypes.object,
-  LayerManager: React.PropTypes.func,
-  layersActive: React.PropTypes.array,
+  mapConfig: PropTypes.object,
+  filters: PropTypes.object,
+  sidebar: PropTypes.object,
+  LayerManager: PropTypes.func,
+  layersActive: PropTypes.array,
   // ACTIONS
-  setMapParams: React.PropTypes.func
+  setMapParams: PropTypes.func
 };
 
 export default Map;
