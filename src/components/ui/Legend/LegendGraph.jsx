@@ -2,6 +2,27 @@ import React from 'react';
 import OnlyOn from '../Responsive';
 
 class LegendGraph extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      groups: {}
+    };
+
+    // BINDINGS
+    this.triggerToggleGroup = this.triggerToggleGroup.bind(this);
+  }
+
+  triggerToggleGroup(group) {
+    this.setState({
+      groups: {
+        ...this.state.groups,
+        [group.name]: !this.state.groups[group.name]
+      }
+    });
+  }
+
   getLegendGraph() {
     const config = this.props.config;
     switch (config.type) {
@@ -32,17 +53,27 @@ class LegendGraph extends React.Component {
             {config.items.map((item, i) => {
               return (
                 <div key={i} className="graph-group">
-                  <div className="graph-group-name">{item.name}</div>
-                  <div className="graph-list">
-                    {item.items.map((it, j) => {
-                      return (
-                        <div className="graph-list-item" key={j}>
-                          <span className="color" style={{ background: it.color }} />
-                          <span className="label">{it.name}</span>
-                        </div>
-                      );
-                    })}
+                  <div
+                    className="graph-group-name"
+                    onClick={() => this.triggerToggleGroup(item)}
+                  >
+                    {item.name}
+                    {!this.state.groups[item.name] &&
+                      <span className="color" style={{ background: item.color }} />
+                    }
                   </div>
+                  {this.state.groups[item.name] &&
+                    <div className="graph-list">
+                      {item.items.map((it, j) => {
+                        return (
+                          <div className="graph-list-item" key={j}>
+                            <span className="color" style={{ background: it.color }} />
+                            <span className="label">{it.name}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  }
                 </div>
               );
             })}

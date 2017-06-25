@@ -40,12 +40,12 @@ export default class Legend extends React.Component {
         }
         <div className="legend-content">
           <ul>
-            {layers.map((layer, i) =>
+            {layers.map(layer =>
               layer.category !== 'mask' &&
               <LegendItem
                 filters={this.props.filters}
                 layer={layer}
-                key={i}
+                key={layer.id}
                 onToggleInfo={this.props.onToggleInfo}
               />
             )}

@@ -401,6 +401,18 @@
 
         .graph-group-name {
           color: $color-text-1;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          cursor: pointer;
+
+          > .color {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border: 1px solid $border-color-2;
+            margin: 0 0 0 $space-1/2;
+          }
         }
       }
 
