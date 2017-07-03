@@ -140,9 +140,6 @@
   align-items: center;
   margin: 5px 0 0 5px;
 
-  button {
-  }
-
   > * {
     display: flex;
     list-style: none;
@@ -410,8 +407,11 @@
             display: block;
             width: 12px;
             height: 12px;
-            border: 1px solid $border-color-2;
-            margin: 0 0 0 $space-1/2;
+            margin: 0 $space-1/2 0 0;
+
+            &.-transparent {
+              border: 1px solid palette(gray);
+            }
           }
         }
       }
@@ -419,28 +419,22 @@
       .graph-list {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
+        margin: 5px 0 0 6px;
+        padding: 0 0 5px 15px;
+        border-left: 1px solid rgba(palette(gray, 'dark'), .2);
 
         .graph-list-item {
           display: flex;
           width: calc(50% - #{$space-1});
-          margin: 5px $space-1 0 0;
-
-          &:last-child {
-            margin: 5px 0 0;
-          }
+          margin: 5px 0 0 0;
 
           @include only-desktop {
             width: calc(25% - #{$space-1});
-            &:last-child {
-              margin-right: 0;
-            }
           }
 
           @include only-print {
             width: calc(25% - #{$space-1});
-            &:last-child {
-              margin-right: 0;
-            }
           }
 
           .color {
@@ -452,7 +446,7 @@
 
           .label {
             display: block;
-            line-height: 1.25;
+            line-height: 1;
             color: $color-text-1;
             font-size: $font-size-small;
             font-weight: 500;
