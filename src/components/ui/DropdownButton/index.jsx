@@ -32,7 +32,7 @@ export default class DropdownButton extends React.Component {
       case 38:
         if (this.state.closed) break;
         e.preventDefault();
-        activeIndex = --this.state.activeIndex % this.props.options.length;
+        activeIndex = (this.state.activeIndex -= 1) % this.props.options.length;
         this.setActiveIndex(activeIndex < 0 ? -activeIndex : activeIndex);
         break;
 
@@ -41,7 +41,7 @@ export default class DropdownButton extends React.Component {
       case 40:
         if (this.state.closed) break;
         e.preventDefault();
-        activeIndex = ++this.state.activeIndex % this.props.options.length;
+        activeIndex = (this.state.activeIndex += 1) % this.props.options.length;
         this.setActiveIndex(activeIndex);
         break;
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 export default class RadioGroup extends React.Component {
@@ -20,7 +21,8 @@ export default class RadioGroup extends React.Component {
   */
   onChange(e) {
     // Set the current selected object
-    const selectedObj = this.props.items.find(item => item.value.toString() === e.currentTarget.value);
+    const selectedObj = this.props.items.find(item =>
+      item.value.toString() === e.currentTarget.value);
 
     // Set state
     this.setState({
@@ -63,9 +65,9 @@ export default class RadioGroup extends React.Component {
 }
 
 RadioGroup.propTypes = {
-  items: React.PropTypes.array.isRequired,
-  name: React.PropTypes.string.isRequired,
-  defaultValue: React.PropTypes.string,
-  className: React.PropTypes.string,
-  onChange: React.PropTypes.func
+  items: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired,
+  defaultValue: PropTypes.string,
+  className: PropTypes.string,
+  onChange: PropTypes.func
 };

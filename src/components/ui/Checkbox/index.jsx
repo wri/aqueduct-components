@@ -1,6 +1,8 @@
 import React from 'react';
-import Icon from '../Icon';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
+import Icon from '../Icon';
 
 export default class Checkbox extends React.Component {
 
@@ -16,7 +18,11 @@ export default class Checkbox extends React.Component {
    * - onChange
   */
   onChange(evt) {
-    this.props.onChange && this.props.onChange({ value: this.props.value, checked: evt.currentTarget.checked });
+    this.props.onChange &&
+      this.props.onChange({
+        value: this.props.value,
+        checked: evt.currentTarget.checked
+      });
   }
 
   render() {
@@ -51,12 +57,12 @@ export default class Checkbox extends React.Component {
 }
 
 Checkbox.propTypes = {
-  name: React.PropTypes.string,
-  value: React.PropTypes.string,
-  label: React.PropTypes.string,
-  className: React.PropTypes.string,
-  checked: React.PropTypes.bool,
-  defaultChecked: React.PropTypes.bool,
-  disabled: React.PropTypes.bool,
-  onChange: React.PropTypes.func
+  name: PropTypes.string,
+  value: PropTypes.string,
+  label: PropTypes.string,
+  className: PropTypes.string,
+  checked: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func
 };
