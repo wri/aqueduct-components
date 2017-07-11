@@ -19,7 +19,7 @@
   "extends": [
     "vizzuality"
   ],
-  "rules":{
+  "rules": {
     "no-underscore-dangle": ["error", { "allowAfterThis": true }]
   }
 }

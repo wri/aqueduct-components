@@ -31,7 +31,8 @@ class Map extends React.Component {
     this.map = L.map(this.mapNode, {
       minZoom: MAP_CONFIG.minZoom,
       zoom: this.props.mapConfig.zoom,
-      zoomControl: isNaN(this.props.mapConfig.zoomControl) ? MAP_CONFIG.zoomControl : this.props.mapConfig.zoomControl,
+      zoomControl: isNaN(this.props.mapConfig.zoomControl) ?
+        MAP_CONFIG.zoomControl : this.props.mapConfig.zoomControl,
       center: [this.props.mapConfig.latLng.lat, this.props.mapConfig.latLng.lng],
       detectRetina: true,
       scrollWheelZoom: !!this.props.mapConfig.scrollWheelZoom
@@ -54,7 +55,7 @@ class Map extends React.Component {
       const foodLayer = this.props.layersActive.find(l => l.category === 'food');
 
       if (foodLayer) {
-        this.addMarkers(foodLayer.id, this.props.mapConfig.zoom);
+        this.addMarkers(foodLayer.id, { prevZoom: this.props.mapConfig.zoom });
       }
     }
   }
@@ -95,14 +96,18 @@ class Map extends React.Component {
       const foodLayer = nextProps.layersActive.find(l => l.category === 'food');
 
       if (foodLayer) {
-        this.addMarkers(foodLayer.id, nextProps.mapConfig.zoom);
+        this.addMarkers(foodLayer.id, {
+          prevZoom: this.props.mapConfig.zoom,
+          nextZoom: nextProps.mapConfig.zoom
+        });
       }
     }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
     const loadingChanged = this.state.loading !== nextState.loading;
-    const sidebarWidthChanged = this.props.sidebar ? (+this.props.sidebar.width !== +nextProps.sidebar.width) : false;
+    const sidebarWidthChanged = this.props.sidebar ?
+      (+this.props.sidebar.width !== +nextProps.sidebar.width) : false;
     return loadingChanged || sidebarWidthChanged;
   }
 
@@ -110,7 +115,7 @@ class Map extends React.Component {
     this._mounted = false;
     // Remember to remove the listeners before removing the map
     // or they will stay in memory
-    this.props.setMapParams && this.removeMapEventListeners();
+    if (this.props.setMapParams) this.removeMapEventListeners();
     this.map.remove();
   }
 
@@ -119,9 +124,11 @@ class Map extends React.Component {
   setLayerManager() {
     const stopLoading = () => {
       // Don't execute callback if component has been unmounted
-      this._mounted && this.setState({
-        loading: false
-      });
+      if (this._mounted) {
+        this.setState({
+          loading: false
+        });
+      }
     };
 
     this.layerManager = new this.props.LayerManager(this.map, {
@@ -135,7 +142,7 @@ class Map extends React.Component {
   }
 
   setZoomControl() {
-    this.map.zoomControl && this.map.zoomControl.setPosition('topright');
+    if (this.map.zoomControl) this.map.zoomControl.setPosition('topright');
   }
 
   setBasemap() {
@@ -146,15 +153,6 @@ class Map extends React.Component {
     this.labelLayer = L.tileLayer(config.BASEMAP_LABEL_URL, {})
                        .addTo(this.map)
                        .setZIndex(1000);
-  }
-
-  addMarkers(layerId, zoom) {
-    const layerConfig = {
-      id: layerId,
-      zoom
-    };
-
-    this.layerManager._setMarkers(layerConfig);
   }
 
   // GETTERS
@@ -170,14 +168,6 @@ class Map extends React.Component {
   getCenter() { return this.map.getCenter(); }
 
   getZoom() { return this.map.getZoom(); }
-
-  fitBounds(geoJson, sidebarWidth) {
-    const geojsonLayer = L.geoJson(geoJson);
-    this.map.fitBounds(geojsonLayer.getBounds(), {
-      paddingTopLeft: [sidebarWidth || 0, 0],
-      paddingBottomRight: [0, 0]
-    });
-  }
 
 
   // MAP LISTENERS
@@ -196,6 +186,14 @@ class Map extends React.Component {
   removeMapEventListeners() {
     this.map.off('zoomend');
     this.map.off('dragend');
+  }
+
+  addMarkers(layerId, zoomStatus) {
+    const layerConfig = {
+      id: layerId
+    };
+
+    this.layerManager._setMarkers(layerConfig, zoomStatus);
   }
 
   // LAYER METHODS
@@ -221,6 +219,13 @@ class Map extends React.Component {
     this.layerManager.removeLayers();
   }
 
+  fitBounds(geoJson, sidebarWidth) {
+    const geojsonLayer = L.geoJson(geoJson);
+    this.map.fitBounds(geojsonLayer.getBounds(), {
+      paddingTopLeft: [sidebarWidth || 0, 0],
+      paddingBottomRight: [0, 0]
+    });
+  }
 
   // RENDER
   render() {
