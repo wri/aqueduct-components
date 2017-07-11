@@ -55,7 +55,7 @@ class Map extends React.Component {
       const foodLayer = this.props.layersActive.find(l => l.category === 'food');
 
       if (foodLayer) {
-        this.addMarkers(foodLayer.id, { prevZoom: this.props.mapConfig.zoom });
+        this.addMarkers(foodLayer, { prevZoom: this.props.mapConfig.zoom });
       }
     }
   }
@@ -96,7 +96,7 @@ class Map extends React.Component {
       const foodLayer = nextProps.layersActive.find(l => l.category === 'food');
 
       if (foodLayer) {
-        this.addMarkers(foodLayer.id, {
+        this.addMarkers(foodLayer, {
           prevZoom: this.props.mapConfig.zoom,
           nextZoom: nextProps.mapConfig.zoom
         });
@@ -188,12 +188,8 @@ class Map extends React.Component {
     this.map.off('dragend');
   }
 
-  addMarkers(layerId, zoomStatus) {
-    const layerConfig = {
-      id: layerId
-    };
-
-    this.layerManager._setMarkers(layerConfig, zoomStatus);
+  addMarkers(layer, zoomStatus) {
+    this.layerManager._setMarkers(layer, zoomStatus);
   }
 
   // LAYER METHODS
