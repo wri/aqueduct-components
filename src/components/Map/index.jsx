@@ -170,7 +170,6 @@ class Map extends React.Component {
 
   getZoom() { return this.map.getZoom(); }
 
-
   // MAP LISTENERS
   setMapEventListeners() {
     function mapChangeHandler() {
@@ -224,7 +223,6 @@ class Map extends React.Component {
     });
   }
 
-  // RENDER
   render() {
     return (
       <div className="c-map">

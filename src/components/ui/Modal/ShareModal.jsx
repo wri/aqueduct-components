@@ -3,6 +3,19 @@ import Clipboard from 'clipboard';
 import Icon from '../Icon';
 
 export default class ShareModal extends React.Component {
+  // UI EVENTS
+  static triggerPopup(e) {
+    e && e.preventDefault();
+    const width = 575;
+    const height = 400;
+    const left = (window.innerWidth - width) / 2;
+    const top = (window.innerHeight - height) / 2;
+
+    const url = e.currentTarget.href;
+    const opts = `status=1,width=${width},height=${height},top=${top},left=${left}`;
+
+    window.open(url, 'Share this analysis', opts);
+  }
 
   constructor(props) {
     super(props);
@@ -33,20 +46,6 @@ export default class ShareModal extends React.Component {
         this.setState({ error: false });
       }, 2000);
     });
-  }
-
-  // UI EVENTS
-  triggerPopup(e) {
-    e && e.preventDefault();
-    const width = 575;
-    const height = 400;
-    const left = (window.innerWidth - width) / 2;
-    const top = (window.innerHeight - height) / 2;
-
-    const url = e.currentTarget.href;
-    const opts = `status=1,width=${width},height=${height},top=${top},left=${left}`;
-
-    window.open(url, 'Share this analysis', opts);
   }
 
   render() {
@@ -96,7 +95,7 @@ export default class ShareModal extends React.Component {
               target="_blank"
               rel="noopener noreferrer"
               className="c-btn -primary -with-icon -twitter -social"
-              onClick={this.triggerPopup}
+              onClick={ShareModal.triggerPopup}
             >
               <Icon name="icon-twitter" />
               <span>Twitter</span>
@@ -106,7 +105,7 @@ export default class ShareModal extends React.Component {
               target="_blank"
               rel="noopener noreferrer"
               className="c-btn -primary -with-icon -facebook -social"
-              onClick={this.triggerPopup}
+              onClick={ShareModal.triggerPopup}
             >
               <Icon name="icon-facebook" />
               <span>Facebook</span>
@@ -116,7 +115,7 @@ export default class ShareModal extends React.Component {
               target="_blank"
               rel="noopener noreferrer"
               className="c-btn -primary -with-icon -linkedin -social"
-              onClick={this.triggerPopup}
+              onClick={ShareModal.triggerPopup}
             >
               <Icon name="icon-linkedin" />
               <span>Linkedin</span>
