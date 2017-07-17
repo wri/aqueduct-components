@@ -170,10 +170,6 @@ class Map extends React.Component {
 
   getZoom() { return this.map.getZoom(); }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> eslint refactor
   // MAP LISTENERS
   setMapEventListeners() {
     function mapChangeHandler() {
@@ -219,18 +215,6 @@ class Map extends React.Component {
     this.layerManager.removeLayers();
   }
 
-<<<<<<< HEAD
-=======
-  addMarkers(layerId, zoom) {
-    const layerConfig = {
-      id: layerId,
-      zoom
-    };
-
-    this.layerManager._setMarkers(layerConfig); // eslint-disable-line no-underscore-dangle
-  }
-
->>>>>>> eslint refactor
   fitBounds(geoJson, sidebarWidth) {
     const geojsonLayer = L.geoJson(geoJson);
     this.map.fitBounds(geojsonLayer.getBounds(), {
