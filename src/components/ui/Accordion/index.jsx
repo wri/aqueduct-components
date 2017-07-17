@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default class Accordion extends React.Component {
@@ -33,13 +32,7 @@ export default class Accordion extends React.Component {
         }
         <div className="accordion-header">
           {this.props.title && <span className="accordion-title">{this.props.title}</span>}
-          <button
-            className="accordion-btn"
-            type="button"
-            onClick={this.toggle}
-          >
-            {this.props.toggleIcon}
-          </button>
+          <button className="accordion-btn" type="button" onClick={this.toggle}>{this.props.toggleIcon}</button>
         </div>
 
         {this.props.contentPosition === 'bottom' &&
@@ -53,10 +46,10 @@ export default class Accordion extends React.Component {
 }
 
 Accordion.propTypes = {
-  opened: PropTypes.bool,
-  title: PropTypes.string,
-  className: PropTypes.string,
-  contentPosition: PropTypes.string,
-  children: PropTypes.object,
-  toggleIcon: PropTypes.object
+  opened: React.PropTypes.bool,
+  title: React.PropTypes.string,
+  className: React.PropTypes.string,
+  contentPosition: React.PropTypes.string,
+  children: React.PropTypes.object,
+  toggleIcon: React.PropTypes.object
 };

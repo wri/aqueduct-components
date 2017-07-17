@@ -18,15 +18,6 @@ import Spinner from '../Spinner';
 
 
 class LegendItem extends React.Component {
-  static _applyOpacity(hex, opacity) {
-    // Splits in 2-length chunks the hexadecimal
-    const hexArray = hex.split('#')[1].match(/.{1,2}/g);
-    // Converts from hex to RGB every chunk
-    const rgb = hexArray.map(h => parseInt(h, 16));
-
-    return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${opacity})`;
-  }
-
   constructor(props) {
     super(props);
 
@@ -86,13 +77,7 @@ class LegendItem extends React.Component {
 
 
         const color = CROP_OPTIONS.find(c => c.value === crop).color;
-        const items = buckets.map((bucket, i) => ({
-          value: `(>= ${format('.3s')(bucket)})`,
-          /* eslint-disable no-underscore-dangle */
-          color: LegendItem._applyOpacity(color, LEGEND_OPACITY_RANGE[i]),
-          /* eslint-enable no-underscore-dangle */
-          name: ''
-        }));
+        const items = buckets.map((bucket, i) => { return { value: `(>= ${format('.3s')(bucket)})`, color: this._applyOpacity(color, LEGEND_OPACITY_RANGE[i]), name: '' }; });
 
         const newlegendConfig = {
           ...legendConfig,
@@ -113,6 +98,15 @@ class LegendItem extends React.Component {
         throw err;
       }
     });
+  }
+
+  _applyOpacity(hex, opacity) {
+    // Splits in 2-length chunks the hexadecimal
+    const hexArray = hex.split('#')[1].match(/.{1,2}/g);
+    // Converts from hex to RGB every chunk
+    const rgb = hexArray.map(h => parseInt(h, 16));
+
+    return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${opacity})`;
   }
 
   triggerAction(action) {

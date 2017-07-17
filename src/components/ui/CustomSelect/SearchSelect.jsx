@@ -74,12 +74,19 @@ export default class CustomSelect extends React.Component {
       // Typing text
       default: {
         const value = evt.currentTarget.value;
-        const filteredOptions = this.props.options.filter(item =>
-          item.label.toLowerCase().match(value.toLowerCase()));
+        const filteredOptions = this.props.options.filter(item => item.label.toLowerCase().match(value.toLowerCase()));
         this.setState({ filteredOptions });
         break;
       }
     }
+  }
+
+  resetSelectedIndex() {
+    this.setSelectedIndex(0);
+  }
+
+  setSelectedIndex(index) {
+    this.setState({ selectedIndex: index });
   }
 
   // Event handler for enter event on search input
@@ -87,26 +94,18 @@ export default class CustomSelect extends React.Component {
     this.setState({ closed: false });
   }
 
-  onScreenClick(evt) {
-    if (this.el.contains && !this.el.contains(evt.target)) {
-      this.close();
-      window.removeEventListener('click', this.onScreenClick);
-    }
-  }
-
-  setSelectedIndex(index) {
-    this.setState({ selectedIndex: index });
-  }
-
-  resetSelectedIndex() {
-    this.setSelectedIndex(0);
-  }
-
   // Event handler for mouseup event on options list item
   selectItem(item) {
     this.setState({ selectedItem: item });
     this.close();
     this.props.onValueChange && this.props.onValueChange(item);
+  }
+
+  onScreenClick(evt) {
+    if (this.el.contains && !this.el.contains(evt.target)) {
+      this.close();
+      window.removeEventListener('click', this.onScreenClick);
+    }
   }
 
   toggle() {
@@ -147,8 +146,7 @@ export default class CustomSelect extends React.Component {
     return (
       <div ref={(node) => { this.el = node; }} className={cNames.join(' ')}>
         <span className="custom-select-text" onClick={this.toggle}>
-          <span>{this.state.selectedItem ?
-            this.state.selectedItem.label : this.props.placeholder}</span>
+          <span>{this.state.selectedItem ? this.state.selectedItem.label : this.props.placeholder}</span>
           <input
             ref={(node) => { this.input = node; }}
             className="custom-select-search"
@@ -165,15 +163,7 @@ export default class CustomSelect extends React.Component {
           <ul className="custom-select-options">
             {this.state.filteredOptions.map((item, index) => {
               const cName = (index === this.state.selectedIndex) ? '-selected' : '';
-              return (
-                <li
-                  className={cName}
-                  key={index}
-                  onMouseEnter={() => { this.setSelectedIndex(index); }}
-                  onMouseDown={() => this.selectItem(item)}
-                >
-                  {item.label}
-                </li>);
+              return <li className={cName} key={index} onMouseEnter={() => { this.setSelectedIndex(index); }} onMouseDown={() => this.selectItem(item)}>{item.label}</li>;
             })}
           </ul>
         }

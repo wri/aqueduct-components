@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default function MapControls({ className, children }) {
-  /* eslint-disable no-underscore-dangle */
   const _children = (Array.isArray(children) || !children) ? children : [children];
-  /* eslint-enable no-underscore-dangle */
   return (
     <div className={classNames('c-map-controls', { [className]: !!className })}>
       {_children &&
