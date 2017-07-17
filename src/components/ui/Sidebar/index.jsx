@@ -1,6 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
+import React from 'react';
 import Icon from '../Icon';
 
 export default class Sidebar extends React.Component {
@@ -40,8 +39,7 @@ export default class Sidebar extends React.Component {
   }
 
   triggerResize() {
-    this.sidebarNode &&
-      this.props.setSidebarWidth((this.state.opened) ? this.sidebarNode.offsetWidth : 50);
+    this.sidebarNode && this.props.setSidebarWidth((this.state.opened) ? this.sidebarNode.offsetWidth : 50);
   }
 
   render() {
@@ -66,7 +64,7 @@ export default class Sidebar extends React.Component {
 }
 
 Sidebar.propTypes = {
-  opened: PropTypes.bool,
-  children: PropTypes.array,
-  setSidebarWidth: PropTypes.func
+  opened: React.PropTypes.bool,
+  children: React.PropTypes.array,
+  setSidebarWidth: React.PropTypes.func
 };

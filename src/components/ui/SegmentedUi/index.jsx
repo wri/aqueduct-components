@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default class SegmentedUi extends React.Component {
@@ -33,13 +32,7 @@ export default class SegmentedUi extends React.Component {
       });
       return (
         <li key={index} className={cNames}>
-          <button
-            type="button"
-            className="segmented-ui-btn"
-            onClick={() => { this.onChange(item); }}
-          >
-            {item.label}
-          </button>
+          <button type="button" className="segmented-ui-btn" onClick={() => { this.onChange(item); }}>{item.label}</button>
         </li>
       );
     });
@@ -58,8 +51,8 @@ export default class SegmentedUi extends React.Component {
 }
 
 SegmentedUi.propTypes = {
-  items: PropTypes.array,
-  selected: PropTypes.string,
-  className: PropTypes.string,
-  onChange: PropTypes.func
+  items: React.PropTypes.array,
+  selected: React.PropTypes.string,
+  className: React.PropTypes.string,
+  onChange: React.PropTypes.func
 };
