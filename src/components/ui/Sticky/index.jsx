@@ -9,7 +9,7 @@ export default class Sticky extends React.Component {
     super(props);
 
     this.state = {
-      isSticked: this.props.isSticked
+      isSticked: props.isSticked
     };
   }
 
@@ -34,7 +34,8 @@ export default class Sticky extends React.Component {
   }
 
   _onScroll() {
-    const currentScroll = this.ScrollElem.scrollTop;
+    const currentScroll = this.ScrollElem !== window ?
+      this.ScrollElem.scrollTop : this.ScrollElem.scrollY;
 
     if (this.props.bottomLimit) {
       if (currentScroll >= this.props.topLimit && currentScroll < this.props.bottomLimit
