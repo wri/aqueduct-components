@@ -51,12 +51,6 @@
     }
   }
 
-  &.-country {
-    > .country-filters {
-      display: none;
-    }
-  }
-
   &.-compare {
     > .country-filters {
       display: flex;
