@@ -1,7 +1,7 @@
 // load all styles for webpack to copy them
-(function (r) {
-  r.keys().forEach(r);
-}(require.context('../styles/', true)));
+function requireAll(r) { r.keys().forEach(r); }
+requireAll(require.context('../styles/', true));
+requireAll(require.context('./icons/', true));
 
 export default {};
 // Constants

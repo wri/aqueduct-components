@@ -18,6 +18,11 @@ module.exports = {
         test: /\.(scss|sass)$/,
         include: path.join(__dirname, 'styles'),
         loader: 'file-loader?name=lib/styles/[name].[ext]'
+      },
+      {
+        test: /\.html/,
+        include: path.join(__dirname, 'src', 'icons'),
+        loader: 'file-loader?name=lib/icons/[name].[ext]'
       }
     ]
   },
