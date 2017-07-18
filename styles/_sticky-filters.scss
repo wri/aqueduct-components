@@ -50,4 +50,28 @@
       }
     }
   }
+
+  &.-country {
+    > .country-filters {
+      display: none;
+    }
+  }
+
+  &.-compare {
+    > .country-filters {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: $space-1 0;
+
+      .compare-filters-text {
+        color: palette(gray, 'dark');
+      }
+    }
+
+    > .global-filters {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
 }
