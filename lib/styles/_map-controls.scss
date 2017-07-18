@@ -1,0 +1,60 @@
+$button-size: 36px;
+
+.c-map-controls {
+  position: absolute;
+  top: $space-1 * 2;
+  right: $space-1 * 2;
+  z-index: 999;
+
+  &.-left {
+    top: $space-1 * 2;
+    left: $space-1 * 2;
+    right: auto;
+  }
+
+  .map-controls-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: palette(white);
+
+    width: 100%;
+    padding: 0;
+
+    border: 1px solid palette(gray, 'light');
+    border-radius: 3px;
+
+    &:not(:first-child) {
+      margin: $space-1 / 2 0 0 0;
+    }
+
+    // buttons
+    button {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $button-size;
+      height: $button-size;
+      background-color: palette(white);
+      transition: background-color linear $animation-time;
+
+      &:not(:first-child) {
+        border-top: 1px solid palette(gray, 'light');
+      }
+
+      &:hover {
+        background-color: darken(palette(white), 5%);
+      }
+
+      &.-disabled {
+        pointer-events: none;
+        opacity: 0.25;
+      }
+
+      > svg {
+        fill: palette(gray, 'dark');
+      }
+    }
+  }
+}

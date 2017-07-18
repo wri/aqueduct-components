@@ -1,3 +1,8 @@
+// load all styles for webpack to copy them
+(function (r) {
+  r.keys().forEach(r);
+}(require.context('../styles/', true)));
+
 export default {};
 // Constants
 

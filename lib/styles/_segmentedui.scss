@@ -1,0 +1,135 @@
+.c-segmented-ui {
+  display: flex;
+  list-style-type: none;
+
+  // Component themes
+  // Tabs theme
+  &.-tabs {
+    background-color: palette(blue, 'dark');
+
+    .segmented-ui-item {
+      &.-active {
+        .segmented-ui-btn {
+          pointer-events: none;
+          background: palette(blue);
+          color: palette(white);
+        }
+      }
+    }
+
+    .segmented-ui-btn {
+      padding: #{($space-1 * 4)/2} #{$space-1 * 4};
+      text-transform: uppercase;
+      color: palette(blue, lightest);
+      font-size: $font-size-default;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      transition: all linear $animation-time;
+
+      &:hover {
+        color: palette(blue, light);
+      }
+    }
+  }
+
+  &.-tabs-light {
+    background-color: palette(gray, 'lightest');
+
+    .segmented-ui-item {
+      &.-active {
+        .segmented-ui-btn {
+          pointer-events: none;
+          background: palette(white);
+          color: palette(gray, 'dark');
+        }
+      }
+    }
+
+    .segmented-ui-btn {
+      padding: #{($space-1 * 4)/2} #{$space-1 * 4};
+      text-transform: uppercase;
+      color: palette(gray, 'dark');
+      font-size: $font-size-default;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      transition: all linear $animation-time;
+
+      &:hover {
+        color: palette(black);
+      }
+    }
+  }
+
+  // Stacked theme
+  &.-stacked-tabs {
+    .segmented-ui-item {
+      flex: 1;
+      // Fix for proper text ellipsis
+      min-width: 0;
+      &.-active {
+        .segmented-ui-btn {
+          color: palette(white);
+          background-color: palette(blue, darkest);
+          pointer-events: none;
+        }
+      }
+    }
+
+    .segmented-ui-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: $font-size-big;
+      font-weight: 500;
+      color: palette(blue, light);
+      background-color: palette(blue, dark);
+      padding: 12px 20px;
+      min-height: 48px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  // Btns theme
+  &.-btns {
+    background-color: palette(white);
+    padding: 11px;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+
+    .segmented-ui-item {
+      flex-grow: 1;
+      text-align: center;
+      font-size: $font-size-big;
+      color: palette(gray);
+      font-weight: 500;
+      border: 1px solid palette(gray, light);
+
+      &.-active {
+        background-color: palette(blue, secondary);
+        color: palette(white);
+      }
+
+      &:first-child {
+        &, .segmented-ui-btn {
+          border-radius: 3px 0 0 3px;
+        }
+      }
+
+      &:last-child {
+        &, .segmented-ui-btn {
+          border-radius: 0 3px 3px 0;
+        }
+        border-left: none;
+      }
+    }
+
+    .segmented-ui-btn {
+      padding: 2px 40px;
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
