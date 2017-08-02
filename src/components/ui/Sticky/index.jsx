@@ -9,7 +9,7 @@ export default class Sticky extends React.Component {
     super(props);
 
     this.state = {
-      isSticked: props.isSticked
+      isSticked: this.props.isSticked
     };
   }
 
@@ -34,31 +34,30 @@ export default class Sticky extends React.Component {
   }
 
   _onScroll() {
-    const currentScroll = this.ScrollElem !== window ?
-      this.ScrollElem.scrollTop : this.ScrollElem.scrollY;
+    const currentScroll = this.ScrollElem.scrollTop;
 
     if (this.props.bottomLimit) {
       if (currentScroll >= this.props.topLimit && currentScroll < this.props.bottomLimit
         && this.state.isSticked === false) {
         this.setState({ isSticked: true }, () => {
-          if (this.props.onStick) this.props.onStick(this.state.isSticked);
+          this.props.onStick && this.props.onStick(this.state.isSticked);
         });
       }
 
       if (currentScroll >= this.props.bottomLimit && this.state.isSticked === true) {
         this.setState({ isSticked: false }, () => {
-          if (this.props.onStick) this.props.onStick(this.state.isSticked);
+          this.props.onStick && this.props.onStick(this.state.isSticked);
         });
       }
     } else {
       if (currentScroll >= this.props.topLimit && this.state.isSticked === false) {
         this.setState({ isSticked: true }, () => {
-          if (this.props.onStick) this.props.onStick(this.state.isSticked);
+          this.props.onStick && this.props.onStick(this.state.isSticked);
         });
       }
       if (currentScroll < this.props.topLimit && this.state.isSticked === true) {
         this.setState({ isSticked: false }, () => {
-          if (this.props.onStick) this.props.onStick(this.state.isSticked);
+          this.props.onStick && this.props.onStick(this.state.isSticked);
         });
       }
     }
