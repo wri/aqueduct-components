@@ -7,8 +7,7 @@
     "test": "eslint --ext .js --ext .jsx .",
     "build": "npm run clean && webpack",
     "clean": "rm -rf ./lib",
-    "dev": "npm run clean && webpack --watch",
-    "postinstall": "npm run build"
+    "dev": "npm run clean && webpack --watch"
   },
   "repository": {
     "type": "git",
