@@ -133,8 +133,7 @@ class Map extends React.Component {
 
     this.layerManager = new this.props.LayerManager(this.map, {
       onLayerAddedSuccess: stopLoading,
-      onLayerAddedError: stopLoading,
-      filters: this.props.filters
+      onLayerAddedError: stopLoading
     });
   }
 

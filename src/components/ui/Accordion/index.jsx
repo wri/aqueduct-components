@@ -23,6 +23,7 @@ export default class Accordion extends React.Component {
       '-closed': !this.state.opened,
       [this.props.className]: this.props.className
     });
+
     return (
       <div className={cNames}>
         {this.props.contentPosition === 'top' &&
@@ -31,8 +32,17 @@ export default class Accordion extends React.Component {
           </div>
         }
         <div className="accordion-header">
-          {this.props.title && <span className="accordion-title">{this.props.title}</span>}
-          <button className="accordion-btn" type="button" onClick={this.toggle}>{this.props.toggleIcon}</button>
+          {this.props.title &&
+            <span className="accordion-title">{this.props.title}</span>
+          }
+
+          <button
+            className="accordion-btn"
+            type="button"
+            onClick={this.toggle}
+          >
+            {this.props.toggleIcon}
+          </button>
         </div>
 
         {this.props.contentPosition === 'bottom' &&

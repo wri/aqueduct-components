@@ -99,21 +99,21 @@ class LegendGraph extends React.Component {
               <div>
                 <div className="graph-list">
                   {config.items.map(item => (
-                    <div className="graph-list-item" style={{ width: `${100 / config.items.length}%` }} key={item.name}>
+                    <div className="graph-list-item" style={{ width: `${100 / config.items.length}%` }} key={item.name || item.value}>
                       <span className="color" style={{ background: item.color }} />
                     </div>
                   ))}
                 </div>
                 <div className="graph-list">
                   {config.items.map(item => (
-                    <div className="graph-list-item" style={{ width: `${100 / config.items.length}%` }} key={item.name}>
+                    <div className="graph-list-item" style={{ width: `${100 / config.items.length}%` }} key={item.name || item.value}>
                       <span className="label">{item.name}</span>
                     </div>
                   ))}
                 </div>
                 <div className="graph-list">
                   {config.items.map(item => (
-                    <div className="graph-list-item" style={{ width: `${100 / config.items.length}%` }} key={item.name}>
+                    <div className="graph-list-item" style={{ width: `${100 / config.items.length}%` }} key={item.name || item.value}>
                       <span className="value">{item.value}</span>
                     </div>
                   ))}
