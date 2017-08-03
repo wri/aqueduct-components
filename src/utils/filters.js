@@ -20,6 +20,14 @@ function getIndicator({ indicator }) {
     '4b000ded-5f4d-4dbd-83c9-03f2dfcd36db': 'water_stress',
     // Seasonal variability
     'd9785282-2140-463f-a82d-f7296687055a': 'seasonal_variability',
+    // Interannual variability
+    'bf657e60-de9c-4b7e-8736-d573d38e3ce1': 'interannual_variability',
+    // Drought severity soil moisture
+    '9c450642-f976-40eb-96b4-0c904d519578': 'drought_severity_soil',
+    // Groundwater stress
+    'b53ef8c5-8554-4a4a-a100-fdf5a022cb4e': 'groundwater_stress',
+    // Drought severity soil moisture
+    'cbd0d0f8-edf9-47bc-93ef-71c1a5e5fed7': 'groundwater_decline_trend',
     // none
     none: 'water_stress'
   };
@@ -49,6 +57,8 @@ function getWaterColumn({ indicator, year, type }, sufix, widget) {
     }
   };
 
+  const layer = layers[indicator] || layers['none'];
+
   // Dictionary
   const yearOptions = {
     baseline: 'bs',
@@ -57,12 +67,11 @@ function getWaterColumn({ indicator, year, type }, sufix, widget) {
     2040: '40',
     2050: '50'
   };
-
-  let _indicator = layers[indicator].indicator;
+  let _indicator = layer.indicator;
   const _year = yearOptions[year];
-  const _dataType = layers[indicator].dataType;
+  const _dataType = layer.dataType;
   const _scenario = (year === 'baseline') ? '00' : '28';
-  const _sufix = sufix || layers[indicator].sufix;
+  const _sufix = sufix || layer.sufix;
 
 
   /**
@@ -72,7 +81,7 @@ function getWaterColumn({ indicator, year, type }, sufix, widget) {
    * don't match with its dataset one, that's why we have to changed it
    * manually. This should be REMOVED in the future.
    **/
-  if (layers[indicator].indicator === 'sv' && widget === true) {
+  if (layer.indicator === 'sv' && widget === true) {
     _indicator = 'ws';
   }
 
