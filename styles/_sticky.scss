@@ -1,5 +1,8 @@
 .c-sticky {
+  z-index: 1;
+
   &.-sticked {
+    width: 100%;
     position: fixed;
     top: 0;
     animation: appear $animation-time 0s forwards;

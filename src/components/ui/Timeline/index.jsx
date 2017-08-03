@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 export default function Timeline(props) {
   const { items, selected } = props;
+
   const classList = classnames('c-timeline', {
     [props.className]: props.className,
     '-disabled': props.disabled
@@ -11,13 +12,14 @@ export default function Timeline(props) {
   return (
     <div className={classList}>
       <ul className="timeline-list">
-        {items.map((item, index) => {
+        {items.map((item) => {
           const itemClassList = classnames('timeline-list-item', {
             '-selected': (selected) ? selected.value === item.value : false
           });
+
           return (
             <li
-              key={index}
+              key={item.value}
               className={itemClassList}
               onClick={() => !props.disabled && props.onChange && props.onChange(item)}
             >
