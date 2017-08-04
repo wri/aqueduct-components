@@ -95,7 +95,7 @@ function getWaterColumn({ indicator, year, type }, sufix, widget) {
  * @param  {String} category     [category is a string to split some conversions and dictionaries. It can be 'food', 'water', 'widget']
  * @return {[type]}              [description]
  */
-export function getObjectConversion(obj = {}, filters = {}, category) {
+export function getObjectConversion(obj = {}, filters = {}, category, paramsConfig = [], sqlConfig = []) {
   const dictionaries = {
     water: {
       yearOptions: {
@@ -139,6 +139,10 @@ export function getObjectConversion(obj = {}, filters = {}, category) {
     crop: key => ({
       key,
       value: filters.crop !== 'all' ? filters.crop : null
+    }),
+    crop_name: key => ({
+      key,
+      value: filters.crop !== 'all' ? filters.crop : 'All crops'
     }),
     type: key => ({
       key,
@@ -193,7 +197,7 @@ export function getObjectConversion(obj = {}, filters = {}, category) {
     }
   };
 
-  const params = obj.paramsConfig && obj.paramsConfig.map((p) => {
+  const params = paramsConfig && paramsConfig.map((p) => {
     // Remove once water_column is not used anymore
     if (p.key === 'water_column') {
       if (category === 'widget') {
@@ -205,7 +209,7 @@ export function getObjectConversion(obj = {}, filters = {}, category) {
     return conversions[p.key] ? conversions[p.key](p.key, p.dictionary) : filters[p.key];
   });
 
-  const sqlParams = obj.sqlConfig && obj.sqlConfig.map((param) => {
+  const sqlParams = sqlConfig && sqlConfig.map((param) => {
     return {
       key: param.key,
       keyParams: param.keyParams.map((p) => {
