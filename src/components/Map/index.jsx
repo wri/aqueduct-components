@@ -3,7 +3,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import L from 'leaflet/dist/leaflet';
+import L from 'leaflet';
 import isEqual from 'lodash/isEqual';
 import Spinner from '../ui/Spinner';
 
