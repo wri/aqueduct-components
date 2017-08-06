@@ -53,7 +53,7 @@ class LegendItem extends React.Component {
       return;
     }
 
-    const legendConfigConverted = getObjectConversion(legendConfig, this.props.filters, 'water');
+    const legendConfigConverted = getObjectConversion(legendConfig, this.props.filters, 'water', legendConfig.paramsConfig, legendConfig.sqlConfig);
     const { sqlQuery } = legendConfigConverted;
     const { crop } = this.props.filters;
 
