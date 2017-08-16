@@ -115,9 +115,17 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
         2050: 2050
       }
     },
-    widget: {
+    'widget-2010': {
       yearOptions: {
         baseline: 2010,
+        2020: 2020,
+        2030: 2030,
+        2040: 2040
+      }
+    },
+    'widget-2014': {
+      yearOptions: {
+        baseline: 2014,
         2020: 2020,
         2030: 2030,
         2040: 2040
