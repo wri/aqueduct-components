@@ -208,7 +208,7 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
   const params = paramsConfig && paramsConfig.map((p) => {
     // Remove once water_column is not used anymore
     if (p.key === 'water_column') {
-      if (category === 'widget') {
+      if (category === 'widget-2010' || category === 'widget-2014') {
         return conversions[p.key] ? conversions[p.key](p, p.dictionary, true) : filters[p.key];
       }
 
