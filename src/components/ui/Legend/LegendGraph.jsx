@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
+import Icon from '../Icon';
 import OnlyOn from '../Responsive';
 
 class LegendGraph extends React.Component {
@@ -56,6 +58,12 @@ class LegendGraph extends React.Component {
                   >
                     <span className={colorClass} style={{ background: itemColor }} />
                     {item.name}
+                    {!this.state.groups[item.name] &&
+                      <Icon name="icon-arrow-down-2" className="-small" />
+                    }
+                    {this.state.groups[item.name] &&
+                      <Icon name="icon-arrow-up-2" className="-small" />
+                    }
                   </div>
                   {this.state.groups[item.name] &&
                     <div className="graph-list">

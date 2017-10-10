@@ -413,6 +413,10 @@
               border: 1px solid palette(gray);
             }
           }
+
+          > svg {
+            margin: 0 0 0 $space-1/2;
+          }
         }
       }
 
