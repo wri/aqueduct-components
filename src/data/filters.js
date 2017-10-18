@@ -21,7 +21,6 @@ const CROP_COLOR_DICTIONARY = {
 
 const CROP_OPTIONS = [
   { value: 'all', label: 'All crops' },
-  { value: 'all pulses', label: 'Other pulses', color: CROP_COLOR_DICTIONARY.leguminous },
   { value: 'wheat', label: 'Wheat', color: CROP_COLOR_DICTIONARY.cereals },
   { value: 'lentils', label: 'Lentils', color: CROP_COLOR_DICTIONARY.leguminous },
   { value: 'cowpeas', label: 'Cowpeas', color: CROP_COLOR_DICTIONARY.leguminous },
@@ -32,7 +31,6 @@ const CROP_OPTIONS = [
   { value: 'pigeonpeas', label: 'Pigeonpeas', color: CROP_COLOR_DICTIONARY.leguminous },
   { value: 'sweet potato', label: 'Sweet potato', color: CROP_COLOR_DICTIONARY.roots_and_tubers },
   { value: 'soybean', label: 'Soybean', color: CROP_COLOR_DICTIONARY.oilseed_crops },
-  { value: 'all cereals', label: 'Other cereals', color: CROP_COLOR_DICTIONARY.cereals },
   { value: 'cassava', label: 'Cassava', color: CROP_COLOR_DICTIONARY.roots_and_tubers },
   { value: 'rice', label: 'Rice', color: CROP_COLOR_DICTIONARY.cereals },
   { value: 'groundnut', label: 'Groundnut', color: CROP_COLOR_DICTIONARY.leguminous },
