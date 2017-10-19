@@ -239,7 +239,6 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
     });
   }
 
-  console.log(getConversion(obj, params || [], sqlParams || []));
   return getConversion(obj, params || [], sqlParams || []);
 }
 
