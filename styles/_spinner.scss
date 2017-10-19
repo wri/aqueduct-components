@@ -58,6 +58,12 @@ $spinner-tiny-size: 20px;
     left: auto;
     transform: translate(0, -50%);
     background-color: transparent;
+
+    > .spinner-box {
+      > .icon {
+        border-width: 5px;
+      }
+    }
   }
 
   // Sizes
