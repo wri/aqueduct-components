@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import isEqual from 'lodash/isEqual';
 import { substitution } from '../../../utils/text';
 
 export default class MapHeader extends React.Component {
@@ -26,7 +25,7 @@ export default class MapHeader extends React.Component {
     const params = this.parseFilters(props.filters);
 
     this.setState({
-      text: substitution(props.template, params)
+      text: props.template ? substitution(props.template, params) : null
     });
   }
 
@@ -46,17 +45,16 @@ export default class MapHeader extends React.Component {
   }
 
   render() {
+    if (!this.state.text) return null;
+
     return (
       <div className="c-map-header">
-        {this.state.text &&
-          <span className="title">{this.state.text}</span>
-        }
+        <span className="title">{this.state.text}</span>
       </div>
     );
   }
 }
 
 MapHeader.propTypes = {
-  dictionary: PropTypes.object,
-  filters: PropTypes.object
+  dictionary: PropTypes.object
 };
