@@ -52,11 +52,11 @@ $spinner-tiny-size: 20px;
 
   // Page
   &.-map {
-    top: $space-1 * 5;
-    right: $space-1 * 13;
+    top: 50%;
+    right: 34px;
     bottom: auto;
     left: auto;
-
+    transform: translate(0, -50%);
     background-color: transparent;
   }
 

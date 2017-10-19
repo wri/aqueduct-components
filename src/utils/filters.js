@@ -174,11 +174,13 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
         value: dictionaries[dictionaryName || category].yearOptions[filters[key]] || 'baseline'
       }
     },
-    irrigation: key => ({
-      key,
-      // We can't have a irrigation different from 1, in this case we don't need to add anything
-      value: (!filters[key] || filters[key].length === 0 || filters[key].length === 2) ? null : filters[key]
-    }),
+    irrigation: key => {
+      return {
+        key,
+        // We can't have a irrigation different from 1, in this case we don't need to add anything
+        value: (filters[key] !== 'all') ? filters[key] : null
+      }
+    },
     commodity: (key, dictionaryName, isSql) => ({
       key: (isSql) ? `lower(${key})` : key,
       value: filters.crop !== 'all' ? filters.crop : null
@@ -237,6 +239,7 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
     });
   }
 
+  console.log(getConversion(obj, params || [], sqlParams || []));
   return getConversion(obj, params || [], sqlParams || []);
 }
 

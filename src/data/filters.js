@@ -43,6 +43,7 @@ const CROP_OPTIONS = [
 ];
 
 const IRRIGATION_OPTIONS = [
+  { value: 'all', label: 'All' },
   { value: 'irrigated', label: 'Irrigated' },
   { value: 'rainfed', label: 'Rainfed' }
 ];

@@ -6,12 +6,20 @@ export default class RadioGroup extends React.Component {
   constructor(props) {
     super(props);
 
+    // Initial state
     this.state = {
-      selected: props.defaultValue
+      selected: props.selected
     };
-
     // BINDINGS
     this.onChange = this.onChange.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selected !== this.props.selected) {
+      this.setState({
+        selected: nextProps.selected
+      });
+    }
   }
 
   /**
@@ -65,7 +73,7 @@ export default class RadioGroup extends React.Component {
 RadioGroup.propTypes = {
   items: React.PropTypes.array.isRequired,
   name: React.PropTypes.string.isRequired,
-  defaultValue: React.PropTypes.string,
+  selected: React.PropTypes.string,
   className: React.PropTypes.string,
   onChange: React.PropTypes.func
 };
