@@ -227,7 +227,7 @@ class Map extends React.Component {
   render() {
     return (
       <div className="c-map">
-        <Spinner className="-map" isLoading />
+        {this.state.loading && <Spinner className="-map" isLoading />}
         <div ref={(node) => { this.mapNode = node; }} className="map-leaflet" />
       </div>
     );
