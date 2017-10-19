@@ -118,6 +118,7 @@ export default class CustomSelect extends React.Component {
     // Class names
     const cNames = ['c-custom-select'];
     this.props.className && cNames.push(this.props.className);
+    this.props.disabled && cNames.push('-disabled');
     this.state.closed && cNames.push('-closed');
 
     return (
