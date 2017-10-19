@@ -19,7 +19,7 @@ const APP_DEFINITIONS = {
   },
   "timeframe": {
     "title": "Timeframe",
-    "instructions": "Select baseline or future years 2020, 2030, or 2040 to learn about water risk over time. In future years, select \"absolute value\" to see the projected water risk in the selected year or \"change from baselne\" to see the degree to which water risk is expected to increase or decrease over time.",
+    "instructions": "Select baseline or future years 2020, 2030, or 2040 to learn about water risk over time. In future years, select \"absolute value\" to see the projected water risk in the selected year or \"change from baseline\" to see the degree to which water risk is expected to increase or decrease over time.",
     "description": "<ul><li>Baseline represents the most recent data on crop production and water risk: 2005 crop area and 2014 water risk. Future projections use a \"business as usual\" scenario (SSP2 RCP8.5), representing a world with stable economic development and steadily rising global carbon emissions. The area where crops are grown remains constant at baseline levels for future projections of water risk.</li></ul>",
     "citation": "-"
   }

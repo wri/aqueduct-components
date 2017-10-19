@@ -99,4 +99,41 @@
       }
     }
   }
+
+  &.-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+
+    // .timeline-list-item {
+    //   cursor: default;
+    //
+    //   &:hover {
+    //     border-color: palette(blue, light);
+    //
+    //     .timeline-label {
+    //       color: palette(blue, light);
+    //     }
+    //   }
+    //
+    //   &:active {
+    //     border-color: palette(blue, light);
+    //
+    //     .timeline-label {
+    //       color: palette(blue, light);
+    //     }
+    //   }
+    //
+    //   &.-selected {
+    //     &:hover {
+    //       border: 1px solid palette(blue, secondary);
+    //       background-color: palette(blue, secondary);
+    //       box-shadow: 0 0 0px 7px palette(blue), 0 0 0px 3px palette(blue) inset;
+    //
+    //       .timeline-label {
+    //         color: palette(white);
+    //       }
+    //     }
+    //   }
+    // }
+  }
 }
