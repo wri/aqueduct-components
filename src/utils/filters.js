@@ -108,7 +108,7 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
     },
     food: {
       yearOptions: {
-        baseline: 2005,
+        baseline: 2010,
         2020: 2020,
         2030: 2030,
         2040: 2040,
