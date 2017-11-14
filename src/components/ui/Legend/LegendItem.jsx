@@ -46,6 +46,7 @@ class LegendItem extends React.Component {
 
   getLegendData() {
     const { layerConfig, legendConfig } = this.state.layer;
+
     if (!legendConfig.sqlQuery) {
       this.setState({
         loading: false
@@ -53,7 +54,7 @@ class LegendItem extends React.Component {
       return;
     }
 
-    const legendConfigConverted = getObjectConversion(legendConfig, this.props.filters, 'water', legendConfig.paramsConfig, legendConfig.sqlConfig);
+    const legendConfigConverted = Object.assign({}, getObjectConversion(legendConfig, this.props.filters, 'water', legendConfig.paramsConfig, legendConfig.sqlConfig));
     const { sqlQuery } = legendConfigConverted;
     const { crop } = this.props.filters;
 
@@ -77,18 +78,14 @@ class LegendItem extends React.Component {
 
 
         const color = CROP_OPTIONS.find(c => c.value === crop).color;
-        const items = buckets.map((bucket, i) => {
-          const symbol = (i === 0) ? '<' : '>=';
-
-          return {
-            value: `(${symbol} ${format('.3s')(bucket)})`,
-            color: this._applyOpacity(color, LEGEND_OPACITY_RANGE[i]),
-            name: ''
-          };
-        });
+        const items = buckets.map((bucket, i) => ({
+          value: `(< ${format('.3s')(bucket)})`,
+          color: this._applyOpacity(color, LEGEND_OPACITY_RANGE[i]),
+          name: ''
+        }));
 
         const newlegendConfig = {
-          ...legendConfig,
+          ...legendConfigConverted,
           ...{ items }
         };
 
