@@ -17,14 +17,39 @@ export default function SourceModal(props) {
         <dl>
           <dt>Description:</dt>
           <dd>{(layer.metadata && layer.metadata.description) ? layer.metadata.description : notAvailable}</dd>
-          <dt>Language:</dt>
-          <dd>{(layer.metadata && layer.metadata.language) ? layer.metadata.language : notAvailable}</dd>
-          <dt>Source:</dt>
-          <dd>{(layer.metadata && layer.metadata.source) ? layer.metadata.source : notAvailable}</dd>
-          <dt>Citation:</dt>
-          <dd>{(layer.metadata && layer.metadata.citation) ? layer.metadata.citation : notAvailable}</dd>
-          <dt>License:</dt>
-          <dd>{(layer.metadata && layer.metadata.license) ? layer.metadata.license : notAvailable}</dd>
+
+          {layer.metadata && layer.metadata.info && layer.metadata.info.sources &&
+            <dt>Source:</dt>
+          }
+          {layer.metadata && layer.metadata.info && layer.metadata.info.sources &&
+            <dd>
+              {layer.metadata.info.sources.map((s, i) => {
+                if (s.sourceUrl) {
+                  return (
+                    <span>
+                      {i !== 0 && ', '}
+                      <a
+                        key={s.sourceName}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href={s.sourceUrl}
+                      >
+                        {s.sourceName}
+                      </a>
+                    </span>
+                  );
+                }
+
+                return (
+                  <span>
+                    {i !== 0 && ', '}
+                    {s.sourceName}
+                  </span>
+                );
+              })}
+            </dd>
+          }
+
         </dl>
       </div>
     </div>

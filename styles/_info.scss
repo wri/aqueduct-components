@@ -67,6 +67,15 @@
       margin: 8px 0;
     }
 
+    a {
+      color: $color-primary;
+
+      &:hover {
+        color: darken($color-primary, 5%);
+        text-decoration: underline;
+      }
+    }
+
     ul {
       display: block;
       padding: 8px 0 0 16px;
