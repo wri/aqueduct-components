@@ -52,9 +52,11 @@
     dd {
       display: block;
       margin-bottom: $space-1 * 2;
+
       &:last-of-type {
         margin-bottom: 0;
       }
+
       &.-highlighted {
         font-weight: 500;
         color: $color-primary;
@@ -62,13 +64,12 @@
     }
 
     p {
-      margin: 5px 0;
+      margin: 8px 0;
     }
 
     ul {
       display: block;
-      padding: 5px 0 0 20px;
-
+      padding: 8px 0 0 16px;
     }
 
     li {
