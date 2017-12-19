@@ -220,14 +220,15 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
 
       return conversions[p.key] ? conversions[p.key](p) : filters[p.key];
     }
-    return conversions[p.key] ? conversions[p.key](p.key, p.dictionary) : filters[p.key];
+
+    return conversions[p.key] ? conversions[p.key](p.key, p.dictionary) : filters[p.key] || {};
   });
 
   const sqlParams = sqlConfig && sqlConfig.map((param) => {
     return {
       key: param.key,
       keyParams: param.keyParams.map((p) => {
-        return conversions[p.key] ? conversions[p.key](p.key, p.dictionary, true) : filters[p.key];
+        return conversions[p.key] ? conversions[p.key](p.key, p.dictionary, true) : filters[p.key] || {};
       })
     };
   });
