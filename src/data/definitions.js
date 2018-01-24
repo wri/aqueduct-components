@@ -3,7 +3,7 @@ const APP_DEFINITIONS = {
     "title": "Crops",
     "instructions": "Select a single crop of interest or \"all crops\" to view the area where the crop(s) is grown.",
     "description": "<p>These crops were selected based on their importance in the global commodities market and for food security. \"All crops\" represent all of the crops that are included in the tool as displayed in the menu. The crop layers displayed on the map reflect where there's at least 10 hectares of crop area in 2005, regardless of the timeframe selected.</p>",
-    "source": "<a href=\"http://mapspam.info/\">MapSPAM</a>"
+    "source": "<a href=\"http://mapspam.info/\">MapSPAM 2005</a>"
   },
   "water-risk": {
     "title": "Water Risk",

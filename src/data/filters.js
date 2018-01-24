@@ -20,7 +20,7 @@ const CROP_COLOR_DICTIONARY = {
 };
 
 const CROP_OPTIONS = [
-  { value: 'all', label: 'Global crop' },
+  { value: 'all', label: 'All crops' },
   { value: 'wheat', label: 'Wheat', color: CROP_COLOR_DICTIONARY.cereals },
   { value: 'lentils', label: 'Lentils', color: CROP_COLOR_DICTIONARY.leguminous },
   { value: 'cowpeas', label: 'Cowpeas', color: CROP_COLOR_DICTIONARY.leguminous },

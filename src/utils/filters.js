@@ -144,6 +144,10 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
       key,
       value: filters.countryName || undefined
     }),
+    countryNameT: key => ({
+      key,
+      value: 'in '+filters.countryName || undefined
+    }),
     'crops.iso': key => ({
       key,
       value: (filters.scope === 'country' && filters.country) ? filters.country : null
@@ -154,7 +158,7 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
     }),
     crop_name: key => ({
       key,
-      value: filters.crop !== 'all' ? filters.crop : 'All crops'
+      value: filters.crop !== 'all' ? filters.crop : 'Global crop'
     }),
     type: key => ({
       key,
