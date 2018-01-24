@@ -144,10 +144,6 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
       key,
       value: filters.countryName || undefined
     }),
-    countryNameT: key => ({
-      key,
-      value: 'in '+filters.countryName || undefined
-    }),
     'crops.iso': key => ({
       key,
       value: (filters.scope === 'country' && filters.country) ? filters.country : null
