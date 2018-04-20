@@ -20,7 +20,7 @@ export default class InfoModal extends React.Component {
             <dd dangerouslySetInnerHTML={{ __html: this.props.info.description || notAvailable }} />
 
             {this.props.info.source && <dt>Source:</dt>}
-            {this.props.info.source && <dd>{this.props.info.source || notAvailable}</dd>}
+            {this.props.info.source &&  <dd dangerouslySetInnerHTML={{ __html: this.props.info.source || notAvailable }} />}
           </dl>
         </div>
       </div>

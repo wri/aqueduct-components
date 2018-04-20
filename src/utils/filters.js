@@ -154,7 +154,7 @@ export function getObjectConversion(obj = {}, filters = {}, category, paramsConf
     }),
     crop_name: key => ({
       key,
-      value: filters.crop !== 'all' ? filters.crop : 'All crops'
+      value: filters.crop !== 'all' ? filters.crop : 'crop'
     }),
     type: key => ({
       key,
