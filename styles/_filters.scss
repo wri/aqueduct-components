@@ -10,7 +10,6 @@
 
     &:last-child {
       border-bottom: 0;
-      padding-bottom: 0;
       padding-top: ($space-1 * 4);
 
       @include only-mobile {
