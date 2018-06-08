@@ -35,12 +35,26 @@
     margin: 0;
 
     .header-logo {
+      position: relative;
       display: block;
       width: 160px;
       height: $size-header;
       background: url('/images/logo.png') center no-repeat;
       background-size: contain;
-      text-indent: -9999px;
+
+      span {
+        display: block;
+        text-indent: -9999px;
+      }
+
+      &:before {
+        content: "BETA";
+        position: absolute;
+        top: 7px;
+        right: 1px;
+        font-size: $font-size-extra-small;
+        color: $color-text-1;
+      }
     }
 
     .header-title {

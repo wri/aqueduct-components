@@ -65,7 +65,7 @@ export default class Header extends React.Component {
       <header role="banner" className="l-header c-header">
         {/* LOGO */}
         <h1 className="c-header-logo">
-          <a href="/" className="header-logo">Logo</a>
+          <a href="/" className="header-logo"><span>Logo</span></a>
           <a href="/" className="header-title">{this.props.title}</a>
         </h1>
         <OnlyOn device="desktop">
