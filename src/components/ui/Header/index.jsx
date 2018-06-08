@@ -1,11 +1,12 @@
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import React from 'react';
 import PropTypes from 'prop-types';
 import OnlyOn from '../Responsive';
 import Icon from '../Icon';
 import HeaderTools from './HeaderTools';
+import DropdownButton from '../DropdownButton';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
 
   constructor(props) {
     super(props);
@@ -16,6 +17,7 @@ export default class Header extends React.Component {
 
     // BINDINGS
     this.onClickBtnAction = this.onClickBtnAction.bind(this);
+    this.onAboutSelect = this.onAboutSelect.bind(this);
   }
 
   /**
@@ -30,24 +32,41 @@ export default class Header extends React.Component {
     });
   }
 
+  onAboutSelect() {
+    const location = {
+      pathname: '/about'
+    };
+    this.props.router.push(location);
+  }
+
   render() {
     const desktopNav = (
       <nav role="navigation">
         {/* RIGHT MENU */}
         <ul className="list">
           <li>
-            <button data-active="tools" className={`c-header-button ${this.state.active === 'tools' && '-active'}`} onClick={this.onClickBtnAction}>
-              <span>Tools</span>
-            </button>
+            <DropdownButton
+              options={[
+                { label: 'About Aqueduct Food', value: 'aqueduct-food' }
+              ]}
+              dropdownClassName="-bottom -left"
+              onSelect={selected => this.onAboutSelect(selected.value)}
+            >
+              <button className="c-header-button">
+                About
+              </button>
+            </DropdownButton>
           </li>
           <li>
             <Link className="c-header-button" to="/how-to">How to </Link>
           </li>
           <li>
-            <Link className="c-header-button" to="/resource-library">Resource Library </Link>
+            <button data-active="tools" className={`c-header-button ${this.state.active === 'tools' && '-active'}`} onClick={this.onClickBtnAction}>
+              <span>Tools</span>
+            </button>
           </li>
           <li>
-            <Link className="c-header-button" to="/about">About us </Link>
+            <Link className="c-header-button" to="/resource-library">Resource Library </Link>
           </li>
           <li>
             <Link className="c-header-button" to="/get-involved">Get involved </Link>
@@ -87,3 +106,5 @@ Header.propTypes = {
 Header.defaultProps = {
   title: ''
 };
+
+export default withRouter(Header);
