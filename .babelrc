@@ -1,4 +1,16 @@
 {
-  "presets": ["env", "react", "latest", "stage-3"],
-  "plugins": ["add-react-displayname"]
+  "presets": ["env", "react", "stage-0"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [".", "./src"],
+        "alias": {
+          "components": "./src/components",
+          "styles": "./styles"
+        },
+        "cwd": "babelrc"
+      }
+    ]
+  ]
 }

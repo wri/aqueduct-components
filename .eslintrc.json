@@ -5,21 +5,21 @@
     "es6": true
   },
   "globals": {
-    "config": true,
-    "Stats": true
+    "Transifex": true,
+    "google": true
   },
-  "parserOptions": {
-    "ecmaVersion": 2017,
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-    },
-    "sourceType": "module"
-  },
-  "extends": [
-    "vizzuality"
-  ],
+  "extends": "vizzuality",
   "rules": {
-    "no-underscore-dangle": ["error", { "allowAfterThis": true }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "babel"
+  ],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+      }
+    }
   }
 }
