@@ -8,7 +8,7 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "test": "eslint --ext .js --ext .jsx .",
-    "deploy": "gh-pages -d styleguide"
+    "deploy": "yarn run styleguide:build && gh-pages -d styleguide"
   },
   "repository": {
     "type": "git",
