@@ -8,7 +8,7 @@ const { name, version } = require('./package.json');
 module.exports = {
   title: `AQ components | ${version}`,
   styleguideComponents: {
-    StyleGuideRenderer: path.join(__dirname, 'styleguide/components/styleGuide'),
+    StyleGuideRenderer: path.join(__dirname, 'src/styleguide/components/styleGuide'),
   },
   sections: [
     {
