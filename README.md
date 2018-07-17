@@ -29,6 +29,9 @@ The component folder needs the following structure:
 
 Feel free to create as many file as you need to make your component work once you have the mandatory ones.
 
+❗❗ **As we are using CSS Modules don't forget to replace `className` with `styleName` in your component in order to allow CSS Modules compile
+the styles properly.** 
+
 ### Adding a new section 📜
 To add a new section, go to `styleguide.config.js` file, look for `sections` and add yours:
 ```
