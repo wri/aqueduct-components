@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import './styles.scss';
+import CSSModules from 'react-css-modules';
+import styles from './styles.scss';
 
 export class Icon extends React.PureComponent {
   static propTypes = {
@@ -20,11 +21,11 @@ export class Icon extends React.PureComponent {
     const classNames = classnames({ [className]: !!className });
 
     return (
-      <svg className={`c-icon ${classNames}`}>
+      <svg styleName={`c-icon ${classNames}`}>
         <use xlinkHref={`#${name}`} />
       </svg>
     );
   }
 }
 
-export default Icon;
+export default CSSModules(Icon, styles, { allowMultiple: true });

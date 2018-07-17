@@ -1,5 +1,5 @@
 ```js
-<div style={{ position: 'relative', minHeight: 125 }}>
-  <Spinner isLoading className="-small" />
+<div style={{ position: 'relative', minHeight: 75 }}>
+  <Spinner isLoading className="-tiny" />
 </div>
 ```

@@ -2,16 +2,18 @@ import React, { PureComponent } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import './styles.scss';
+import CSSModules from 'react-css-modules';
+import styles from './styles.scss';
 
-class Spinner extends PureComponent {
+export class Spinner extends PureComponent {
   render() {
     const { isLoading, className, style } = this.props;
+    const componentClass = classNames('', { [className]: !!className, '-loading': isLoading });
 
     return (
-      <div className={classNames('c-spinner', { [className]: !!className, '-loading': isLoading })}>
-        <div className="spinner-box" style={style}>
-          <div className="icon" />
+      <div styleName={`c-spinner ${componentClass}`}>
+        <div styleName="spinner-box" style={style}>
+          <div styleName="icon" />
         </div>
       </div>
     );
@@ -24,4 +26,4 @@ Spinner.propTypes = {
   style: PropTypes.object
 };
 
-export default Spinner;
+export default CSSModules(Spinner, styles, { allowMultiple: true });

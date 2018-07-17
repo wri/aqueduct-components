@@ -30,6 +30,7 @@
     "natives": "^1.1.0",
     "prop-types": "^15.5.8",
     "react": "^16.4.1",
+    "react-css-modules": "^4.7.4",
     "react-dom": "^16.4.1",
     "react-responsive": "^5.0.0",
     "react-router": "^4.3.1",
