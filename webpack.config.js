@@ -30,7 +30,7 @@ const config = {
               options: {
                 modules: true,
                 importLoaders: 1,
-                localIdentName: '[local]'
+                localIdentName: 'aq__[local]'
               }
             },
             {

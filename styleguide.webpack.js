@@ -15,7 +15,7 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'style-loader',
-          'css-loader?modules&importLoaders=1&localIdentName=[local]',
+          'css-loader?modules&importLoaders=1&localIdentName=aq__[local]',
           'resolve-url-loader',
           {
             loader: 'sass-loader',
