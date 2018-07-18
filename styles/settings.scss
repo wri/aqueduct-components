@@ -1,3 +1,6 @@
+@import 'styles/reset';
+@import 'styles/functions';
+
 // Max widths
 $max-width-main: 1280px;
 $max-width-sidebar: 700px;
@@ -16,10 +19,10 @@ $palettes: (
     lightest: rgba(#DBE3F7, .5)
   ),
   white: (
-    primary: #FFFFFF
+    primary: #fff
   ),
   black: (
-    primary: #000000
+    primary: #000
   ),
   feedback: (
     success: #1c801c,
