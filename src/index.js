@@ -16,11 +16,7 @@ export { default as CountrySelect } from './components/CountrySelect';
 export { default as VegaChart } from './components/VegaChart';
 export { default as Map } from './components/Map';
 
-// Ui components
 export { default as Accordion } from './components/ui/Accordion';
-export { default as Checkbox } from './components/ui/Checkbox';
-export { default as CheckboxGroup } from './components/ui/CheckboxGroup';
-
 export { default as CustomSelect } from './components/ui/CustomSelect';
 export { default as DropdownButton } from './components/ui/DropdownButton';
 export { default as Header } from './components/ui/Header';
@@ -38,7 +34,9 @@ export { default as Sticky } from './components/ui/Sticky';
 export { default as Timeline } from './components/ui/Timeline';
 export { default as ZoomControl } from './components/ui/ZoomControl';
 
-// Form components
+// form components
+export { default as Checkbox } from './components/form/checkbox';
+export { default as CheckboxGroup } from './components/form/checkbox-group';
 export { default as Field } from './components/form/Field';
 export { default as FormElement } from './components/form/FormElement';
 export { default as Input } from './components/form/Input';
