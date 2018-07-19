@@ -16,10 +16,9 @@ export { default as CountrySelect } from './components/CountrySelect';
 export { default as VegaChart } from './components/VegaChart';
 export { default as Map } from './components/Map';
 
-export { default as Accordion } from './components/ui/Accordion';
 export { default as CustomSelect } from './components/ui/CustomSelect';
 export { default as DropdownButton } from './components/ui/DropdownButton';
-export { default as Header } from './components/ui/Header';
+export { default as Header } from './components/ui/header';
 export { default as Icon } from './components/ui/icon';
 export { default as Legend } from './components/ui/Legend';
 export { default as MapControls } from './components/ui/MapControls';

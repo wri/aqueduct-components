@@ -22,6 +22,10 @@ const config = {
         exclude: /node_modules/
       },
       {
+        test: /\.png$/,
+        use: 'url-loader'
+      },
+      {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           use: [
