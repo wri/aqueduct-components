@@ -1,6 +1,6 @@
 import React from 'react';
 import Clipboard from 'clipboard';
-import Icon from '../Icon';
+import Icon from 'components/ui/icon';
 
 export default class ShareModal extends React.Component {
 

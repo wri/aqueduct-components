@@ -20,7 +20,7 @@ export { default as Accordion } from './components/ui/Accordion';
 export { default as CustomSelect } from './components/ui/CustomSelect';
 export { default as DropdownButton } from './components/ui/DropdownButton';
 export { default as Header } from './components/ui/Header';
-export { default as Icon } from './components/ui/Icon';
+export { default as Icon } from './components/ui/icon';
 export { default as Legend } from './components/ui/Legend';
 export { default as MapControls } from './components/ui/MapControls';
 export { default as MapHeader } from './components/ui/MapHeader';
@@ -28,10 +28,10 @@ export { default as OnlyOn } from './components/ui/Responsive';
 export { default as Radio } from './components/ui/Radio';
 export { default as RadioGroup } from './components/ui/RadioGroup';
 export { default as SegmentedUi } from './components/ui/SegmentedUi';
-export { default as Sidebar } from './components/ui/Sidebar';
-export { default as Spinner } from './components/ui/Spinner';
+export { default as Sidebar } from './components/ui/sidebar';
+export { default as Spinner } from './components/ui/spinner';
 export { default as Sticky } from './components/ui/Sticky';
-export { default as Timeline } from './components/ui/Timeline';
+export { default as Timeline } from './components/ui/timeline';
 export { default as ZoomControl } from './components/ui/ZoomControl';
 
 // form components

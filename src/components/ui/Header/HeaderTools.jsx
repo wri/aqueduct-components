@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon';
+import Icon from 'components/ui/icon';
 
 export default function HeaderToolsMenu(props) {
   return (

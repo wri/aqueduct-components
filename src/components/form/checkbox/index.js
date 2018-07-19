@@ -8,7 +8,7 @@ import classnames from 'classnames';
 import CSSModules from 'react-css-modules';
 
 // components
-import Icon from 'components/ui/Icon';
+import Icon from 'components/ui/icon';
 
 // styles
 import styles from './styles.scss';

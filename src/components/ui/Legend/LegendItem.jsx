@@ -14,7 +14,7 @@ import { getObjectConversion } from '../../../utils/filters';
 // Components
 import LegendButtons from './LegendButtons';
 import LegendGraph from './LegendGraph';
-import Spinner from '../Spinner';
+import Spinner from 'components/ui/spinner';
 
 
 class LegendItem extends React.Component {

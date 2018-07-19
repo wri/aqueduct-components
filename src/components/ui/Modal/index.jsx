@@ -1,6 +1,6 @@
 import React from 'react';
-import Icon from '../Icon';
-import Spinner from '../Spinner';
+import Icon from 'components/ui/icon';
+import Spinner from 'components/ui/spinner';
 
 export default class Modal extends React.Component {
 

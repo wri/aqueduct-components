@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import Icon from '../Icon';
+import Icon from 'components/ui/icon';
 
 export default function ShareButton(props) {
   const className = classnames({

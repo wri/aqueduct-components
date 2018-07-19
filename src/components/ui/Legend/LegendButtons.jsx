@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon';
+import Icon from 'components/ui/icon';
 
 class LegendButtons extends React.Component {
 

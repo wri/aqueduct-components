@@ -2,7 +2,7 @@ import { Link, withRouter } from 'react-router';
 import React from 'react';
 import PropTypes from 'prop-types';
 import OnlyOn from '../Responsive';
-import Icon from '../Icon';
+import Icon from 'components/ui/icon';
 import HeaderTools from './HeaderTools';
 import DropdownButton from '../DropdownButton';
 

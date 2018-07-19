@@ -1,6 +1,6 @@
 import debounce from 'lodash/debounce';
 import React from 'react';
-import Icon from '../Icon';
+import Icon from 'components/ui/icon';
 
 export default class Sidebar extends React.Component {
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import orderBy from 'lodash/orderBy';
 import LegendItem from './LegendItem';
-import Icon from '../Icon';
+import Icon from 'components/ui/icon';
 import OnlyOn from '../Responsive';
 
 export default class Legend extends React.Component {
