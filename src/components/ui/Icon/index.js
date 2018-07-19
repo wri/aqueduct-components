@@ -9,13 +9,17 @@ import styles from './styles.scss';
 class Icon extends PureComponent {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
+    prefix: PropTypes.string
   };
 
-  static defaultProps = { className: null };
+  static defaultProps = {
+    className: null,
+    prefix: 'icon'
+  };
 
   render() {
-    const { name, className } = this.props;
+    const { prefix, name, className } = this.props;
     const componentClass = classnames(
       'c-icon',
       { [className]: !!className }
@@ -23,7 +27,7 @@ class Icon extends PureComponent {
 
     return (
       <svg styleName={componentClass}>
-        <use xlinkHref={`#icon-${name}`} />
+        <use xlinkHref={`#${prefix}-${name}`} />
       </svg>
     );
   }
