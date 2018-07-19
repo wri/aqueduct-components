@@ -1,28 +1,33 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 import CSSModules from 'react-css-modules';
+
+// styles
 import styles from './styles.scss';
 
-export class Icon extends React.PureComponent {
+class Icon extends PureComponent {
   static propTypes = {
-    name: PropTypes.string,
-    className: PropTypes.string
+    name: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    prefix: PropTypes.string
   };
 
   static defaultProps = {
-    name: '',
-    className: ''
+    className: null,
+    prefix: 'icon'
   };
 
   render() {
-    const { name, className } = this.props;
-    const classNames = classnames({ [className]: !!className });
+    const { prefix, name, className } = this.props;
+    const componentClass = classnames(
+      'c-icon',
+      { [className]: !!className }
+    );
 
     return (
-      <svg styleName={`c-icon ${classNames}`}>
-        <use xlinkHref={`#${name}`} />
+      <svg styleName={componentClass}>
+        <use xlinkHref={`#${prefix}-${name}`} />
       </svg>
     );
   }

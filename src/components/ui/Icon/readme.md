@@ -1,3 +1,3 @@
 ```js
-<Icon name="icon-search" className="-small" />
+<Icon name="search" className="-small" />
 ```

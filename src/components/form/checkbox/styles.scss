@@ -1,3 +1,5 @@
+@import 'styles/settings';
+
 .c-checkbox {
   label {
     font-size: $font-size-big;
@@ -30,7 +32,6 @@
       border: 1px solid palette(blue, light);
       border-radius: 2px;
       transform: translate(0,-50%);
-      // transition: all $animation-time $ease-in-out-sine;
 
       svg {
         position: absolute;
@@ -59,25 +60,6 @@
       background-color: palette(blue, secondary);
       svg {
         transform: translate(-50%,-50%) scale(1);
-      }
-    }
-  }
-}
-
-.c-checkbox-box {
-  > * {
-    margin: 0 0 10px;
-    &:last-child {
-      margin: 0;
-    }
-  }
-
-  &.-inline {
-    display: flex;
-    > * {
-      margin: 0 ($space-1 * 2) 0 0;
-      &:last-child {
-        margin: 0;
       }
     }
   }

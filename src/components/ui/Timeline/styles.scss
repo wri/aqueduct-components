@@ -1,14 +1,12 @@
-.c-timeline {
-  margin-top: $space-1 / 2;
-  padding: 45px 24px 0;
+@import 'styles/settings';
 
+.c-timeline {
   .timeline-list {
     display: flex;
     justify-content: space-between;
     position: relative;
     width: 100%;
     height: 2px;
-    list-style: none;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQYV2NkQAOMIP6Sw/99QHSMLeMW7ALIugAMHQgFiK4hAgAAAABJRU5ErkJggg==) repeat-x center;
   }
 
@@ -103,37 +101,5 @@
   &.-disabled {
     opacity: 0.5;
     pointer-events: none;
-
-    // .timeline-list-item {
-    //   cursor: default;
-    //
-    //   &:hover {
-    //     border-color: palette(blue, light);
-    //
-    //     .timeline-label {
-    //       color: palette(blue, light);
-    //     }
-    //   }
-    //
-    //   &:active {
-    //     border-color: palette(blue, light);
-    //
-    //     .timeline-label {
-    //       color: palette(blue, light);
-    //     }
-    //   }
-    //
-    //   &.-selected {
-    //     &:hover {
-    //       border: 1px solid palette(blue, secondary);
-    //       background-color: palette(blue, secondary);
-    //       box-shadow: 0 0 0px 7px palette(blue), 0 0 0px 3px palette(blue) inset;
-    //
-    //       .timeline-label {
-    //         color: palette(white);
-    //       }
-    //     }
-    //   }
-    // }
   }
 }

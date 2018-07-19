@@ -14,6 +14,10 @@ module.exports = {
     {
       name: 'UI',
       components: () => ([ path.resolve(__dirname, 'src/components/ui/*', 'index.js') ])
+    },
+    {
+      name: 'Form',
+      components: () => ([ path.resolve(__dirname, 'src/components/form/*', 'index.js') ])
     }
   ],
   skipComponentsWithoutExample: true,
