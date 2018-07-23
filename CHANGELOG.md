@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.0] - 2018-07-23
+### Accordion
+This component is not available anymore.
+
+### Header
+- Changed to current component structure.
+- Accepts an `app` property to set the current tool in the tool header.
+- Accepts `children` to populate menu.
+
 ## [1.0.0] - 2018-07-19
 ### Icon
 - Changed to current component structure.

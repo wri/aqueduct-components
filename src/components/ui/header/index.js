@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSModules from 'react-css-modules';
 
-
 // components
 import Icon from 'components/ui/icon';
 import ToolsMenu from './tools';
@@ -30,7 +29,6 @@ class Header extends PureComponent {
 
     return (
       <header styleName="c-header" role="banner">
-        {/* LOGO */}
         <h1 styleName="c-header-logo">
           <a href="/" styleName="header-logo"><span>Logo</span></a>
           <a href="/" styleName="header-title">{title}</a>
@@ -56,7 +54,6 @@ class Header extends PureComponent {
           visible={this.state.tools}
           currentApp={app}
         />
-        {/* </OnlyOn> */}
       </header>
     );
   }

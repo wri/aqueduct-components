@@ -9,9 +9,6 @@ $size-header: 60px;
   width: 100%;
   height: $size-header;
   z-index: 9999;
-  // @include only-desktop {
-  //   box-shadow: 0 1px 1px rgba(palette(black), .15);
-  // }
 
   nav {
     display: flex;
