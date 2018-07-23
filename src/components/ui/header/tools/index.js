@@ -12,7 +12,7 @@ import { TOOLS } from './constants';
 // styles
 import styles from './styles.scss';
 
-class Tools extends PureComponent {
+export class Tools extends PureComponent {
   static propTypes = {
     currentApp: PropTypes.string.isRequired,
     visible: PropTypes.bool.isRequired

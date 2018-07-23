@@ -10,7 +10,7 @@ import Checkbox from '../checkbox';
 // styles
 import styles from './styles.scss';
 
-class CheckboxGroup extends PureComponent {
+export class CheckboxGroup extends PureComponent {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string.isRequired,

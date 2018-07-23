@@ -18,7 +18,7 @@ export { default as Map } from './components/Map';
 
 export { default as CustomSelect } from './components/ui/CustomSelect';
 export { default as DropdownButton } from './components/ui/DropdownButton';
-export { default as Header } from './components/ui/header';
+export { default as Header } from './components/ui/Header';
 export { default as Icon } from './components/ui/icon';
 export { default as Legend } from './components/ui/Legend';
 export { default as MapControls } from './components/ui/MapControls';

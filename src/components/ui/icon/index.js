@@ -6,7 +6,7 @@ import CSSModules from 'react-css-modules';
 // styles
 import styles from './styles.scss';
 
-class Icon extends PureComponent {
+export class Icon extends PureComponent {
   static propTypes = {
     name: PropTypes.string.isRequired,
     className: PropTypes.string,

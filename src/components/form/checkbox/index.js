@@ -13,7 +13,7 @@ import Icon from 'components/ui/icon';
 // styles
 import styles from './styles.scss';
 
-class Checkbox extends PureComponent {
+export class Checkbox extends PureComponent {
   static propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,

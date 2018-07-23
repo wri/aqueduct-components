@@ -10,7 +10,7 @@ import ToolsMenu from './tools';
 // styles
 import styles from './styles.scss';
 
-class Header extends PureComponent {
+export class Header extends PureComponent {
   static propTypes = {
     app: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,

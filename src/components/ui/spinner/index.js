@@ -6,7 +6,7 @@ import CSSModules from 'react-css-modules';
 // styles
 import styles from './styles.scss';
 
-class Spinner extends PureComponent {
+export class Spinner extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     style: PropTypes.object

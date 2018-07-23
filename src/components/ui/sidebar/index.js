@@ -10,7 +10,7 @@ import Icon from 'components/ui/icon';
 // styles
 import styles from './styles.scss';
 
-class Sidebar extends PureComponent {
+export class Sidebar extends PureComponent {
   static propTypes = {
     visible: PropTypes.bool.isRequired,
     children: PropTypes.any.isRequired,

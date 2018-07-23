@@ -6,7 +6,7 @@ import CSSModules from 'react-css-modules';
 // styles
 import styles from './styles.scss';
 
-class Timeline extends PureComponent {
+export class Timeline extends PureComponent {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string.isRequired,
