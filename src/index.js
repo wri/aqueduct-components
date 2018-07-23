@@ -12,26 +12,19 @@ export { LEGEND_OPACITY_RANGE } from './data/legend';
 export { YEAR_OPTIONS, CROP_COLOR_DICTIONARY, CROP_OPTIONS, IRRIGATION_OPTIONS, DATA_TYPE_OPTIONS } from './data/filters';
 
 // Aqueduct components
-export { default as CountrySelect } from './components/CountrySelect';
 export { default as VegaChart } from './components/VegaChart';
-export { default as Map } from './components/Map';
 
 export { default as CustomSelect } from './components/ui/CustomSelect';
 export { default as DropdownButton } from './components/ui/DropdownButton';
-export { default as Header } from './components/ui/Header';
+export { default as Header } from './components/ui/header';
 export { default as Icon } from './components/ui/icon';
-export { default as Legend } from './components/ui/Legend';
 export { default as MapControls } from './components/ui/MapControls';
-export { default as MapHeader } from './components/ui/MapHeader';
-export { default as OnlyOn } from './components/ui/Responsive';
 export { default as Radio } from './components/ui/Radio';
 export { default as RadioGroup } from './components/ui/RadioGroup';
-export { default as SegmentedUi } from './components/ui/SegmentedUi';
 export { default as Sidebar } from './components/ui/sidebar';
 export { default as Spinner } from './components/ui/spinner';
-export { default as Sticky } from './components/ui/Sticky';
 export { default as Timeline } from './components/ui/timeline';
-export { default as ZoomControl } from './components/ui/ZoomControl';
+export { default as ZoomControls } from './components/ui/zoom-controls';
 
 // form components
 export { default as Checkbox } from './components/form/checkbox';

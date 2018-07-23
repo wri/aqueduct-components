@@ -1,6 +1,17 @@
 # Changelog
 
 ## [1.0.0] - 2018-07-23
+- Removed the next components:
+  - Map
+  - Legend
+  - Country select
+  - Responsive
+  - Segmented UI
+  - Sticky
+  - Share button
+  - Dropdown button
+- Added map section.
+
 ### Accordion
 This component is not available anymore.
 
@@ -8,6 +19,16 @@ This component is not available anymore.
 - Changed to current component structure.
 - Accepts an `app` property to set the current tool in the tool header.
 - Accepts `children` to populate menu.
+
+### Zoom Controls
+- To use zoom controls now you need to export `MapControls` component.
+- `onZoomChange` property is now mandatory.
+
+### Map Controls
+- Instead of rendering just a `children`, now it renders `ZoomControls` (optional) and `children`.
+- Added `showZoomControls` property to control zoom controls visibility.
+- `onZoomChange` property is now mandatory. It passes to `ZoomControls`.
+
 
 ## [1.0.0] - 2018-07-19
 ### Icon
