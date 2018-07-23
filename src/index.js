@@ -11,20 +11,20 @@ export { default as APP_DEFINITIONS } from './data/definitions';
 export { LEGEND_OPACITY_RANGE } from './data/legend';
 export { YEAR_OPTIONS, CROP_COLOR_DICTIONARY, CROP_OPTIONS, IRRIGATION_OPTIONS, DATA_TYPE_OPTIONS } from './data/filters';
 
-// Aqueduct components
+// UI components
 export { default as VegaChart } from './components/VegaChart';
 
 export { default as CustomSelect } from './components/ui/CustomSelect';
-export { default as DropdownButton } from './components/ui/DropdownButton';
 export { default as Header } from './components/ui/header';
 export { default as Icon } from './components/ui/icon';
-export { default as MapControls } from './components/ui/MapControls';
 export { default as Radio } from './components/ui/Radio';
 export { default as RadioGroup } from './components/ui/RadioGroup';
 export { default as Sidebar } from './components/ui/sidebar';
 export { default as Spinner } from './components/ui/spinner';
 export { default as Timeline } from './components/ui/timeline';
-export { default as ZoomControls } from './components/ui/zoom-controls';
+
+// map components
+export { default as MapControls } from './components/map/map-controls';
 
 // form components
 export { default as Checkbox } from './components/form/checkbox';
@@ -33,9 +33,6 @@ export { default as Field } from './components/form/Field';
 export { default as FormElement } from './components/form/FormElement';
 export { default as Input } from './components/form/Input';
 export { default as TextArea } from './components/form/TextArea';
-
-// Buttons
-export { default as ShareButton } from './components/ui/Buttons/ShareButton';
 
 // Modal
 export { default as Modal } from './components/ui/Modal';
