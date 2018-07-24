@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import CSSModules from 'react-css-modules';
 
 // styles
@@ -19,13 +19,10 @@ export class Spinner extends PureComponent {
 
   render() {
     const { className, style } = this.props;
-    const componentClass = classNames(
-      'c-spinner',
-      { [className]: !!className }
-    );
+    const customClass = classnames({ [className]: !!className });
 
     return (
-      <div styleName={componentClass}>
+      <div styleName="c-spinner" className={customClass}>
         <div styleName="spinner-box" style={style}>
           <div styleName="icon" />
         </div>

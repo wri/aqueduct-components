@@ -38,15 +38,11 @@ export class Timeline extends PureComponent {
 
   render() {
     const { items, className, disabled } = this.props;
-    const componentClass = classnames(
-      'c-timeline', {
-        [className]: !!className,
-        '-disabled': disabled
-      }
-    );
+    const componentClass = classnames('c-timeline', { '-disabled': disabled });
+    const customClass = classnames({ [className]: !!className });
 
     return (
-      <div styleName={componentClass}>
+      <div styleName={componentClass} className={customClass}>
         <ul styleName="timeline-list">
           {items.map((item) => {
             const itemClassList = classnames(

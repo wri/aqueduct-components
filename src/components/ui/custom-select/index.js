@@ -20,7 +20,7 @@ export class CustomSelect extends PureComponent {
       ]).isRequired
     })).isRequired,
     className: PropTypes.string,
-    theme: PropTypes.string
+    theme: PropTypes.oneOf(['light', 'dark'])
   }
 
   static defaultProps = {

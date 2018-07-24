@@ -27,20 +27,15 @@ export class Sidebar extends PureComponent {
 
   render() {
     const { className, visible } = this.props;
-    const componentClass = classnames(
-      'c-sidebar',
-      {
-        [className]: !!className,
-        '-visible': visible
-      }
-    );
+    const componentClass = classnames('c-sidebar', { '-visible': visible });
+    const customClass = classnames({ [className]: !!className });
     const iconName = classnames({
       'arrow-left': visible,
       'arrow-right': !visible
     });
 
     return (
-      <aside styleName={componentClass}>
+      <aside styleName={componentClass} className={customClass}>
         <div>
           {this.props.children}
         </div>

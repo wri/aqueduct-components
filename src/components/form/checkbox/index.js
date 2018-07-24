@@ -18,6 +18,7 @@ export class Checkbox extends PureComponent {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
+    theme: PropTypes.oneOf(['light', 'dark']),
     className: PropTypes.string,
     defaultChecked: PropTypes.bool,
     disabled: PropTypes.bool,
@@ -27,6 +28,7 @@ export class Checkbox extends PureComponent {
   static defaultProps = {
     defaultChecked: false,
     disabled: false,
+    theme: 'dark',
     className: null,
     onChange: null
   }
@@ -50,19 +52,18 @@ export class Checkbox extends PureComponent {
       label,
       defaultChecked,
       disabled,
+      theme,
       className
     } = this.props;
 
     const componentClass = classnames(
-      'c-checkbox',
-      {
-        [className]: !!className,
-        '-disabled': disabled
-      }
+      `c-checkbox -${theme}`,
+      { '-disabled': disabled }
     );
+    const customClass = classnames({ [className]: !!className });
 
     return (
-      <div styleName={componentClass}>
+      <div styleName={componentClass} className={customClass}>
         <input
           type="checkbox"
           name={name}
@@ -73,10 +74,8 @@ export class Checkbox extends PureComponent {
           onChange={this.onChange}
         />
         <label htmlFor={`checkbox-${name}-${value}`}>
-          <span>
-            <Icon name="checkbox" />
-          </span>
-          {label}
+          <span styleName="checkbox-label-fake"><Icon name="checkbox" /></span>
+          <span styleName="checkbox-label">{label}</span>
         </label>
       </div>
     );

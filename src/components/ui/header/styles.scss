@@ -1,4 +1,5 @@
 @import 'styles/settings';
+@import 'styles/functions';
 
 $size-header: 60px;
 
@@ -9,6 +10,9 @@ $size-header: 60px;
   width: 100%;
   height: $size-header;
   z-index: 9999;
+
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family-1;
 
   nav {
     display: flex;
@@ -25,9 +29,11 @@ $size-header: 60px;
 
       li {
         position: relative;
+        list-style: none;
 
         > ul {
           display: flex;
+          padding: 0;
         }
       }
 
@@ -41,7 +47,7 @@ $size-header: 60px;
         flex-shrink: 0;
         height: $size-header;
         padding: 0 ($space-1 * 2);
-        background: white;
+        background: palette(white);
         color: $color-primary;
         fill: $color-primary;
         font-size: 12px;
@@ -49,6 +55,7 @@ $size-header: 60px;
         letter-spacing: 1.4px;
         transition: all $animation-time $ease-in-out-sine;
         text-transform: uppercase;
+        cursor: pointer;
 
         > * {
           margin: 0 $space-1 0 0;
@@ -62,6 +69,16 @@ $size-header: 60px;
           color: white;
           fill: white;
         }
+      }
+
+      li > button {
+        background: none;
+        border: 0;
+        outline: 0;
+      }
+
+      li > a {
+        text-decoration: none;
       }
     }
   }
@@ -82,11 +99,6 @@ $size-header: 60px;
       background: url("./logo.png") center no-repeat;
       background-size: contain;
 
-      span {
-        display: block;
-        text-indent: -9999px;
-      }
-
       &:before {
         content: "BETA";
         position: absolute;
@@ -94,6 +106,11 @@ $size-header: 60px;
         right: 1px;
         font-size: $font-size-extra-small;
         color: $color-text-1;
+      }
+
+      span {
+        display: block;
+        text-indent: -9999px;
       }
     }
 
@@ -105,6 +122,10 @@ $size-header: 60px;
       text-transform: uppercase;
       letter-spacing: 1.4px;
       white-space: nowrap;
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 }

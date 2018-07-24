@@ -7,7 +7,7 @@ const TIMELINE_ITEMS = [
   { label: '2018', value: 2018, selected: false }
 ];
 
-<div style={{ margin: '45px 0' }}>
+<div style={{ backgroundColor: '#2E57B8', padding: 50 }}>
   <Timeline
     items={TIMELINE_ITEMS}
     onChange={(selected) => { console.log(selected)}}

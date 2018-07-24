@@ -1,9 +1,10 @@
 @import 'styles/settings';
+@import 'styles/functions';
 @import 'styles/mixins';
 
 .c-select {
   -webkit-font-smoothing: antialiased;
-  font-family: $font-family-roboto;
+  font-family: $font-family-1;
   font-size: $font-size-big;
 
   .react-select__control {

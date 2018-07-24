@@ -20,13 +20,10 @@ export class Icon extends PureComponent {
 
   render() {
     const { prefix, name, className } = this.props;
-    const componentClass = classnames(
-      'c-icon',
-      { [className]: !!className }
-    );
+    const customClass = classnames({ [className]: !!className });
 
     return (
-      <svg styleName={componentClass}>
+      <svg styleName="c-icon" className={customClass}>
         <use xlinkHref={`#${prefix}-${name}`} />
       </svg>
     );

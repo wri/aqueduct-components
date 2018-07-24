@@ -1,20 +1,48 @@
 @import 'styles/settings';
+@import 'styles/functions';
 
 .c-checkbox-box {
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family-1;
+  font-size: $font-size-big;
+
   > * {
     margin: 0 0 10px;
+
     &:last-child {
       margin: 0;
+    }
+  }
+
+  > .group-title {
+    font-weight: 500;
+
+    + * {
+      margin-top: $space-1 * 2;
     }
   }
 
   &.-inline {
     display: flex;
     > * {
-      margin: 0 ($space-1 * 2) 0 0;
+      margin: 0 ($space-1 * 1) 0 0;
       &:last-child {
         margin: 0;
       }
+    }
+  }
+
+
+  // themes
+  &.-dark {
+    .group-title {
+      color: palette(gray, 'dark');
+    }
+  }
+
+  &.-light {
+    .group-title {
+      color: palette(white);
     }
   }
 }

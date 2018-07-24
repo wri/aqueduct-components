@@ -22,12 +22,14 @@ export class CheckboxGroup extends PureComponent {
     })).isRequired,
     name: PropTypes.string.isRequired,
     title: PropTypes.string,
+    theme: PropTypes.oneOf(['light', 'dark']),
     className: PropTypes.string,
     onChange: PropTypes.func
   };
 
   static defaultProps = {
     title: null,
+    theme: 'dark',
     className: null,
     onChange: null
   };
@@ -59,16 +61,14 @@ export class CheckboxGroup extends PureComponent {
   }
 
   render() {
-    const { name, className } = this.props;
-    const componentClass = classnames(
-      'c-checkbox-box',
-      { [className]: !!className }
-    );
+    const { name, theme, className } = this.props;
+    const componentClass = `c-checkbox-box -${theme}`;
+    const customClass = classnames({ [className]: !!className });
 
     return (
-      <div styleName={componentClass}>
+      <div styleName={componentClass} className={customClass}>
         {this.props.title &&
-          <span>{this.props.title}</span>}
+          <span styleName="group-title">{this.props.title}</span>}
         {this.items.map(item => (
           <Checkbox
             key={`${name}-${item.value}`}
@@ -76,6 +76,7 @@ export class CheckboxGroup extends PureComponent {
             value={item.value}
             checked={item.selected}
             defaultChecked={item.checked}
+            theme={theme}
             label={item.label}
             onChange={this.onChange}
           />

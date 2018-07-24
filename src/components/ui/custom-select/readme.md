@@ -7,17 +7,17 @@ const options = [
 ];
 
 <div>
-  <div style={{ backgroundColor: '#2E57B8', padding: 30 }}>
+  <div style={{ backgroundColor: '#f5f4f0', padding: 30}}>
     <CustomSelect
+      theme="dark"
       options={options}
       placeholder="Select a yummy fruit!"
       onChange={option => console.log(option)}
     />
   </div>
 
-  <div style={{ backgroundColor: '#f5f4f0', padding: 30, marginTop: 16 }}>
+  <div style={{ backgroundColor: '#2E57B8', padding: 30, marginTop: 16  }}>
     <CustomSelect
-      theme="dark"
       options={options}
       placeholder="Select a yummy fruit!"
       onChange={option => console.log(option)}

@@ -1,3 +1,5 @@
+@import 'styles/settings';
+@import 'styles/functions';
 
 /**
  *
@@ -9,8 +11,6 @@
  // </div>
 
  **/
-
-@import 'styles/settings';
 
 $spinner-size: 40px;
 $spinner-tiny-size: 20px;
