@@ -1,9 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import CSSModules from 'react-css-modules';
 
 // components
 import Icon from 'components/ui/icon';
+
+// styles
+import styles from './styles.scss';
 
 class ZoomControls extends PureComponent {
   static propTypes = {
@@ -39,10 +43,6 @@ class ZoomControls extends PureComponent {
 
   render() {
     const { zoom, maxZoom, minZoom, className } = this.props;
-    const componentClass = classnames(
-      'c-zoom-controls',
-      { [className]: !!className }
-    );
     const zoomInClass = classnames(
       'zoom-control-btn',
       { '-disabled': zoom === maxZoom }
@@ -52,12 +52,14 @@ class ZoomControls extends PureComponent {
       { '-disabled': zoom === minZoom }
     );
 
+    const customClass = classnames({ [className]: !!className });
+
     return (
-      <ul className={componentClass}>
+      <ul styleName="c-zoom-controls" className={customClass}>
         <li>
           <button
             type="button"
-            className={zoomInClass}
+            styleName={zoomInClass}
             onClick={this.increaseZoom}
           >
             <Icon name="plus" />
@@ -66,7 +68,7 @@ class ZoomControls extends PureComponent {
         <li>
           <button
             type="button"
-            className={zoomOutClass}
+            styleName={zoomOutClass}
             onClick={this.decreaseZoom}
           >
             <Icon name="minus" />
@@ -77,4 +79,4 @@ class ZoomControls extends PureComponent {
   }
 }
 
-export default ZoomControls;
+export default CSSModules(ZoomControls, styles, { allowMultiple: true });

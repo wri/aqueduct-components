@@ -38,7 +38,7 @@ export class MapControls extends PureComponent {
             {...this.props}
           />}
         {!isEmpty(children) &&
-          <div className="custom-map-controls">
+          <div styleName="custom-map-controls">
             {children}
           </div>}
       </div>
