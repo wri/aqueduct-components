@@ -14,7 +14,7 @@ export { YEAR_OPTIONS, CROP_COLOR_DICTIONARY, CROP_OPTIONS, IRRIGATION_OPTIONS, 
 // UI components
 export { default as VegaChart } from './components/VegaChart';
 
-export { default as CustomSelect } from './components/ui/CustomSelect';
+export { default as CustomSelect } from './components/ui/custom-select';
 export { default as Header } from './components/ui/header';
 export { default as Icon } from './components/ui/icon';
 export { default as Radio } from './components/ui/Radio';
