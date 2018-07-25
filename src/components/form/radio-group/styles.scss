@@ -1,0 +1,50 @@
+@import 'styles/settings';
+@import 'styles/functions';
+
+.c-radio-group {
+  > * {
+    &:not(:last-child) {
+      margin: 0 0 10px;
+    }
+  }
+
+  > .group-title {
+    -webkit-font-smoothing: antialiased;
+    font-family: $font-family-1;
+    font-size: $font-size-big;
+    font-weight: 500;
+
+    + * {
+      margin-top: $space-1 * 2;
+    }
+  }
+
+  &.-small {
+    &:not(:last-child) {
+      margin: 0 0 5px;
+    }
+  }
+
+  &.-inline {
+    display: flex;
+
+    > * {
+      &:not(:last-child) {
+        margin: 0 ($space-1 * 2) 0 0;
+      }
+    }
+  }
+
+  // themes
+  &.-dark {
+    .group-title {
+      color: palette(gray, 'dark');
+    }
+  }
+
+  &.-light {
+    .group-title {
+      color: palette(white);
+    }
+  }
+}
