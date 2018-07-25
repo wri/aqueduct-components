@@ -17,11 +17,10 @@ export { default as VegaChart } from './components/VegaChart';
 export { default as CustomSelect } from './components/ui/custom-select';
 export { default as Header } from './components/ui/header';
 export { default as Icon } from './components/ui/icon';
-export { default as Radio } from './components/ui/Radio';
-export { default as RadioGroup } from './components/ui/RadioGroup';
 export { default as Sidebar } from './components/ui/sidebar';
 export { default as Spinner } from './components/ui/spinner';
 export { default as Timeline } from './components/ui/timeline';
+export { default as Tabs } from './components/ui/tabs';
 
 // map components
 export { default as MapControls } from './components/map/map-controls';
@@ -29,6 +28,8 @@ export { default as MapControls } from './components/map/map-controls';
 // form components
 export { default as Checkbox } from './components/form/checkbox';
 export { default as CheckboxGroup } from './components/form/checkbox-group';
+export { default as Radio } from './components/form/radio';
+export { default as RadioGroup } from './components/form/radio-group';
 export { default as Field } from './components/form/Field';
 export { default as FormElement } from './components/form/FormElement';
 export { default as Input } from './components/form/Input';
