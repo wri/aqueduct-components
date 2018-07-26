@@ -22,8 +22,9 @@
   white-space: nowrap;
   cursor: pointer;
   outline: none;
+  transition: all $animation-time $ease-in-out-sine;
 
-  > svg {
+  > * {
     margin: 0 $space-1 0 0;
   }
 
@@ -47,16 +48,34 @@
   &.-bg-dark-blue {
     background: palette(blue, dark);
     border-color: palette(blue, dark);
+
+    &:hover,
+    &:active {
+      background: lighten(palette(blue, darkest), 15%);
+      border-color: lighten(palette(blue, darkest), 15%)
+    }
   }
 
   &.-bg-light-blue {
     background: palette(blue, secondary);
     border-color: palette(blue, secondary);
+
+    &:hover,
+    &:active {
+      background: darken(palette(blue, secondary), 3%);
+      border-color: darken(palette(blue, secondary), 3%);
+    }
   }
 
   &.-bg-white {
     background: palette(white);
     border-color: palette(white);
+
+    &:hover,
+    &:active {
+      background: darken(palette(white), 5%);
+      border-color: darken(palette(white), 5%);
+    }
   }
 
   &.-bg-transparent {

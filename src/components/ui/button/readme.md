@@ -28,7 +28,7 @@
   <div style={{ marginTop: 16, backgroundColor: '#f5f4f0', padding: 15 }}>
     <Button
       theme="light"
-      className="-large -bg-light-blue -uppercase -bold"
+      className="-large -bg-dark-blue -uppercase -bold"
       onClick={tab => console.log('click')}
     >
       This is a button with light theme
