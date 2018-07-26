@@ -12,9 +12,6 @@ export { LEGEND_OPACITY_RANGE } from './data/legend';
 export { YEAR_OPTIONS, CROP_COLOR_DICTIONARY, CROP_OPTIONS, IRRIGATION_OPTIONS, DATA_TYPE_OPTIONS } from './data/filters';
 
 // UI components
-export { default as VegaChart } from './components/VegaChart';
-
-
 export { default as Header } from './components/ui/header';
 export { default as Icon } from './components/ui/icon';
 export { default as Sidebar } from './components/ui/sidebar';
@@ -32,9 +29,6 @@ export { default as CheckboxGroup } from './components/form/checkbox-group';
 export { default as Radio } from './components/form/radio';
 export { default as RadioGroup } from './components/form/radio-group';
 export { default as CustomSelect } from './components/form/custom-select';
-export { default as FormElement } from './components/form/FormElement';
-export { default as Input } from './components/form/Input';
-export { default as TextArea } from './components/form/TextArea';
 
 // Modal
 export { default as Modal } from './components/ui/Modal';
