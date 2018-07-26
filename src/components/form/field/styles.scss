@@ -1,0 +1,37 @@
+@import 'styles/settings';
+@import 'styles/functions';
+
+.c-field {
+  flex: 1;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family-1;
+
+  > label {
+    font-size: $font-size-extrabig;
+    color: currentColor;
+  }
+
+  > .field-container {
+    margin: $space-1 0 0;
+  }
+
+  // themes
+  &.-light {
+    color: palette(white);
+  }
+
+  &.-dark {
+    color: palette(gray, dark);
+  }
+
+  // modificators
+  &.-inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > .field-container {
+      margin: 0;
+    }
+  }
+}
