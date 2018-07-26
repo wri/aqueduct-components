@@ -15,6 +15,7 @@
     label="Show Advanced settings"
     name="radio-advanced"
     value="radio-advanced-value"
+    checked
     onChange={val => console.log(val)}
   />
 </div>

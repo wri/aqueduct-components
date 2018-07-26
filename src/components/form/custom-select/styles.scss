@@ -8,6 +8,7 @@
   font-size: $font-size-big;
 
   .react-select__control {
+    min-width: 200px;
     background: transparent;
     border: 0;
     border-radius: 0;
@@ -20,18 +21,24 @@
     }
 
     > .react-select__value-container {
-      padding-left: 0;
+      padding: 0 0 $space-1 0;
 
       &.react-select__value-container--has-value {
 
         > .react-select__single-value {
+          margin: 0;
           color: currentColor;
           font-weight: 500;
         }
       }
 
       > .react-select__placeholder {
+        max-width: calc(100% - #{$space-1});
+        margin: 0;
         color: currentColor;
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
       }
 
       .react-select__input {
