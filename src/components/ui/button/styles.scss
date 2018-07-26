@@ -1,0 +1,83 @@
+@import 'styles/settings';
+@import 'styles/functions';
+
+.c-button {
+  -webkit-appearance: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: $space-1/2 $space-1;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: none;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family-1;
+  font-size: $font-size-default;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.8;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+
+  > svg {
+    margin: 0 $space-1 0 0;
+  }
+
+  // themes
+  &.-dark {
+    color: palette(gray, 'dark');
+    border-color: palette(gray, 'lightest');
+  }
+
+  &.-light {
+    color: palette(white);
+    border-color: palette(white);
+  }
+
+  &.-blue {
+    color: palette(blue);
+    border-color: palette(blue);
+  }
+
+  // colours
+  &.-bg-dark-blue {
+    background: palette(blue, dark);
+    border-color: palette(blue, dark);
+  }
+
+  &.-bg-light-blue {
+    background: palette(blue, secondary);
+    border-color: palette(blue, secondary);
+  }
+
+  &.-bg-white {
+    background: palette(white);
+    border-color: palette(white);
+  }
+
+  &.-bg-transparent {
+    background: transparent;
+  }
+
+  // sizes
+  &.-regular {
+    padding: $space-1 $space-1 * 2;
+  }
+
+  &.-large {
+    padding: $space-1 * 2 $space-1 * 4;
+  }
+
+  // other modificators
+  &.-uppercase {
+    text-transform: uppercase;
+  }
+
+  &.-bold {
+    font-weight: 700;
+  }
+}
