@@ -1,0 +1,70 @@
+@import 'styles/settings';
+@import 'styles/functions';
+
+$max-width-modal: 700px;
+$max-width-modal-large: 1130px;
+$margin-modal: 25px;
+
+.ReactModal__Overlay {
+  z-index: $max-z-index;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(palette(blue, darkest), .9);
+}
+
+.ReactModal__Html--open,
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.c-modal {
+  z-index: $max-z-index;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: $max-width-modal;
+  width: calc(100% - #{$margin-modal * 2});
+  transform: translate(-50%, -50%);
+  transition: transform 0.24s cubic-bezier(0.215, 0.61, 0.355, 1);
+  outline: none;
+
+  > .modal-container {
+    width: 100%;
+    height: 100%;
+
+    > .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: $space-1/2 0;
+
+      .modal-close-icon {
+        fill: palette(blue, light);
+
+        &:hover {
+          fill: palette(white);
+        }
+      }
+    }
+
+    > .modal-content {
+      padding: $space-1 * 4 $space-1 * 8;
+      background: palette(white);
+      box-shadow: 0 1px 1px rgba(palette(black), .15);
+
+      > .overflow-container {
+        overflow-y: auto;
+        max-height: calc(100vh / 2);
+        height: 100%;
+      }
+    }
+  }
+
+  // replace this with a media querie
+  &.-large {
+    max-width: $max-width-modal-large;
+  }
+}

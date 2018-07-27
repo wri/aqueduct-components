@@ -33,6 +33,7 @@
     "react-css-modules": "^4.7.4",
     "react-dom": "^16.4.1",
     "react-dom-factories": "^1.0.2",
+    "react-modal": "^3.5.1",
     "react-responsive": "^5.0.0",
     "react-router": "^4.3.1",
     "react-select": "2.0.0",

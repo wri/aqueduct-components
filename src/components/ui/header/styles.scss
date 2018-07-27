@@ -9,7 +9,7 @@ $size-header: 60px;
   background: palette(white);
   width: 100%;
   height: $size-header;
-  z-index: 9999;
+  z-index: $max-z-index - 1;
 
   -webkit-font-smoothing: antialiased;
   font-family: $font-family-1;

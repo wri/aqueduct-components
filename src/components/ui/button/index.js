@@ -18,7 +18,7 @@ export class Button extends PureComponent {
   static defaultProps = {
     className: null,
     customClass: null,
-    theme: 'dark',
+    theme: null,
     type: 'button'
   };
 
@@ -30,7 +30,10 @@ export class Button extends PureComponent {
       theme,
       ...buttonProps
     } = this.props;
-    const componentClass = classnames(`c-button -${theme}`, { [className]: !!className });
+    const componentClass = classnames(
+      `c-button ${theme ? `-${theme}` : ''}`,
+      { [className]: !!className }
+    );
     const externalClass = classnames({ [customClass]: !!customClass });
 
     return (
