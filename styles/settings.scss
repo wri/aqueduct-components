@@ -1,11 +1,5 @@
 
-// Max widths
-$max-width-main: 1280px;
-$max-width-sidebar: 700px;
-$max-width-modal: 700px;
-$max-width-modal-medium: 1130px;
-
-// Colors
+// colours
 $palettes: (
   blue: (
     primary : #2E57B8,
@@ -38,55 +32,37 @@ $palettes: (
 );
 
 $color-primary: #03a1de;
-$color-secondary: #3559a1;
 $color-tertiary: #294d94;
-$color-alternative: #fbbc22;
-$color-gray: #eff3f8;
 $color-white: white;
-$color-deactivate: #8CACEE;
 $color-soft: #8CACEE;
-$color-map: #f5f4f0;
-$color-softer: #c2d7ff;
-$color-dark: #123671;
-
-$color-success: #1c801c;
-$color-error: #de2239;
 
 $color-text-1: #4a596a;
 
-// Font families
+// typography – families
 $font-family-1: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-// Fonts sizes
+// typography – sizing
 $font-size-extra-small:   10px;
-$font-size-small:   12px;
-$font-size-default: 14px;
-$font-size-big:     16px;
-$font-size-extrabig: 18px;
-$font-size-huge:  22px;
-$font-size-extrahuge:  32px;
+$font-size-small:         12px;
+$font-size-default:       14px;
+$font-size-big:           16px;
+$font-size-extrabig:      18px;
+$font-size-huge:          22px;
+$font-size-extrahuge:     32px;
 
-// Grays
-$gray-3: #333;
-$gray-5: #555;
-$gray-7: #777;
-$gray-9: #999;
-
-// Borders
-$border-color-1: #eee;
-$border-color-2: #ccc;
-
-// Margins & Paddings
+// spacing
 $space-1: 8px;
-$space-sidebar: 54px;
 
-// Times
+// miscellaneous
+$max-z-index: 9999;
+
+// animation – timings
 $animation-time: .16s;
 $animation-time-2: .24s;
 $animation-time-3: .5s;
 $animation-time-4: .75s;
 
-// Eases
+// animation – functions
 $ease-in-cubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
 $ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 $ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
@@ -95,23 +71,7 @@ $ease-in-sine: cubic-bezier(0.470, 0.000, 0.745, 0.715);
 $ease-out-sine: cubic-bezier(0.390, 0.575, 0.565, 1.000);
 $ease-in-out-sine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
 
-// Leaflet
-$zoom-margin-top: 10px;
-$zoom-margin-right: 10px;
-
-// map controls
-$map-controls-button-size: 36px;
-
-// Responsive breakpoints
-$breakpoint-mobile: 640px;
-
-// Mobile heights
-$height-country-tabs: 48px;
-$height-filter-btn: 52px;
-
-// Layout
-$sidebar-padding: $space-1 * 4;
-
+// keyframes
 @-webkit-keyframes rotate {
   from { transform: rotate(0deg);}
   to { transform: rotate(360deg);}
