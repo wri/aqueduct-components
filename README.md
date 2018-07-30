@@ -50,6 +50,11 @@ Those steps can be run just typing `yarn run deploy`.
 
 For more details, check `package.json`, `scripts` section.
 
+## Troubleshooting ⚠️
+
+`Vega` library uses `canvas` dependency, this one at the same time depends on `cairo`. So if you are
+suffering something related go to [https://github.com/Automattic/node-canvas#compiling](https://github.com/Automattic/node-canvas#compiling) and follow the steps.
+
 ## Recommendations 🐰
 ---
 
