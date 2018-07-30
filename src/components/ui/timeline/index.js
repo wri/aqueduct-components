@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSModules from 'react-css-modules';
+import isEqual from 'lodash/isEqual';
 
 // styles
 import styles from './styles.scss';
@@ -27,8 +28,32 @@ export class Timeline extends PureComponent {
     className: null
   }
 
-  onClickItem = (item) => {
-    if (this.props.onChange) this.props.onChange(item);
+  constructor(props) {
+    super(props);
+
+    this.state = { items: props.items };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { items } = this.props;
+    const { items: nextItems } = nextProps;
+    const itemsHaveChanged = !isEqual(items, nextItems);
+
+    if (itemsHaveChanged) this.items = nextItems;
+  }
+
+  onClickItem = (selectedItem) => {
+    const selectedItemIndex = this.state.items.findIndex(item =>
+      item.value === selectedItem.value);
+
+    const items = this.state.items.map((it, index) => ({
+      ...it,
+      ...index === selectedItemIndex ? { selected: true } : { selected: false }
+    }));
+
+    this.setState({ items }, () => {
+      if (this.props.onChange) this.props.onChange(items[selectedItemIndex]);
+    });
   }
 
   handleKeyPress = (evt, item) => {
@@ -37,7 +62,8 @@ export class Timeline extends PureComponent {
   }
 
   render() {
-    const { items, className, disabled } = this.props;
+    const { className, disabled } = this.props;
+    const { items } = this.state;
     const componentClass = classnames('c-timeline', { '-disabled': disabled });
     const customClass = classnames({ [className]: !!className });
 
