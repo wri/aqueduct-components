@@ -21,7 +21,7 @@
     alignItems: 'center',
     backgroundColor: '#2E57B8', 
     padding: 15, 
-    marginTop: 16 
+    marginLeft: 16 
   }}>
     <Button
       theme="blue"
