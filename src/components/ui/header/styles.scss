@@ -80,6 +80,12 @@ $size-header: 60px;
       li > a {
         text-decoration: none;
       }
+
+      li {
+        &:last-child {
+          padding: 0;
+        }
+      }
     }
   }
 
@@ -88,7 +94,7 @@ $size-header: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 ($space-1 * 2);
+    padding: 0 ($space-1 * 2) 0 0;
     margin: 0;
 
     .header-logo {
@@ -118,6 +124,7 @@ $size-header: 60px;
       display: block;
       padding: 0 0 0 ($space-1 * 2);
       font-size: $font-size-small;
+      font-weight: $font-weigth-semi-bold;
       color: $color-primary;
       text-transform: uppercase;
       letter-spacing: 1.4px;

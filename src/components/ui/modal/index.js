@@ -25,7 +25,7 @@ export class CustomModal extends PureComponent {
     customClass: null
   };
 
-  componentWillMount() {
+  componentDidMount() {
     Modal.setAppElement(this.props.appElement);
   }
 
