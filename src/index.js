@@ -4,7 +4,9 @@
 // requireAll(require.context('./icons/', true));
 
 export default {};
-// Constants
+
+// icons
+export { default as Icons } from './icons';
 
 // UI components
 export { default as Header } from './components/ui/header';
