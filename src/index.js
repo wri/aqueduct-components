@@ -9,6 +9,7 @@ export default {};
 export { default as Icons } from './icons';
 
 // UI components
+export { default as Button } from './components/ui/button';
 export { default as Header } from './components/ui/header';
 export { default as Icon } from './components/ui/icon';
 export { default as Modal } from './components/ui/modal';
