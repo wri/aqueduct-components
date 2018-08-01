@@ -6,6 +6,18 @@
   height: 20px;
   flex-shrink: 0;
 
+  // themes
+  &.-dark {
+    fill: palette(gray, dark);
+    color: palette(gray, dark);
+  }
+
+  &.-light {
+    fill: palette(white);
+    color: palette(white);
+  }
+
+  // sizing
   &.-tiny {
     width: 7px;
     height: 7px;
@@ -36,8 +48,8 @@
     height: 65px;
   }
 
-  // favourite icon
-  &.-star {
-    fill: $color-tertiary;
+  &.-round {
+    border-radius: 50%;
+    border: 1px solid currentColor;
   }
 }
