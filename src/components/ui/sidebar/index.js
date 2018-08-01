@@ -15,10 +15,14 @@ export class Sidebar extends PureComponent {
     visible: PropTypes.bool.isRequired,
     children: PropTypes.any.isRequired,
     className: PropTypes.string,
+    customClass: PropTypes.string,
     onToggle: PropTypes.func.isRequired
   }
 
-  static defaultProps = { className: null }
+  static defaultProps = {
+    className: null,
+    customClass: null
+  }
 
   onClickToggle = () => {
     const { visible } = this.props;
@@ -26,19 +30,23 @@ export class Sidebar extends PureComponent {
   }
 
   render() {
-    const { className, visible } = this.props;
-    const componentClass = classnames('c-sidebar', { '-visible': visible });
-    const customClass = classnames({ [className]: !!className });
+    const { className, customClass, visible } = this.props;
+    const componentClass = classnames(
+      'c-sidebar',
+      {
+        '-visible': visible,
+        [className]: !!className
+      }
+    );
+    const externalClass = classnames({ [customClass]: !!customClass });
     const iconName = classnames({
       'arrow-left': visible,
       'arrow-right': !visible
     });
 
     return (
-      <aside styleName={componentClass} className={customClass}>
-        <div>
-          {this.props.children}
-        </div>
+      <aside styleName={componentClass} className={externalClass}>
+        {this.props.children}
         <button
           type="button"
           styleName="btn-toggle"
