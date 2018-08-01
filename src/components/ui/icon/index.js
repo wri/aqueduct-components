@@ -11,18 +11,23 @@ export class Icon extends PureComponent {
     name: PropTypes.string.isRequired,
     className: PropTypes.string,
     customClass: PropTypes.string,
+    theme: PropTypes.string,
     prefix: PropTypes.string
   };
 
   static defaultProps = {
     className: null,
     customClass: null,
+    theme: 'light',
     prefix: 'icon'
   };
 
   render() {
-    const { prefix, name, className, customClass } = this.props;
-    const componentClass = classnames('c-icon', { [className]: !!className });
+    const { prefix, name, theme, className, customClass } = this.props;
+    const componentClass = classnames(
+      `c-icon -${theme}`,
+      { [className]: !!className }
+    );
     const externalClass = classnames({ [customClass]: !!customClass });
 
     return (
