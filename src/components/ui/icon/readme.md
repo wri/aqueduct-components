@@ -1,3 +1,7 @@
 ```js
-<Icon name="search" className="-small" />
+<Icon 
+  name="search" 
+  theme="dark"
+  className="-small" 
+/>
 ```
