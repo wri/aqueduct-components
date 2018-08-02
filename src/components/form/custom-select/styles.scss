@@ -33,6 +33,35 @@
           color: currentColor;
           font-weight: 500;
         }
+
+        & + .react-select__indicators {
+
+          &::after {
+            display: none;
+          }
+
+          > .react-select__clear-indicator {
+            position: absolute;
+            right: 0;
+            top: calc(50% + 4px);
+            padding: 0;
+            transform: translate(0, -50%);
+            color: currentColor;
+
+            &:hover {
+              color: currentColor;
+            }
+
+            > svg {
+              width: 15px;
+              height: 15px;
+
+              &:hover {
+                fill: currentColor;
+              }
+            }
+          }
+        }
       }
 
       > .react-select__placeholder {
@@ -55,14 +84,13 @@
 
     > .react-select__indicators {
       position: relative;
-      padding: $space-1 0 $space-1 * 2;
 
       &:after {
         @include triangle(5px, currentColor, 'down');
         content: '';
         position: absolute;
-        top: 50%;
-        left: calc(50% - 4px);
+        top: calc(50% + (#{$space-1} / 2));
+        left: calc(50% - #{$space-1});
         transform: translate(-50%, -50%)
       }
 
@@ -78,6 +106,10 @@
         &:after {
           border: 0;
           @include triangle(5px, currentColor, 'up');
+        }
+
+        > .react-select__clear-indicator {
+          padding: 0;
         }
       }
 
@@ -141,6 +173,28 @@
         }
       }
     }
+
+    &.-disabled {
+      color: rgba(palette(white), .4);
+
+      .react-select__control {
+        border-bottom: 1px solid rgba(palette(blue, 'light'), .4);
+
+        > .react-select__value-container {
+
+          .react-select__input {
+            color: currentColor;
+          }
+
+          > .react-select__indicators {
+
+            &:after {
+              @include triangle(5px, currentColor, 'down');
+            }
+          }
+        }
+      }
+    }
   }
 
   &.-dark {
@@ -172,6 +226,28 @@
           &.react-select__option--is-selected,
           &.react-select__option--is-focused {
             background-color: palette(gray, 'lightest');
+          }
+        }
+      }
+    }
+
+    &.-disabled {
+      color: rgba(palette(gray, 'dark'), .4);
+
+      .react-select__control {
+        border-bottom: 1px solid currentColor;
+
+        > .react-select__value-container {
+
+          .react-select__input {
+            color: currentColor;
+          }
+
+          > .react-select__indicators {
+
+            &:after {
+              @include triangle(5px, currentColor, 'down');
+            }
           }
         }
       }

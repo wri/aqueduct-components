@@ -20,27 +20,43 @@ export class CustomSelect extends PureComponent {
       ]).isRequired
     })).isRequired,
     defaultValue: PropTypes.string,
+    value: PropTypes.string,
+    isDisabled: PropTypes.bool,
     className: PropTypes.string,
+    customClass: PropTypes.string,
     theme: PropTypes.oneOf(['light', 'dark'])
   }
 
   static defaultProps = {
     defaultValue: null,
+    value: null,
+    isDisabled: false,
     className: null,
+    customClass: null,
     theme: 'light'
   }
 
   render() {
-    const { className, theme } = this.props;
-    const componentClass = `c-select -${theme}`;
-    const customClass = classnames({ [className]: !!className });
+    const { className, customClass, theme, isDisabled } = this.props;
+    const componentClass = classnames(
+      `c-select -${theme}`,
+      {
+        [className]: !!className,
+        '-disabled': !!isDisabled
+      }
+    );
+    const externalClass = classnames({ [customClass]: !!customClass });
+    const { value, ...selectProps } = this.props;
     const defaultValueObject = this.props.options.find(option =>
       option.value === this.props.defaultValue);
+    const valueObject = value ? this.props.options.find(option =>
+      option.value === value) || null : null;
 
     return (
-      <div styleName={componentClass} className={customClass}>
+      <div styleName={componentClass} className={externalClass}>
         <Select
-          {...this.props}
+          {...selectProps}
+          {...value && { value: valueObject }}
           defaultValue={defaultValueObject}
           classNamePrefix="aq__react-select"
         />

@@ -13,6 +13,7 @@ const options = [
       options={options}
       placeholder="Select a yummy fruit!"
       onChange={option => console.log(option)}
+      isClearable
     />
   </div>
 
@@ -21,6 +22,7 @@ const options = [
       options={options}
       placeholder="Select a yummy fruit!"
       onChange={option => console.log(option)}
+      isClearable
     />
   </div>
 </div>
