@@ -50,13 +50,13 @@ export class CustomSelect extends PureComponent {
     const defaultValueObject = this.props.options.find(option =>
       option.value === this.props.defaultValue);
     const valueObject = value ? this.props.options.find(option =>
-      option.value === value) || null : null;
+      option.value === value) || '' : '';
 
     return (
       <div styleName={componentClass} className={externalClass}>
         <Select
           {...selectProps}
-          {...value && { value: valueObject }}
+          value={valueObject}
           defaultValue={defaultValueObject}
           classNamePrefix="aq__react-select"
         />
