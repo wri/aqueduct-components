@@ -1,6 +1,9 @@
 **/.DS_Store
 /lib
+/dist
 node_modules
 yarn-error.log
 npm-debug.log
-yarn.lock
+
+styleguide/build
+styleguide/index.html

@@ -1,0 +1,136 @@
+@import 'styles/settings';
+@import 'styles/functions';
+
+.c-header {
+  display: flex;
+  position: relative;
+  background: palette(white);
+  width: 100%;
+  height: $size-header;
+  z-index: $max-z-index - 1;
+
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family-1;
+
+  nav {
+    display: flex;
+    justify-content: flex-end;;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background: palette(white);
+
+    .list {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        position: relative;
+        list-style: none;
+
+        > ul {
+          display: flex;
+          padding: 0;
+        }
+      }
+
+      li > a,
+      li > button {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        height: $size-header;
+        padding: 0 ($space-1 * 2);
+        background: palette(white);
+        color: $color-primary;
+        fill: $color-primary;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1.4px;
+        transition: all $animation-time $ease-in-out-sine;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        > * {
+          margin: 0 $space-1 0 0;
+          &:last-child { margin: 0; }
+        }
+
+        &:hover { background: darken(white, 5%); }
+        &:active { background: darken(white, 10%);}
+        &.-active {
+          background: $color-primary;
+          color: white;
+          fill: white;
+        }
+      }
+
+      li > button {
+        background: none;
+        border: 0;
+        outline: 0;
+      }
+
+      li > a {
+        text-decoration: none;
+      }
+
+      li {
+        &:last-child {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  // LOGO
+  .c-header-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 ($space-1 * 2) 0 0;
+    margin: 0;
+
+    .header-logo {
+      position: relative;
+      display: block;
+      width: 160px;
+      height: $size-header;
+      background: url("./logo.png") center no-repeat;
+      background-size: contain;
+
+      &:before {
+        content: "BETA";
+        position: absolute;
+        top: 7px;
+        right: 1px;
+        font-size: $font-size-extra-small;
+        color: $color-text-1;
+      }
+
+      span {
+        display: block;
+        text-indent: -9999px;
+      }
+    }
+
+    .header-title {
+      display: block;
+      padding: 0 0 0 ($space-1 * 2);
+      font-size: $font-size-small;
+      font-weight: $font-weight-semi-bold;
+      color: $color-primary;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      white-space: nowrap;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

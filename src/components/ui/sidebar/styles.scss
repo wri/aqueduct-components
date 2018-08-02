@@ -1,0 +1,36 @@
+@import 'styles/settings';
+@import 'styles/functions';
+
+.c-sidebar {
+  display: inline-block;
+  transform: translate(-100%, 0);
+  transition: transform $animation-time-2 $ease-in-out-sine;
+
+  .btn-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 53px;
+    height: 53px;
+    transition: background $animation-time-2 $ease-in-out-sine;
+    background-color: palette(blue, secondary);
+    cursor: pointer;
+
+    > svg {
+      fill: palette(white);
+      transition: all $animation-time $ease-in-out-sine,
+      transform $animation-time-2 $ease-in-out-sine $animation-time;
+    }
+
+    &:hover {
+      background-color: darken(palette(blue, secondary), 4%);
+    }
+  }
+
+  &.-visible {
+    transform: translate(0,0);
+  }
+}
