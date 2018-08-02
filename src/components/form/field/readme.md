@@ -37,7 +37,7 @@ const options = [
     <Field 
       name="test-3"
       label="A fruit selector! (inline version)"
-      className="-inline"
+      className="-full-width"
     >
       <CustomSelect
         theme="light"
@@ -51,7 +51,7 @@ const options = [
     <Field 
       name="test-4"
       label="A fruit selector! (inline version)"
-      className="-inline"
+      className="-full-width"
       theme="dark"
     >
       <CustomSelect

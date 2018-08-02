@@ -2,7 +2,7 @@
 @import 'styles/functions';
 
 .c-field {
-  flex: 1;
+
   -webkit-font-smoothing: antialiased;
   font-family: $font-family-1;
 
@@ -33,6 +33,13 @@
     > .field-container {
       margin: 0;
     }
+  }
+
+  &.-full-width {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &.-bolder {
