@@ -1,4 +1,7 @@
 **/.DS_Store
 node_modules
-*.log
+yarn-error.log
 npm-debug.log
+
+styleguide/build
+styleguide/index.html
