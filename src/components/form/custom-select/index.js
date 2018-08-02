@@ -19,11 +19,13 @@ export class CustomSelect extends PureComponent {
         PropTypes.number
       ]).isRequired
     })).isRequired,
+    defaultValue: PropTypes.string,
     className: PropTypes.string,
     theme: PropTypes.oneOf(['light', 'dark'])
   }
 
   static defaultProps = {
+    defaultValue: null,
     className: null,
     theme: 'light'
   }
@@ -32,11 +34,14 @@ export class CustomSelect extends PureComponent {
     const { className, theme } = this.props;
     const componentClass = `c-select -${theme}`;
     const customClass = classnames({ [className]: !!className });
+    const defaultValueObject = this.props.options.find(option =>
+      option.value === this.props.defaultValue);
 
     return (
       <div styleName={componentClass} className={customClass}>
         <Select
           {...this.props}
+          defaultValue={defaultValueObject}
           classNamePrefix="aq__react-select"
         />
       </div>
