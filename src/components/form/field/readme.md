@@ -59,6 +59,7 @@ const options = [
         options={options}
         placeholder="Select a huge and yummy fruit!"
         onChange={option => console.log(option)}
+        isClearable
       />
     </Field>
   </div>

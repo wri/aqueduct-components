@@ -21,7 +21,7 @@
     }
 
     > .react-select__value-container {
-      padding: 0 0 $space-1 0;
+      padding: 0 $space-1 * 2 $space-1 0;
 
       &.react-select__value-container--has-value {
 
@@ -65,7 +65,7 @@
       }
 
       > .react-select__placeholder {
-        max-width: calc(100% - #{$space-1});
+        max-width: calc(100% - #{$space-1 * 2});
         margin: 0;
         color: currentColor;
         white-space: nowrap;
@@ -74,6 +74,10 @@
       }
 
       .react-select__input {
+        position: absolute;
+        top: calc(50% + 4px);
+        left: 0;
+        transform: translate(0, -50%);
         color: currentColor;
 
         > input {
