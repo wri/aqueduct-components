@@ -16,6 +16,21 @@ module.exports = {
         use: 'url-loader'
       },
       {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              includePaths: ['./node_modules']
+                .map(d => path.join(__dirname, d))
+                .map(g => glob.sync(g))
+                .reduce((a, c) => a.concat(c), [])
+            }
+          }
+        ]
+      },
+      {
         test: /\.scss$/,
         use: [
           'style-loader',
