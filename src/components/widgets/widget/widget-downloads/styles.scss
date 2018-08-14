@@ -1,0 +1,39 @@
+@import 'styles/settings';
+@import 'styles/functions';
+
+.c-widget-downloads {
+  width: 270px;
+  max-height: 160px;
+  overflow-y: auto;
+  padding: $space-1 * 2 0;
+  background: palette(white);
+  box-shadow: 0 4px 8px 0 rgba(palette(black), .2);
+
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family-1;
+
+  > .widget-download-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    > .widget-download-item {
+      color: palette(gray, dark);
+      font-weight: $font-weight-light;
+
+      &:hover {
+        background: palette(blue, lightest);
+
+        > .widget-download-btn {
+          color: palette(blue);
+        }
+      }
+
+      > .widget-download-btn {
+        justify-content: flex-start;
+        width: 100%;
+        padding: $space-1 $space-1 * 3;
+      }
+    }
+  }
+}

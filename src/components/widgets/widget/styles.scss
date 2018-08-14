@@ -1,0 +1,125 @@
+@import 'styles/settings';
+@import 'styles/functions';
+
+.c-widget {
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family-1;
+
+  > .widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 26px; // if widget options are removed, header will keep same height
+    padding: $space-1 * 3 0;
+
+    > .widget-title {
+      font-size: $font-size-default;
+      font-weight: $font-weight-light;
+      text-transform: uppercase;
+      letter-spacing: -.7px;
+    }
+
+    .widget-options-list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+
+      > .widget-options-item {
+        cursor: pointer;
+
+        &:not(:first-child) {
+          margin: 0 0 0 $space-1 * 2;
+        }
+
+        > * {
+          min-width: 26px;
+          min-height: 26px;
+          padding: $space-1 / 2;
+          border-radius: 50%;
+          border: 1px solid;
+        }
+      }
+    }
+  }
+
+  > .widget-content {
+    position: relative;
+    min-height: 250px;
+    background: palette(white);
+  }
+
+  // themes
+  &.-light {
+    color: palette(white);
+
+    > .widget-header {
+      > .widget-title {
+        color: currentColor;
+      }
+
+      .widget-options-list {
+        > .widget-options-item {
+          > * {
+            border-color: palette(white);
+          }
+
+          &:hover {
+            > * {
+              border-color: palette(blue, lighter);
+            }
+
+            svg {
+              fill: palette(blue, lighter);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.-dark {
+    color: palette(gray, dark);
+
+    > .widget-header {
+      > .widget-title {
+        color: currentColor;
+      }
+
+      .widget-options-list {
+        > .widget-options-item {
+          > * {
+            border-color: palette(gray, light);
+          }
+
+          svg {
+            fill: palette(gray, dark);
+          }
+
+          &:hover {
+            > * {
+              border-color: darken(palette(gray, light), 10);
+            }
+
+            svg {
+              fill: darken(palette(gray, dark), 10);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.widget-download-tooltip {
+  :global {
+    .rc-tooltip-content {
+      > .rc-tooltip-inner {
+        max-width: none;
+        padding: 0;
+        border-radius: 0;
+      }
+    }
+  }
+}
