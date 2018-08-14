@@ -27,6 +27,9 @@ export { default as Radio } from './components/form/radio';
 export { default as RadioGroup } from './components/form/radio-group';
 export { default as CustomSelect } from './components/form/custom-select';
 
+// widgets
+export { default as Widget } from './components/widgets/widget';
+
 // utils
 export { downloadFile } from './utils/download';
 export { get, post, remove } from './utils/request';

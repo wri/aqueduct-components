@@ -28,6 +28,10 @@ module.exports = {
     {
       name: 'Form',
       components: () => ([ path.resolve(__dirname, 'src/components/form/*', 'index.js') ])
+    },
+    {
+      name: 'Widgets',
+      components: () => ([ path.resolve(__dirname, 'src/components/widgets/*', 'index.js') ])
     }
   ],
   skipComponentsWithoutExample: true,
