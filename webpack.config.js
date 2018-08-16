@@ -4,10 +4,14 @@ const webpack = require('webpack');
 const CompressionPlugin = require('compression-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+const env = process.env.NODE_ENV || 'development';
 
 const config = {
   entry: './src/index.js',
+
+  mode: env,
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -18,7 +22,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(jsx|js)?$/,
         loader: 'babel-loader',
         exclude: /node_modules/
       },
@@ -105,13 +109,16 @@ const config = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(env)
+    }),
     new ExtractTextPlugin({
       disable: false,
       allChunks: true,
       filename: '[name].css'
     }),
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.HashedModuleIdsPlugin(),
+    // new webpack.optimize.ModuleConcatenationPlugin(),
+    // new webpack.HashedModuleIdsPlugin(),
     new CompressionPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',

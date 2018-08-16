@@ -1,13 +1,15 @@
 const path = require('path');
 const glob = require('glob');
+const env = process.env.NODE_ENV || 'development';
 
 module.exports = {
-  devtool: 'eval',
+  mode: env,
+  devtool: env === 'development' ?  'eval' : null,
   resolve: { extensions: ['.js', '.jsx', '.json'] },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(jsx|js)?$/,
         loader: 'babel-loader',
         exclude: /node_modules/
       },
@@ -48,6 +50,5 @@ module.exports = {
         ]
       }
     ]
-  },
-  plugins: []
+  }
 };
