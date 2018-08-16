@@ -85,7 +85,6 @@ const config = {
 
   optimization: {
     minimizer: [
-      //https://github.com/mishoo/UglifyJS2/tree/harmony
       new UglifyJsPlugin({
         uglifyOptions: {
           output: {
@@ -104,7 +103,7 @@ const config = {
             join_vars: true
           }
         }
-      }),
+      })
     ]
   },
 
