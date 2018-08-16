@@ -8857,9 +8857,9 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
-wri-api-components@^2.0.14:
-  version "2.0.14"
-  resolved "https://registry.yarnpkg.com/wri-api-components/-/wri-api-components-2.0.14.tgz#a03de220a8509b088c6b9d93cbabf7f70237be56"
+wri-api-components@^2.0.17:
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/wri-api-components/-/wri-api-components-2.0.17.tgz#4033ccc382df6faf432cd52f8b0d5b91578dae03"
   dependencies:
     layer-manager "^1.0.4"
     prop-types "^15.6.2"

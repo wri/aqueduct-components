@@ -45,7 +45,7 @@
     "uglifyjs-webpack-plugin": "^1.2.7",
     "vega": "4.1.0",
     "webpack-bundle-analyzer": "2.13.1",
-    "wri-api-components": "^2.0.14"
+    "wri-api-components": "^2.0.17"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
