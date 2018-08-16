@@ -1,6 +1,6 @@
 {
   "name": "aqueduct-components",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A collection of components to use in Aqueduct's project",
   "main": "dist/bundle.js",
   "scripts": {
@@ -32,9 +32,9 @@
     "natives": "^1.1.0",
     "prop-types": "^15.5.8",
     "rc-slider": "^8.6.1",
-    "react": "^16.4.1",
+    "react": "^16.4.2",
     "react-css-modules": "^4.7.4",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.4.2",
     "react-dom-factories": "^1.0.2",
     "react-modal": "^3.5.1",
     "react-responsive": "^5.0.0",
@@ -43,9 +43,10 @@
     "react-styleguidist": "7.1.0",
     "react-transition-group": "^1.1.2",
     "uglifyjs-webpack-plugin": "^1.2.7",
-    "vega": "4.1.0",
+    "vega": "^4.2.0",
+    "vega-lib": "^4.2.0",
     "webpack-bundle-analyzer": "2.13.1",
-    "wri-api-components": "2.0.19"
+    "wri-api-components": "2.0.20"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
