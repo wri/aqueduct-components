@@ -112,10 +112,11 @@ export class Widget extends PureComponent {
               </ul>
             </div>}
         </header>
-        <section styleName="widget-content">
+
+        <div styleName="widget-content">
           {widget.loading && <Spinner />}
           {children(widget)}
-        </section>
+        </div>
       </div>
     );
   }

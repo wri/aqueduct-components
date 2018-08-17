@@ -1,6 +1,6 @@
+@import '~wri-api-components/dist/components.css';
 @import 'styles/settings';
 @import 'styles/functions';
-
 
 :global {
   .rc-slider {
@@ -122,6 +122,7 @@
   }
 
   .range-tooltip {
+    display: inline-block;
     -webkit-font-smoothing: antialiased;
     font-family: $font-family-1;
     cursor: pointer;

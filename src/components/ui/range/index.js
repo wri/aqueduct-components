@@ -5,7 +5,6 @@ import { Range, Handle } from 'rc-slider';
 import { Tooltip } from 'wri-api-components';
 
 // styles
-import 'wri-api-components/dist/components.css';
 import './styles.scss';
 
 export class CustomRange extends PureComponent {
@@ -80,4 +79,5 @@ export class CustomRange extends PureComponent {
   }
 }
 
+// export default CustomRange;
 export default CustomRange;

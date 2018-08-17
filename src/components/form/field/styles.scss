@@ -1,8 +1,10 @@
+@import '~wri-api-components/dist/components.css';
 @import 'styles/settings';
 @import 'styles/functions';
 
 .c-field {
   display: inline-block;
+  width: 100%;
 
   -webkit-font-smoothing: antialiased;
   font-family: $font-family-1;
@@ -13,7 +15,7 @@
   }
 
   > .field-container {
-    margin: $space-1 0 0;
+    margin: $space-1 * 5 0 0;
   }
 
   // themes

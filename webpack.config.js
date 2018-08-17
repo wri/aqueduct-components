@@ -58,9 +58,10 @@ const config = {
               }
             },
             {
+
               loader: 'sass-loader',
               options: {
-                includePaths: ['./node_modules', './src/css']
+                includePaths: ['./node_modules']
                   .map(d => path.join(__dirname, d))
                   .map(g => glob.sync(g))
                   .reduce((a, c) => a.concat(c), [])
@@ -72,11 +73,11 @@ const config = {
     ]
   },
 
-  externals: [
-    'react',
-    'react-dom',
-    'react-css-modules'
-  ],
+  // externals: [
+  //   'react',
+  //   'react-dom'
+  //   'react-css-modules'
+  // ],
 
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
@@ -116,8 +117,6 @@ const config = {
       allChunks: true,
       filename: '[name].css'
     }),
-    // new webpack.optimize.ModuleConcatenationPlugin(),
-    // new webpack.HashedModuleIdsPlugin(),
     new CompressionPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
