@@ -1,0 +1,25 @@
+```js
+<div style={{ backgroundColor: '#2E57B8', padding: 50 }}>
+  <Field 
+    name="test-range-1"
+    label="A range selector!"
+  >
+    <CustomSlider 
+      min={0}
+      max={20}
+      defaultValue={5}
+      onAfterChange={value => console.log(value)}
+    />
+  </Field>
+</div>
+
+<div style={{ backgroundColor: '#f5f4f0', padding: 50, marginTop: 16 }}>
+  <CustomSlider 
+    min={0}
+    max={20}
+    defaultValue={9}
+    theme='dark'
+    onAfterChange={value => console.log(value)}
+  />
+</div>
+```

@@ -18,6 +18,7 @@ export { default as Spinner } from './components/ui/spinner';
 export { default as Timeline } from './components/ui/timeline';
 export { default as Tabs } from './components/ui/tabs';
 export { default as Range } from './components/ui/range';
+export { default as Slider } from './components/ui/slider';
 
 // form components
 export { default as Field } from './components/form/field';

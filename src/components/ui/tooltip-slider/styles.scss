@@ -1,0 +1,27 @@
+@import 'styles/settings';
+@import 'styles/functions';
+
+.c-tooltip-slider {
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family-1;
+  font-size: $font-size-default;
+
+  &.-disabled {
+    pointer-events: none;
+  }
+
+  // themes
+  &.-light {
+    color: palette(white);
+  }
+
+  &.-dark {
+    color: palette(gray);
+  }
+
+  > .tooltip-value-container {
+    position: absolute;
+    top: -21px;
+    transform: translate(-50%, 0);
+  }
+}

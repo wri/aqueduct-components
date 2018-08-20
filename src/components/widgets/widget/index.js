@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSModules from 'react-css-modules';
 import { Tooltip } from 'wri-api-components';
+import isEqual from 'lodash/isEqual';
 
 // components
 import Button from 'components/ui/button';
@@ -50,10 +51,14 @@ export class Widget extends PureComponent {
     getWidgetData(params.id);
   }
 
-  // componentDidUpdate() {
-  //   const { params, getWidgetData } = this.props;
-  //   getWidgetData(params.id);
-  // }
+  componentWillReceiveProps(nextProps) {
+    const { params: nextParams } = nextProps;
+    const { params, getWidgetData } = this.props;
+
+    const paramasChanged = !isEqual(params, nextParams);
+
+    if (paramasChanged) getWidgetData(params.id);
+  }
 
   onDownloadWidget = (value) => {
     const { onDownloadWidget, params } = this.props;

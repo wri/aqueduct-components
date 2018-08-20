@@ -19,8 +19,14 @@ export class CustomSelect extends PureComponent {
         PropTypes.number
       ]).isRequired
     })).isRequired,
-    defaultValue: PropTypes.string,
-    value: PropTypes.string,
+    defaultValue: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
     isDisabled: PropTypes.bool,
     className: PropTypes.string,
     customClass: PropTypes.string,

@@ -1,19 +1,20 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Range, Handle } from 'rc-slider';
+import CSSModules from 'react-css-modules';
+import Slider, { Handle } from 'rc-slider';
 
 // components
 import TooltipSlider from 'components/ui/tooltip-slider';
 
 // styles
-import './styles.scss';
+import styles from './styles.scss';
 
-export class CustomRange extends PureComponent {
+export class CustomSlider extends PureComponent {
   static propTypes = {
     min: PropTypes.number.isRequired,
     max: PropTypes.number.isRequired,
-    defaultValue: PropTypes.array,
+    defaultValue: PropTypes.number,
     theme: PropTypes.string,
     customClass: PropTypes.string,
     disabled: PropTypes.bool,
@@ -41,7 +42,6 @@ export class CustomRange extends PureComponent {
       typeof formatValue === 'function' ? formatValue(value) : value;
     const key = className.split(' ')[1];
 
-
     return (
       <TooltipSlider
         key={key}
@@ -63,16 +63,16 @@ export class CustomRange extends PureComponent {
       ...rangeProps
     } = this.props;
     const componentClass = classnames(
-      `c-range -${theme}`,
+      `c-slider -${theme}`,
       {
         [customClass]: !!customClass,
         '-disabled': !!this.props.disabled
       }
     );
-    const calculatedDefaultValue = defaultValue || [this.props.min, this.props.min + 1];
+    const calculatedDefaultValue = defaultValue || 0;
 
     return (
-      <Range
+      <Slider
         {...rangeProps}
         className={componentClass}
         defaultValue={calculatedDefaultValue}
@@ -82,5 +82,5 @@ export class CustomRange extends PureComponent {
   }
 }
 
-// export default CustomRange;
-export default CustomRange;
+// export default CustomSlider;
+export default CSSModules(CustomSlider, styles, { allowMultiple: true });
