@@ -1,16 +1,15 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // components
 import Icon from 'components/ui/icon';
 import ToolsMenu from './tools';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class Header extends PureComponent {
+class Header extends PureComponent {
   static propTypes = {
     app: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -59,4 +58,4 @@ export class Header extends PureComponent {
   }
 }
 
-export default CSSModules(Header, styles, { allowMultiple: true });
+export default Header;

@@ -2,15 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import isEqual from 'lodash/isEqual';
-import CSSModules from 'react-css-modules';
 
 // components
 import Checkbox from '../checkbox';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class CheckboxGroup extends PureComponent {
+class CheckboxGroup extends PureComponent {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string.isRequired,
@@ -86,4 +85,4 @@ export class CheckboxGroup extends PureComponent {
   }
 }
 
-export default CSSModules(CheckboxGroup, styles, { allowMultiple: true });
+export default CheckboxGroup;

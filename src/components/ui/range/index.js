@@ -9,7 +9,7 @@ import TooltipSlider from 'components/ui/tooltip-slider';
 // styles
 import 'styles/components/_slider.scss';
 
-export class CustomRange extends PureComponent {
+class CustomRange extends PureComponent {
   static propTypes = {
     min: PropTypes.number.isRequired,
     max: PropTypes.number.isRequired,

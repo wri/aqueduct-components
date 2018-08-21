@@ -5,12 +5,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class Radio extends PureComponent {
+class Radio extends PureComponent {
   static propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
@@ -84,4 +83,4 @@ export class Radio extends PureComponent {
   }
 }
 
-export default CSSModules(Radio, styles, { allowMultiple: true });
+export default Radio;

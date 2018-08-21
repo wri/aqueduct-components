@@ -1,12 +1,14 @@
 const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CompressionPlugin = require('compression-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'development';
+const isDev = env === 'development';
 
 const config = {
   entry: './src/index.js',
@@ -27,10 +29,6 @@ const config = {
         exclude: /node_modules/
       },
       {
-        test: /\.png$/,
-        use: 'url-loader'
-      },
-      {
         test: /\.css$/,
         use: [
           'style-loader',
@@ -46,65 +44,62 @@ const config = {
         ]
       },
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                importLoaders: 1,
-                localIdentName: 'aq__[local]'
-              }
-            },
-            {
-
-              loader: 'sass-loader',
-              options: {
-                includePaths: ['./node_modules']
-                  .map(d => path.join(__dirname, d))
-                  .map(g => glob.sync(g))
-                  .reduce((a, c) => a.concat(c), [])
-              }
+        test: /\.(scss)$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              filename: isDev ? '[name].css' : '[name].[hash].css',
+              chunkFilename: isDev ? '[id].css' :  '[id].[hash].css'
             }
-          ]
-        })
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: 'aq__[local]'
+            }
+          },
+          { loader: 'resolve-url-loader', options: { sourceMap: true } },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              includePaths: ['./node_modules', './src/css']
+                .map(d => path.join(__dirname, d))
+                .map(g => glob.sync(g))
+                .reduce((a, c) => a.concat(c), [])
+            }
+          }
+        ]
       }
     ]
   },
 
-  // externals: [
-  //   'react',
-  //   'react-dom'
-  //   'react-css-modules'
-  // ],
+  externals: [
+    'react',
+    'react-dom'
+  ],
 
-  resolve: {
-    extensions: ['.js', '.jsx', '.json'],
-    symlinks: false
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
 
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
         uglifyOptions: {
-          output: {
-            comments: false
-          },
-          minify: {},
-          compress: {
-            warnings: false,
-            conditionals: true,
-            unused: true,
-            comparisons: true,
-            sequences: true,
-            dead_code: true,
-            evaluate: true,
-            if_return: true,
-            join_vars: true
-          }
-        }
-      })
+          ecma: 6,
+          output: { comments: false },
+          compress: { dead_code: true, drop_console: true }
+        },
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
     ]
   },
 
@@ -112,9 +107,7 @@ const config = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env)
     }),
-    new ExtractTextPlugin({
-      disable: false,
-      allChunks: true,
+    new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
     new CompressionPlugin({
@@ -123,10 +116,12 @@ const config = {
       test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
       threshold: 10240,
       minRatio: 0.8
-    }),
-    process.env.BUNDLE_ANALIZE ? new BundleAnalyzerPlugin({ analyzerMode: 'static' }) : () => {}
+    })
   ]
-
 };
+
+if (process.env.BUNDLE_ANALYZE) {
+  config.plugins.push(new BundleAnalyzerPlugin({ analyzerMode: 'static' }));
+}
 
 module.exports = config;

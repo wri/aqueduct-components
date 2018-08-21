@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // components
 import Icon from 'components/ui/icon';
@@ -10,9 +9,9 @@ import Icon from 'components/ui/icon';
 import { TOOLS } from './constants';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class Tools extends PureComponent {
+class Tools extends PureComponent {
   static propTypes = {
     currentApp: PropTypes.string.isRequired,
     visible: PropTypes.bool.isRequired
@@ -42,4 +41,4 @@ export class Tools extends PureComponent {
   }
 }
 
-export default CSSModules(Tools, styles, { allowMultiple: true });
+export default Tools;

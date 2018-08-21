@@ -100,7 +100,7 @@
       display: block;
       width: 160px;
       height: $size-header;
-      background: url("./logo.png") center no-repeat;
+      background: url('./logo.png') center no-repeat;
       background-size: contain;
 
       &:before {

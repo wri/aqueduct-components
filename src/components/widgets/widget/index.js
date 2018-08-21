@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 import { Tooltip } from 'wri-api-components';
 import isEqual from 'lodash/isEqual';
 
@@ -12,9 +11,9 @@ import Spinner from 'components/ui/spinner';
 import WidgetDownloads from './widget-downloads';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class Widget extends PureComponent {
+class Widget extends PureComponent {
   static propTypes = {
     params: PropTypes.object.isRequired,
     widget: PropTypes.shape({
@@ -127,5 +126,5 @@ export class Widget extends PureComponent {
   }
 }
 
-export default CSSModules(Widget, styles, { allowMultiple: true });
+export default Widget;
 

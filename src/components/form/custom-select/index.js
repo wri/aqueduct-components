@@ -1,16 +1,15 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // components
 import Select from 'react-select';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
 // https://react-select.com/home
-export class CustomSelect extends PureComponent {
+class CustomSelect extends PureComponent {
   static propTypes = {
     options: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string.isRequired,
@@ -71,4 +70,4 @@ export class CustomSelect extends PureComponent {
   }
 }
 
-export default CSSModules(CustomSelect, styles, { allowMultiple: true });
+export default CustomSelect;
