@@ -6,8 +6,10 @@
   font-family: $font-family-1;
   font-size: $font-size-default;
 
-  &.-disabled {
-    pointer-events: none;
+  > .tooltip-value-container {
+    position: absolute;
+    top: -21px;
+    transform: translate(-50%, 0);
   }
 
   // themes
@@ -19,9 +21,8 @@
     color: palette(gray);
   }
 
-  > .tooltip-value-container {
-    position: absolute;
-    top: -21px;
-    transform: translate(-50%, 0);
+  &.-disabled {
+    pointer-events: none;
+    opacity: .5;
   }
 }

@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSModules from 'react-css-modules';
-import Slider, { Handle } from 'rc-slider';
 
 // styles
 import styles from './styles.scss';
@@ -12,12 +11,18 @@ export class TooltipSlider extends PureComponent {
     theme: PropTypes.string,
     customClass: PropTypes.string,
     disabled: PropTypes.bool,
-    value: PropTypes.number.isRequired
+    offset: PropTypes.number,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]).isRequired,
+    children: PropTypes.node.isRequired
   }
 
   static defaultProps = {
     theme: 'light',
     disabled: false,
+    offset: 0,
     customClass: null
   }
 
@@ -26,25 +31,27 @@ export class TooltipSlider extends PureComponent {
       value,
       offset,
       theme,
+      disabled,
       customClass
     } = this.props;
+
     const componentClass = classnames(
-      `c-slider -${theme}`,
-      {
-        [customClass]: !!customClass,
-        '-disabled': !!this.props.disabled
-      }
+      `c-tooltip-slider -${theme}`,
+      { '-disabled': disabled }
     );
 
     return (
-      <div styleName="c-tooltip-slider">
+      <div
+        styleName={componentClass}
+        className={customClass}
+      >
         <span
           styleName="tooltip-value-container"
           style={{ left: `${offset}%` }}
         >
           {value}
         </span>
-          {this.props.children}
+        {this.props.children}
       </div>
     );
   }

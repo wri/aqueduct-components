@@ -7,7 +7,7 @@ import { Range, Handle } from 'rc-slider';
 import TooltipSlider from 'components/ui/tooltip-slider';
 
 // styles
-import './styles.scss';
+import 'styles/components/_slider.scss';
 
 export class CustomRange extends PureComponent {
   static propTypes = {
@@ -30,10 +30,6 @@ export class CustomRange extends PureComponent {
 
   renderHandle = (handleProps) => {
     const { theme, formatValue, disabled } = this.props;
-    const componentClass = classnames(
-      `c-rc-tooltip -default range-tooltip -${theme}`,
-      { '-disabled': !!disabled }
-    );
     const { className } = handleProps;
     const { value, dragging, ...restHandleProps } = handleProps;
     const { offset } = restHandleProps;
