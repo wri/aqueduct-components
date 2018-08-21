@@ -33,6 +33,5 @@ export { default as Widget } from './components/widgets/widget';
 
 // utils
 export { downloadFile } from './utils/download';
-export { get, post, remove } from './utils/request';
-export { substitution, concatenation, capitalizeFirstLetter } from './utils/text';
+export { substitution, concatenation, replace } from './utils/string';
 export { dataURItoBlob, saveAsFile } from './utils/image';
