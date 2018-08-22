@@ -29,6 +29,15 @@ const config = {
         exclude: /node_modules/
       },
       {
+        test: /\.(png|jpg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
+        ]
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
@@ -61,7 +70,6 @@ const config = {
               localIdentName: 'aq__[local]'
             }
           },
-          { loader: 'resolve-url-loader', options: { sourceMap: true } },
           {
             loader: 'sass-loader',
             options: {
