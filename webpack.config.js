@@ -87,7 +87,9 @@ const config = {
 
   externals: [
     'react',
-    'react-dom'
+    'react-dom',
+    'vega',
+    'vega-lib'
   ],
 
   performance: {

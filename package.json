@@ -8,7 +8,7 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "components:watch": "webpack --colors --progress --watch",
-    "components:build": "webpack --colors --progress",
+    "components:build": "NODE_ENV=production webpack --colors --progress",
     "test": "eslint --ext .js --ext .jsx .",
     "deploy": "yarn run styleguide:build && gh-pages -d styleguide"
   },
@@ -48,7 +48,7 @@
     "vega": "^4.2.0",
     "vega-lib": "^4.2.0",
     "webpack-bundle-analyzer": "2.13.1",
-    "wri-api-components": "2.0.20"
+    "wri-api-components": "^2.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
