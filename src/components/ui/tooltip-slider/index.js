@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class TooltipSlider extends PureComponent {
+class TooltipSlider extends PureComponent {
   static propTypes = {
     theme: PropTypes.string,
     customClass: PropTypes.string,
@@ -57,4 +56,4 @@ export class TooltipSlider extends PureComponent {
   }
 }
 
-export default CSSModules(TooltipSlider, styles, { allowMultiple: true });
+export default TooltipSlider;

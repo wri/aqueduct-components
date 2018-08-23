@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class Spinner extends PureComponent {
+class Spinner extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     style: PropTypes.object
@@ -31,4 +30,4 @@ export class Spinner extends PureComponent {
   }
 }
 
-export default CSSModules(Spinner, styles, { allowMultiple: true });
+export default Spinner;

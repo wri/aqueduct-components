@@ -5,15 +5,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // components
 import Icon from 'components/ui/icon';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class Checkbox extends PureComponent {
+class Checkbox extends PureComponent {
   static propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
@@ -82,4 +81,4 @@ export class Checkbox extends PureComponent {
   }
 }
 
-export default CSSModules(Checkbox, styles, { allowMultiple: true });
+export default Checkbox;

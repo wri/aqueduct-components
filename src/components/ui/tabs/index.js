@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
 export class Tabs extends PureComponent {
   static propTypes = {
@@ -69,4 +68,4 @@ export class Tabs extends PureComponent {
   }
 }
 
-export default CSSModules(Tabs, styles, { allowMultiple: true });
+export default Tabs;
