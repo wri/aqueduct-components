@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 import isEqual from 'lodash/isEqual';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
 export class Timeline extends PureComponent {
   static propTypes = {
@@ -96,4 +95,4 @@ export class Timeline extends PureComponent {
   }
 }
 
-export default CSSModules(Timeline, styles, { allowMultiple: true });
+export default Timeline;

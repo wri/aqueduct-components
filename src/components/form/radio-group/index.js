@@ -2,15 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import isEqual from 'lodash/isEqual';
-import CSSModules from 'react-css-modules';
 
 // components
 import Radio from '../radio';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class RadioGroup extends PureComponent {
+class RadioGroup extends PureComponent {
   static propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string.isRequired,
@@ -39,7 +38,6 @@ export class RadioGroup extends PureComponent {
   constructor(props) {
     super(props);
 
-    // this.items = props.items;
     this.state = { currentValue: (props.items.find(item => item.checked) || {}).value };
   }
 
@@ -85,4 +83,4 @@ export class RadioGroup extends PureComponent {
   }
 }
 
-export default CSSModules(RadioGroup, styles, { allowMultiple: true });
+export default RadioGroup;

@@ -1,16 +1,17 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // components
 import Icon from 'components/ui/icon';
 import ToolsMenu from './tools';
 
-// styles
-import styles from './styles.scss';
+import Logo from './logo.png';
 
-export class Header extends PureComponent {
+// styles
+import './styles.scss';
+
+class Header extends PureComponent {
   static propTypes = {
     app: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -30,7 +31,7 @@ export class Header extends PureComponent {
     return (
       <header styleName="c-header" role="banner">
         <h1 styleName="c-header-logo">
-          <a href="/" styleName="header-logo"><span>Logo</span></a>
+          <a href="/" styleName="header-logo" style={{ backgroundImage: Logo }}><span>Logo</span></a>
           <a href="/" styleName="header-title">{title}</a>
         </h1>
         <nav role="navigation">
@@ -59,4 +60,4 @@ export class Header extends PureComponent {
   }
 }
 
-export default CSSModules(Header, styles, { allowMultiple: true });
+export default Header;

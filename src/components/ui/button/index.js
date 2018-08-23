@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
 export class Button extends PureComponent {
   static propTypes = {
@@ -48,4 +47,4 @@ export class Button extends PureComponent {
   }
 }
 
-export default CSSModules(Button, styles, { allowMultiple: true });
+export default Button;

@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
 
 // components
 import Button from 'components/ui/button';
@@ -9,9 +8,9 @@ import Button from 'components/ui/button';
 import { WIDGET_DOWNLOAD_OPTIONS } from './constants';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class WidgetDownloads extends PureComponent {
+class WidgetDownloads extends PureComponent {
   static propTypes = {
     downloadOptions: PropTypes.arrayOf(
       PropTypes.shape({
@@ -54,8 +53,8 @@ export class WidgetDownloads extends PureComponent {
           ))}
         </ul>
       </div>
-    )
+    );
   }
 }
 
-export default CSSModules(WidgetDownloads, styles, { allowMultiple: true });
+export default WidgetDownloads;

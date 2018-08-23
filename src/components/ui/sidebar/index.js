@@ -2,15 +2,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 
 // components
 import Icon from 'components/ui/icon';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class Sidebar extends PureComponent {
+class Sidebar extends PureComponent {
   static propTypes = {
     visible: PropTypes.bool.isRequired,
     children: PropTypes.any.isRequired,
@@ -59,4 +58,4 @@ export class Sidebar extends PureComponent {
   }
 }
 
-export default CSSModules(Sidebar, styles, { allowMultiple: true });
+export default Sidebar;

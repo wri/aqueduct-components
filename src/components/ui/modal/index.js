@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules';
 import Modal from 'react-modal';
 
 // components
@@ -9,9 +8,9 @@ import Button from 'components/ui/button';
 import Icon from 'components/ui/icon';
 
 // styles
-import styles from './styles.scss';
+import './styles.scss';
 
-export class CustomModal extends PureComponent {
+class CustomModal extends PureComponent {
   static propTypes = {
     // http://reactcommunity.org/react-modal/accessibility/#app-element
     appElement: PropTypes.string.isRequired,
@@ -70,4 +69,4 @@ export class CustomModal extends PureComponent {
   }
 }
 
-export default CSSModules(CustomModal, styles, { allowMultiple: true });
+export default CustomModal;

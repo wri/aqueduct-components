@@ -11,6 +11,15 @@
         },
         "cwd": "babelrc"
       }
+    ],
+    [
+      "react-css-modules",
+      {
+        "generateScopedName": "aq__[local]",
+        "filetypes": {
+          ".scss": { "syntax": "postcss-scss" }
+        }
+      }
     ]
   ]
 }
