@@ -15,7 +15,7 @@ const config = {
 
   mode: env,
 
-  target: 'web',
+  target: isDev ? 'node' : 'web',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -70,7 +70,6 @@ const config = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
               includePaths: ['./node_modules', './src/css']
                 .map(d => path.join(__dirname, d))
                 .map(g => glob.sync(g))
@@ -117,7 +116,8 @@ const config = {
       'process.env.NODE_ENV': JSON.stringify(env)
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: '[name].css',
+      chunkFilename: '[name].css'
     }),
     new CompressionPlugin({
       asset: '[path].gz[query]',
