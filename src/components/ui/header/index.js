@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import Icon from 'components/ui/icon';
 import ToolsMenu from './tools';
 
-import Logo from './logo.png';
+import logoImage from './logo.png';
 
 // styles
 import './styles.scss';
@@ -31,7 +31,7 @@ class Header extends PureComponent {
     return (
       <header styleName="c-header" role="banner">
         <h1 styleName="c-header-logo">
-          <a href="/" styleName="header-logo" style={{ backgroundImage: Logo }}><span>Logo</span></a>
+          <a href="/" styleName="header-logo" style={{ backgroundImage: `url(${logoImage})` }}><span>Logo</span></a>
           <a href="/" styleName="header-title">{title}</a>
         </h1>
         <nav role="navigation">

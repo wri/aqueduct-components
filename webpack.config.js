@@ -32,8 +32,7 @@ const config = {
         test: /\.(png|jpg)$/,
         use: [
           {
-            loader: 'file-loader',
-            options: {}
+            loader: 'url-loader',
           }
         ]
       },
@@ -89,7 +88,8 @@ const config = {
     'react',
     'react-dom',
     'vega',
-    'vega-lib'
+    'vega-lib',
+    'wri-api-components'
   ],
 
   performance: {
