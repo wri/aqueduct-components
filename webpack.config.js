@@ -15,10 +15,12 @@ const config = {
 
   mode: env,
 
+  target: 'web',
+
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: isDev ? 'umd' : 'commonjs2'
   },
 
   module: {
@@ -55,11 +57,7 @@ const config = {
         test: /\.(scss)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              filename: isDev ? '[name].css' : '[name].[hash].css',
-              chunkFilename: isDev ? '[id].css' :  '[id].[hash].css'
-            }
+            loader: MiniCssExtractPlugin.loader
           },
           {
             loader: 'css-loader',
@@ -85,6 +83,7 @@ const config = {
   },
 
   externals: [
+    'leaflet',
     'react',
     'react-dom',
     'vega',
