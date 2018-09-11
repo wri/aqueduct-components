@@ -64,26 +64,45 @@
 
   // themes
   &.-dark {
-    // > label {
-    //   &:hover {
-    //     color: palette(blue, lighter);
-    //   }
-    // }
-
     .checkbox-label {
-      color: palette(gray, 'dark');
+      color: palette(gray, dark);
     }
   }
 
   &.-light {
-    > label {
-      &:hover {
-        color: palette(blue, lighter);
+    .checkbox-label {
+      color: palette(white);
+    }
+  }
+
+  // disabled styles
+  &.-disabled {
+    pointer-events: none;
+    cursor: default;
+
+    input[type=checkbox] {
+      &:checked + label {
+        > .checkbox-label-fake {
+          border-color: transparent;
+          background-color: rgba(palette(blue, secondary), .4);
+
+          > svg {
+            fill: rgba(palette(white), .4);
+          }
+        }
       }
     }
 
-    .checkbox-label {
-      color: palette(white);
+    &.-dark {
+      .checkbox-label {
+        color: rgba(palette(gray, dark), .4);
+      }
+    }
+
+    &.-light {
+      .checkbox-label {
+        color: rgba(palette(white), .4);
+      }
     }
   }
 }
