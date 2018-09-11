@@ -12,6 +12,7 @@ class Field extends PureComponent {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     className: PropTypes.string,
+    disabled: PropTypes.bool,
     customClass: PropTypes.string,
     theme: PropTypes.oneOf(['light', 'dark']),
     children: PropTypes.any.isRequired
@@ -20,7 +21,8 @@ class Field extends PureComponent {
   static defaultProps = {
     theme: 'light',
     className: null,
-    customClass: null
+    customClass: null,
+    disabled: false
   }
 
   render() {
@@ -30,11 +32,15 @@ class Field extends PureComponent {
       theme,
       className,
       customClass,
+      disabled,
       children
     } = this.props;
     const componentClass = classnames(
       `c-field -${theme}`,
-      { [className]: !!className }
+      {
+        [className]: !!className,
+        '-disabled': disabled
+      }
     );
     const externalClass = classnames({ [customClass]: !!customClass });
 
