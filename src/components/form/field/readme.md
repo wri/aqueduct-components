@@ -10,6 +10,7 @@ const options = [
     <Field 
       name="test-1"
       label="A fruit selector!"
+      className="-higher-margin-top"
     >
       <CustomSelect
         theme="light"

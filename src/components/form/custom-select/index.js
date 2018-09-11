@@ -11,13 +11,7 @@ import './styles.scss';
 // https://react-select.com/home
 class CustomSelect extends PureComponent {
   static propTypes = {
-    options: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-      ]).isRequired
-    })).isRequired,
+    options: PropTypes.array.isRequired,
     defaultValue: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
@@ -27,6 +21,7 @@ class CustomSelect extends PureComponent {
       PropTypes.number
     ]),
     isDisabled: PropTypes.bool,
+    grouped: PropTypes.bool,
     className: PropTypes.string,
     customClass: PropTypes.string,
     theme: PropTypes.oneOf(['light', 'dark'])
@@ -36,13 +31,14 @@ class CustomSelect extends PureComponent {
     defaultValue: null,
     value: null,
     isDisabled: false,
+    grouped: false,
     className: null,
     customClass: null,
     theme: 'light'
   }
 
   render() {
-    const { className, customClass, theme, isDisabled } = this.props;
+    const { className, customClass, theme, isDisabled, grouped } = this.props;
     const componentClass = classnames(
       `c-select -${theme}`,
       {
@@ -52,10 +48,22 @@ class CustomSelect extends PureComponent {
     );
     const externalClass = classnames({ [customClass]: !!customClass });
     const { value, ...selectProps } = this.props;
-    const defaultValueObject = this.props.options.find(option =>
-      option.value === this.props.defaultValue);
-    const valueObject = value ? this.props.options.find(option =>
-      option.value === value) || '' : '';
+    let valueObject = '';
+
+    const defaultValueObject = (this.props.options.options || this.props.options).find((option) => {
+      if (option.options) return option.options.find(opt => opt.value === this.props.defaultValue);
+      return option.value === this.props.defaultValue;
+    });
+
+    if (!grouped) {
+      valueObject = value ? this.props.options.find(option => (option.value === value) || '') : '';
+    } else {
+      this.props.options.forEach((option) => {
+        const found = (option.options || []).find(opt => opt.value === value);
+        if (found) valueObject = found;
+      });
+    }
+
 
     return (
       <div styleName={componentClass} className={externalClass}>

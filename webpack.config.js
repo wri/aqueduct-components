@@ -15,10 +15,12 @@ const config = {
 
   mode: env,
 
+  target: isDev ? 'node' : 'web',
+
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: isDev ? 'umd' : 'commonjs2'
   },
 
   module: {
@@ -55,11 +57,7 @@ const config = {
         test: /\.(scss)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              filename: isDev ? '[name].css' : '[name].[hash].css',
-              chunkFilename: isDev ? '[id].css' :  '[id].[hash].css'
-            }
+            loader: MiniCssExtractPlugin.loader
           },
           {
             loader: 'css-loader',
@@ -72,7 +70,6 @@ const config = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
               includePaths: ['./node_modules', './src/css']
                 .map(d => path.join(__dirname, d))
                 .map(g => glob.sync(g))
@@ -85,6 +82,7 @@ const config = {
   },
 
   externals: [
+    'leaflet',
     'react',
     'react-dom',
     'vega',
@@ -118,7 +116,8 @@ const config = {
       'process.env.NODE_ENV': JSON.stringify(env)
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: '[name].css',
+      chunkFilename: '[name].css'
     }),
     new CompressionPlugin({
       asset: '[path].gz[query]',

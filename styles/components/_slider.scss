@@ -38,20 +38,20 @@
     &.-dark {
       .rc-slider-rail {
         &:before {
-          border-color: palette(gray);
+          border-color: palette(gray, dark);
         }
       }
 
       .rc-slider-track {
-        background-color: palette(gray);
+        background-color: palette(gray, dark);
       }
 
       .rc-slider-handle {
-        border-color: palette(gray);
+        border-color: palette(gray, dark);
         background-color: palette(sand);
 
         &:before {
-          background-color: palette(gray);
+          background-color: palette(gray, dark);
         }
       }
     }

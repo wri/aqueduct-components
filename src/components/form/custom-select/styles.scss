@@ -131,14 +131,14 @@
 
     > .react-select__menu-list {
       padding: 0;
+    }
 
-      > .react-select__option {
-        cursor: pointer;
-        font-weight: 500;
+    .react-select__option {
+      cursor: pointer;
+      font-weight: 500;
 
-        &.react-select__option--is-selected {
-          background-color: currentColor;
-        }
+      &.react-select__option--is-selected {
+        background-color: currentColor;
       }
     }
   }
@@ -167,14 +167,12 @@
     }
 
     .react-select__menu {
-      > .react-select__menu-list {
-        > .react-select__option {
-          color: palette(blue, 'dark');
+      .react-select__option {
+        color: palette(blue, 'dark');
 
-          &.react-select__option--is-selected,
-          &.react-select__option--is-focused {
-            background-color: palette(blue, 'lighter');
-          }
+        &.react-select__option--is-selected,
+        &.react-select__option--is-focused {
+          background-color: palette(blue, 'lighter');
         }
       }
     }
@@ -224,14 +222,12 @@
     }
 
     .react-select__menu {
-      > .react-select__menu-list {
-        > .react-select__option {
-          color: palette(gray, 'dark');
+      .react-select__option {
+        color: palette(gray, 'dark');
 
-          &.react-select__option--is-selected,
-          &.react-select__option--is-focused {
-            background-color: palette(gray, 'lightest');
-          }
+        &.react-select__option--is-selected,
+        &.react-select__option--is-focused {
+          background-color: palette(gray, 'lightest');
         }
       }
     }
