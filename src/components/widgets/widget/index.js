@@ -72,6 +72,12 @@ class Widget extends PureComponent {
     if (onShareWidget) onShareWidget(widget);
   }
 
+  onRefresh = () => {
+    const { params, getWidgetData } = this.props;
+
+    getWidgetData(params.id);
+  }
+
   render() {
     const {
       title,
@@ -85,6 +91,7 @@ class Widget extends PureComponent {
       `c-widget -${theme}`,
       { [customClass]: !!customClass }
     );
+    const isDev = process.env.NODE_ENV === 'development';
 
     return (
       <div styleName={componentClass}>
@@ -119,6 +126,32 @@ class Widget extends PureComponent {
 
         <div styleName="widget-content">
           {widget.loading && <Spinner />}
+          {!!(widget.error || []).length &&
+            <div styleName="error-container">
+              {isDev && (widget.error).map(err => (
+                <div
+                  key={`${err.status}-${err.detail}`}
+                  styleName="error-message"
+                >
+                  {err.status && <div styleName="error-status">{err.status}</div>}
+                  {err.detail && <div styleName="error-detail">{err.detail}</div>}
+                  <Button onClick={this.onRefresh}>
+                    <Icon name="refresh" className="-medium" theme={theme} />
+                  </Button>
+                </div>))}
+              {!isDev && (
+                <div styleName="error-message">
+                  <div styleName="error-detail">
+                    Ops, somehting went wrong.<br />
+                    Press the below button to refresh this widget.
+                  </div>
+                  <Button onClick={this.onRefresh}>
+                    <Icon name="refresh" className="-medium" theme={theme} />
+                  </Button>
+                </div>
+              )}
+            </div>
+          }
           {children(widget)}
         </div>
       </div>
