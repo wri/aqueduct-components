@@ -48,6 +48,30 @@
     position: relative;
     min-height: 200px;
     background: palette(white);
+
+    > .error-container {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      > .error-message {
+        color: palette(feedback, error);
+        text-align: center;
+
+        > .error-status {
+          font-size: $font-size-extrabig;
+        }
+
+        > .error-detail {
+          font-size: $font-size-default;
+        }
+
+        > button {
+          margin: #{$space-1 * 2} 0 0;
+        }
+      }
+    }
   }
 
   // themes
