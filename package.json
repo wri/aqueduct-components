@@ -1,6 +1,6 @@
 {
   "name": "aqueduct-components",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "A collection of components to use in Aqueduct's project",
   "main": "dist/bundle.js",
   "scripts": {
