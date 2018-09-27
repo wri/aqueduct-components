@@ -87,14 +87,15 @@ class Widget extends PureComponent {
       hideWidgetOptions,
       children
     } = this.props;
-    const componentClass = classnames(
-      `c-widget -${theme}`,
-      { [customClass]: !!customClass }
-    );
+    const componentClass = classnames(`c-widget -${theme}`);
+    const externalClass = classnames({ [customClass]: !!customClass });
     const isDev = process.env.NODE_ENV === 'development';
 
     return (
-      <div styleName={componentClass}>
+      <div
+        styleName={componentClass}
+        className={externalClass}
+      >
         <header styleName="widget-header">
           {title &&
             <span styleName="widget-title">{title}</span>}
