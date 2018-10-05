@@ -22,6 +22,7 @@
     }
 
     > .react-select__value-container {
+      width: 100%;
       padding: 0 $space-1 * 2 0 0;
 
       &.react-select__value-container--has-value {
