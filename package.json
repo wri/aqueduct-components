@@ -7,8 +7,8 @@
     "start": "yarn run styleguide",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "components:watch": "webpack --colors --progress --watch",
-    "components:build": "NODE_ENV=production webpack --colors --progress",
+    "watch": "webpack --colors --progress --watch",
+    "build": "NODE_ENV=production webpack --colors --progress",
     "test": "eslint --ext .js --ext .jsx .",
     "deploy": "yarn run styleguide:build && gh-pages -d styleguide"
   },
