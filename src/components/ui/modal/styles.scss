@@ -43,6 +43,7 @@ $margin-modal: 25px;
 
       .modal-close-icon {
         fill: palette(blue, light);
+        transition: fill $animation-time $ease-in-out-sine;
 
         &:hover {
           fill: palette(white);
