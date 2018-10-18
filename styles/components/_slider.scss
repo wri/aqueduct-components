@@ -70,6 +70,20 @@
         }
       }
     }
+
+    &.-colorful {
+      .rc-slider-rail {
+        height: 5px;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      .rc-slider-track {
+        display: none;
+      }
+    }
   }
 
   .-disabled {

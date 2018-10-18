@@ -17,6 +17,7 @@ class CustomSlider extends PureComponent {
     theme: PropTypes.string,
     customClass: PropTypes.string,
     disabled: PropTypes.bool,
+    colorful: PropTypes.bool,
     formatValue: PropTypes.func
   }
 
@@ -24,6 +25,7 @@ class CustomSlider extends PureComponent {
     defaultValue: null,
     theme: 'light',
     disabled: false,
+    colorful: false,
     customClass: null,
     formatValue: null
   }
@@ -56,13 +58,15 @@ class CustomSlider extends PureComponent {
       theme,
       customClass,
       disabled,
+      colorful,
       ...rangeProps
     } = this.props;
     const componentClass = classnames(
       `c-slider -${theme}`,
       {
         [customClass]: !!customClass,
-        '-disabled': disabled
+        '-disabled': disabled,
+        '-colorful': colorful
       }
     );
     const calculatedDefaultValue = defaultValue || 0;
@@ -71,7 +75,6 @@ class CustomSlider extends PureComponent {
       <Slider
         {...rangeProps}
         className={componentClass}
-        c
         defaultValue={calculatedDefaultValue}
         handle={this.renderHandle}
       />
