@@ -16,16 +16,14 @@ class Checkbox extends PureComponent {
   static propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
     theme: PropTypes.oneOf(['light', 'dark']),
     className: PropTypes.string,
-    defaultChecked: PropTypes.bool,
+    checked: PropTypes.bool.isRequired,
     disabled: PropTypes.bool,
     onChange: PropTypes.func
   }
 
   static defaultProps = {
-    defaultChecked: false,
     disabled: false,
     theme: 'dark',
     className: null,
@@ -33,12 +31,11 @@ class Checkbox extends PureComponent {
   }
 
   onChange = (evt) => {
-    const { label, value } = this.props;
+    const { label } = this.props;
 
     if (this.props.onChange) {
       this.props.onChange({
         label,
-        value,
         checked: evt.currentTarget.checked
       });
     }
@@ -46,11 +43,10 @@ class Checkbox extends PureComponent {
 
   render() {
     const {
-      value,
       name,
       label,
-      defaultChecked,
       disabled,
+      checked,
       theme,
       className
     } = this.props;
@@ -62,17 +58,19 @@ class Checkbox extends PureComponent {
     const customClass = classnames({ [className]: !!className });
 
     return (
-      <div styleName={componentClass} className={customClass}>
+      <div
+        styleName={componentClass}
+        className={customClass}
+      >
         <input
           type="checkbox"
           name={name}
-          id={`checkbox-${name}-${value}`}
-          value={value}
+          id={`checkbox-${name}`}
+          checked={checked}
           disabled={disabled}
-          defaultChecked={defaultChecked}
           onChange={this.onChange}
         />
-        <label htmlFor={`checkbox-${name}-${value}`}>
+        <label htmlFor={`checkbox-${name}`}>
           <span styleName="checkbox-label-fake"><Icon name="checkbox" /></span>
           <span styleName="checkbox-label">{label}</span>
         </label>
