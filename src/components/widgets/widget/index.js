@@ -27,7 +27,7 @@ class Widget extends PureComponent {
     hideWidgetOptions: PropTypes.bool,
     getWidgetData: PropTypes.func.isRequired,
     onDownloadWidget: PropTypes.func,
-    onShareWidget: PropTypes.func,
+    onMoreInfo: PropTypes.func,
     children: PropTypes.func.isRequired
   };
 
@@ -40,7 +40,7 @@ class Widget extends PureComponent {
     title: null,
     hideWidgetOptions: false,
     onDownloadWidget: null,
-    onShareWidget: null,
+    onMoreInfo: null,
     theme: 'dark',
     customClass: null
   }
@@ -60,16 +60,15 @@ class Widget extends PureComponent {
   }
 
   onDownloadWidget = (value) => {
-    const { onDownloadWidget, params } = this.props;
-    const { id } = params;
+    const { onDownloadWidget, widget } = this.props;
 
-    if (onDownloadWidget) onDownloadWidget(value, { id });
+    if (onDownloadWidget) onDownloadWidget(value, widget);
   }
 
-  onShareWidget = () => {
-    const { onShareWidget, widget } = this.props;
+  onMoreInfo = () => {
+    const { onMoreInfo, widget } = this.props;
 
-    if (onShareWidget) onShareWidget(widget);
+    if (onMoreInfo) onMoreInfo(widget);
   }
 
   onRefresh = () => {
@@ -117,8 +116,8 @@ class Widget extends PureComponent {
                   </Tooltip>
                 </li>
                 <li styleName="widget-options-item">
-                  <Button onClick={this.onShareWidget}>
-                    <Icon name="share" className="-small" theme={theme} />
+                  <Button onClick={this.onMoreInfo}>
+                    <Icon name="info" className="-small" theme={theme} />
                   </Button>
                 </li>
               </ul>
