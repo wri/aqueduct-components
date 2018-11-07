@@ -152,7 +152,7 @@ class Widget extends PureComponent {
               )}
             </div>
           }
-          {children(widget)}
+          {(!widget.loading && !(widget.error || []).length) && children(widget)}
         </div>
       </div>
     );
