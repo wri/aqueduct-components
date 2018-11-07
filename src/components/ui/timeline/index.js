@@ -18,13 +18,15 @@ export class Timeline extends PureComponent {
     })).isRequired,
     disabled: PropTypes.bool,
     onChange: PropTypes.func,
-    className: PropTypes.string
+    className: PropTypes.string,
+    theme: PropTypes.string
   }
 
   static defaultProps = {
     disabled: false,
     onChange: null,
-    className: null
+    className: null,
+    theme: 'light'
   }
 
   constructor(props) {
@@ -61,9 +63,12 @@ export class Timeline extends PureComponent {
   }
 
   render() {
-    const { className, disabled } = this.props;
+    const { className, theme, disabled } = this.props;
     const { items } = this.state;
-    const componentClass = classnames('c-timeline', { '-disabled': disabled });
+    const componentClass = classnames(
+      `c-timeline -${theme}`,
+      { '-disabled': disabled }
+    );
     const customClass = classnames({ [className]: !!className });
 
     return (

@@ -18,53 +18,18 @@
 
   .timeline-list-item {
     list-style-type: none;
+    box-sizing: border-box;
     width: 16px;
     height: 16px;
-    background-color: palette(blue);
-    border: 1px solid palette(blue, light);
     border-radius: 50%;
     transform: translateY(-50%);
+    transition: all $animation-time-2 $ease-in-out-sine;
     cursor: pointer;
-    box-sizing: border-box;
-    transition: all .1s $ease-in-cubic;
-    box-shadow: 0 0 0px 7px palette(blue);
-
-    &.-selected {
-      border: 1px solid palette(blue, secondary);
-      background-color: palette(blue, secondary);
-      box-shadow: 0 0 0px 7px palette(blue), 0 0 0px 3px palette(blue) inset;
-
-      .timeline-label {
-        color: palette(white);
-      }
-
-      &:hover {
-        border: 1px solid palette(blue, secondary);
-        background-color: palette(blue, secondary);
-        box-shadow: 0 0 0px 7px palette(blue), 0 0 0px 3px palette(blue) inset;
-
-        .timeline-label {
-          color: palette(white);
-        }
-      }
-    }
-
-    &.-secondary {
-      background-color: palette(blue, dark);
-      box-shadow: 0 0 0px 7px palette(blue, dark), 0 0 0px 3px palette(blue, dark) inset;
-
-      &.-selected {
-        background-color: palette(blue, secondary);
-        box-shadow: 0 0 0px 7px palette(blue, dark), 0 0 0px 3px palette(blue, dark) inset;
-      }
-
-    }
 
     .timeline-label {
       font-size: $font-size-big;
       line-height: $font-size-big;
       font-weight: 500;
-      color: palette(blue, light);
       position: absolute;
       bottom: 100%;
       margin-bottom: 5px;
@@ -81,29 +46,83 @@
         left: 0;
         height: 40px;
       }
-
-      &:hover {
-        color: palette(white)
-      }
     }
+  }
 
-    &:hover {
-      border-color: palette(white);
+  // themes
+  &.-light {
+    .timeline-list-item {
+      background-color: palette(blue);
+      border: 1px solid palette(blue, light);
+      box-shadow: 0 0 0px 7px palette(blue);
 
       .timeline-label {
-        color: palette(white)
+        color: palette(blue, light);
+
+        &:hover {
+          color: palette(white)
+        }
       }
-    }
 
-    &:active {
-      border-color:  palette(blue, secondary);
+      &.-selected {
+        border: 1px solid palette(blue, secondary);
+        background-color: palette(blue, secondary);
+        box-shadow: 0 0 0px 7px palette(blue), 0 0 0px 3px palette(blue) inset;
 
-      .timeline-label {
-        color: palette(white)
+        .timeline-label {
+          color: palette(white);
+        }
+
+        &:hover {
+          border: 1px solid palette(blue, secondary);
+          background-color: palette(blue, secondary);
+          box-shadow: 0 0 0px 7px palette(blue), 0 0 0px 3px palette(blue) inset;
+
+          .timeline-label {
+            color: palette(white);
+          }
+        }
       }
     }
   }
 
+  &.-dark {
+    .timeline-list-item {
+      background-color: white;
+      border: 1px solid palette(gray, light);
+      box-shadow: 0 0 0px 7px palette(white);
+
+      .timeline-label {
+        color: palette(gray, light);
+
+        &:hover {
+          color: palette(gray, dark)
+        }
+      }
+
+      &.-selected {
+        border: 1px solid palette(gray, dark);
+        background-color: palette(gray, dark);
+        box-shadow: 0 0 0px 7px palette(white), 0 0 0px 3px palette(white) inset;
+
+        .timeline-label {
+          color: palette(gray, dark);
+        }
+
+        &:hover {
+          border: 1px solid palette(gray, dark);
+          background-color: palette(gray, dark);
+          box-shadow: 0 0 0px 7px palette(white), 0 0 0px 3px palette(white) inset;
+
+          .timeline-label {
+            color: palette(gray, dark);
+          }
+        }
+      }
+    }
+  }
+
+  // state
   &.-disabled {
     opacity: 0.5;
     pointer-events: none;
