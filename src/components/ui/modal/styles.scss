@@ -1,9 +1,8 @@
 @import 'styles/settings';
 @import 'styles/functions';
 
-$max-width-modal: 700px;
-$max-width-modal-large: 1130px;
-$margin-modal: 25px;
+$max-width-modal: 1130px;
+$margin-modal: 24px;
 
 .ReactModal__Overlay {
   z-index: $max-z-index;
@@ -43,6 +42,7 @@ $margin-modal: 25px;
 
       .modal-close-icon {
         fill: palette(blue, light);
+        transition: fill $animation-time $ease-in-out-sine;
 
         &:hover {
           fill: palette(white);
@@ -61,10 +61,5 @@ $margin-modal: 25px;
         height: 100%;
       }
     }
-  }
-
-  // replace this with a media querie
-  &.-large {
-    max-width: $max-width-modal-large;
   }
 }

@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   font-family: $font-family-1;
 
+  &.-embed {
+    border-bottom: 1px solid $color-primary;
+  }
+
   nav {
     display: flex;
     justify-content: flex-end;;
@@ -102,7 +106,6 @@
       height: $size-header;
       background-position: center;
       background-repeat: no-repeat;
-      // background: url('./logo.png') center no-repeat;
       background-size: contain;
 
       &:before {

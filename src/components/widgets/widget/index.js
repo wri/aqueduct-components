@@ -27,7 +27,7 @@ class Widget extends PureComponent {
     hideWidgetOptions: PropTypes.bool,
     getWidgetData: PropTypes.func.isRequired,
     onDownloadWidget: PropTypes.func,
-    onShareWidget: PropTypes.func,
+    onMoreInfo: PropTypes.func,
     children: PropTypes.func.isRequired
   };
 
@@ -40,7 +40,7 @@ class Widget extends PureComponent {
     title: null,
     hideWidgetOptions: false,
     onDownloadWidget: null,
-    onShareWidget: null,
+    onMoreInfo: null,
     theme: 'dark',
     customClass: null
   }
@@ -60,16 +60,21 @@ class Widget extends PureComponent {
   }
 
   onDownloadWidget = (value) => {
-    const { onDownloadWidget, params } = this.props;
-    const { id } = params;
+    const { onDownloadWidget, widget } = this.props;
 
-    if (onDownloadWidget) onDownloadWidget(value, { id });
+    if (onDownloadWidget) onDownloadWidget(value, widget);
   }
 
-  onShareWidget = () => {
-    const { onShareWidget, widget } = this.props;
+  onMoreInfo = () => {
+    const { onMoreInfo, widget } = this.props;
 
-    if (onShareWidget) onShareWidget(widget);
+    if (onMoreInfo) onMoreInfo(widget);
+  }
+
+  onRefresh = () => {
+    const { params, getWidgetData } = this.props;
+
+    getWidgetData(params.id);
   }
 
   render() {
@@ -81,13 +86,15 @@ class Widget extends PureComponent {
       hideWidgetOptions,
       children
     } = this.props;
-    const componentClass = classnames(
-      `c-widget -${theme}`,
-      { [customClass]: !!customClass }
-    );
+    const componentClass = classnames(`c-widget -${theme}`);
+    const externalClass = classnames({ [customClass]: !!customClass });
+    const isDev = process.env.NODE_ENV === 'development';
 
     return (
-      <div styleName={componentClass}>
+      <div
+        styleName={componentClass}
+        className={externalClass}
+      >
         <header styleName="widget-header">
           {title &&
             <span styleName="widget-title">{title}</span>}
@@ -109,8 +116,8 @@ class Widget extends PureComponent {
                   </Tooltip>
                 </li>
                 <li styleName="widget-options-item">
-                  <Button onClick={this.onShareWidget}>
-                    <Icon name="share" className="-small" theme={theme} />
+                  <Button onClick={this.onMoreInfo}>
+                    <Icon name="info" className="-small" theme={theme} />
                   </Button>
                 </li>
               </ul>
@@ -119,7 +126,33 @@ class Widget extends PureComponent {
 
         <div styleName="widget-content">
           {widget.loading && <Spinner />}
-          {children(widget)}
+          {!!(widget.error || []).length &&
+            <div styleName="error-container">
+              {isDev && (widget.error).map(err => (
+                <div
+                  key={`${err.status}-${err.detail}`}
+                  styleName="error-message"
+                >
+                  {err.status && <div styleName="error-status">{err.status}</div>}
+                  {err.detail && <div styleName="error-detail">{err.detail}</div>}
+                  <Button onClick={this.onRefresh}>
+                    <Icon name="refresh" className="-medium" theme={theme} />
+                  </Button>
+                </div>))}
+              {!isDev && (
+                <div styleName="error-message">
+                  <div styleName="error-detail">
+                    Ops, somehting went wrong.<br />
+                    Press the below button to refresh this widget.
+                  </div>
+                  <Button onClick={this.onRefresh}>
+                    <Icon name="refresh" className="-medium" theme={theme} />
+                  </Button>
+                </div>
+              )}
+            </div>
+          }
+          {(!widget.loading && !(widget.error || []).length) && children(widget)}
         </div>
       </div>
     );

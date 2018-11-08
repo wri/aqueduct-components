@@ -11,14 +11,16 @@ export class Button extends PureComponent {
     className: PropTypes.string,
     customClass: PropTypes.string,
     theme: PropTypes.string,
-    type: PropTypes.string
+    type: PropTypes.string,
+    disabled: PropTypes.bool
   };
 
   static defaultProps = {
     className: null,
     customClass: null,
     theme: null,
-    type: 'button'
+    type: 'button',
+    disabled: false
   };
 
   render() {
@@ -27,11 +29,15 @@ export class Button extends PureComponent {
       children,
       customClass,
       theme,
+      disabled,
       ...buttonProps
     } = this.props;
     const componentClass = classnames(
       `c-button ${theme ? `-${theme}` : ''}`,
-      { [className]: !!className }
+      {
+        [className]: !!className,
+        '-disabled': disabled
+      }
     );
     const externalClass = classnames({ [customClass]: !!customClass });
 
