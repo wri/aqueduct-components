@@ -7,10 +7,21 @@ const TIMELINE_ITEMS = [
   { label: '2018', value: 2018, selected: false }
 ];
 
-<div style={{ backgroundColor: '#2E57B8', padding: 50 }}>
-  <Timeline
-    items={TIMELINE_ITEMS}
-    onChange={(selected) => { console.log(selected)}}
-  />
+<div>
+  <div style={{ backgroundColor: '#2E57B8', padding: 50 }}>
+    <Timeline
+      items={TIMELINE_ITEMS}
+      onChange={(selected) => { console.log(selected)}}
+    />
+  </div>
+
+  <div style={{ backgroundColor: '#fff', padding: 50, marginTop: 16 }}>
+    <Timeline
+      items={TIMELINE_ITEMS}
+      onChange={(selected) => { console.log(selected)}}
+      theme="dark"
+    />
+  </div>
 </div>
+
 ```
