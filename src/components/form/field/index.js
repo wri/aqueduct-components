@@ -4,6 +4,11 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+// components
+import Button from 'components/ui/button';
+import Icon from 'components/ui/icon';
+
+
 // styles
 import './styles.scss';
 
@@ -15,14 +20,16 @@ class Field extends PureComponent {
     disabled: PropTypes.bool,
     customClass: PropTypes.string,
     theme: PropTypes.oneOf(['light', 'dark']),
-    children: PropTypes.any.isRequired
+    children: PropTypes.any.isRequired,
+    onMoreInfo: PropTypes.func
   }
 
   static defaultProps = {
     theme: 'light',
     className: null,
     customClass: null,
-    disabled: false
+    disabled: false,
+    onMoreInfo: null
   }
 
   render() {
@@ -33,6 +40,7 @@ class Field extends PureComponent {
       className,
       customClass,
       disabled,
+      onMoreInfo,
       children
     } = this.props;
     const componentClass = classnames(
@@ -46,7 +54,18 @@ class Field extends PureComponent {
 
     return (
       <div styleName={componentClass} className={externalClass}>
-        <label htmlFor={name}>{label}</label>
+        <div styleName="label-container">
+          <label htmlFor={name}>{label}</label>
+          {onMoreInfo && (
+            <Button onClick={onMoreInfo} customClass="info-button">
+              <Icon
+                name="question"
+                className="-round"
+                theme={theme}
+              />
+            </Button>
+          )}
+        </div>
         <div styleName="field-container">
           {children}
         </div>
