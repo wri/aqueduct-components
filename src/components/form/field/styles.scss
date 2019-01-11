@@ -72,8 +72,6 @@
 
   // disabled styles
   &.-disabled {
-    pointer-events: none;
-
     &.-light {
       color: rgba(palette(white), .4);
     }
