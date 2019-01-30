@@ -7,6 +7,12 @@ module.exports = {
     filename: 'lib/index.js',
     libraryTarget: 'commonjs'
   },
+
+  externals: [
+    'react',
+    'react-dom',
+  ],
+
   module: {
     loaders: [
       {
