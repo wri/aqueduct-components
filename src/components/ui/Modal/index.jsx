@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from '../Icon';
 import Spinner from '../Spinner';
 
@@ -48,8 +49,8 @@ export default class Modal extends React.Component {
 
 Modal.propTypes = {
   // STORE
-  modal: React.PropTypes.object,
+  modal: PropTypes.object,
   // ACTIONS
-  toggleModal: React.PropTypes.func,
-  setModalOptions: React.PropTypes.func
+  toggleModal: PropTypes.func,
+  setModalOptions: PropTypes.func
 };

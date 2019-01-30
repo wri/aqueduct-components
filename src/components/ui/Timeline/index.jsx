@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 export default function Timeline(props) {
@@ -35,9 +36,9 @@ export default function Timeline(props) {
 }
 
 Timeline.propTypes = {
-  items: React.PropTypes.array.isRequired,
-  selected: React.PropTypes.any.isRequired,
-  disabled: React.PropTypes.bool,
-  onChange: React.PropTypes.func,
-  className: React.PropTypes.string
+  items: PropTypes.array.isRequired,
+  selected: PropTypes.any.isRequired,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
+  className: PropTypes.string
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 class Field extends React.Component {
@@ -89,10 +90,10 @@ class Field extends React.Component {
 }
 
 Field.propTypes = {
-  properties: React.PropTypes.object.isRequired,
-  hint: React.PropTypes.string,
-  sufix: React.PropTypes.string,
-  className: React.PropTypes.string
+  properties: PropTypes.object.isRequired,
+  hint: PropTypes.string,
+  sufix: PropTypes.string,
+  className: PropTypes.string
 };
 
 export default Field;

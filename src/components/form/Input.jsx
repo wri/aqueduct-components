@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import FormElement from './FormElement';
 
 class Input extends FormElement {
@@ -31,9 +31,9 @@ class Input extends FormElement {
 }
 
 Input.propTypes = {
-  properties: React.PropTypes.object.isRequired,
-  validations: React.PropTypes.array,
-  onChange: React.PropTypes.func
+  properties: PropTypes.object.isRequired,
+  validations: PropTypes.array,
+  onChange: PropTypes.func
 };
 
 export default Input;

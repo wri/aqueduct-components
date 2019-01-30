@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SimpleSelect from './SimpleSelect';
 import SearchSelect from './SearchSelect';
 
@@ -8,5 +9,5 @@ export default function CustomSelect(props) {
 }
 
 CustomSelect.propTypes = {
-  search: React.PropTypes.bool
+  search: PropTypes.bool
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function SourceModal(props) {
   const { layer } = props;
@@ -57,5 +58,5 @@ export default function SourceModal(props) {
 }
 
 SourceModal.propTypes = {
-  layer: React.PropTypes.object
+  layer: PropTypes.object
 };

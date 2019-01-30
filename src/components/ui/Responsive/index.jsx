@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
 
 const BREAKPOINT_MOBILE = 640;
@@ -17,6 +18,6 @@ export default function OnlyOn(props) {
 
 OnlyOn.propTypes = {
   // STORE
-  children: React.PropTypes.object,
-  device: React.PropTypes.string.isRequired
+  children: PropTypes.object,
+  device: PropTypes.string.isRequired
 };

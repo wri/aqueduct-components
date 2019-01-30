@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Clipboard from 'clipboard';
 import Icon from '../Icon';
 
@@ -129,6 +130,6 @@ export default class ShareModal extends React.Component {
 }
 
 ShareModal.propTypes = {
-  share: React.PropTypes.object,
-  getShareUrl: React.PropTypes.func
+  share: PropTypes.object,
+  getShareUrl: PropTypes.func
 };

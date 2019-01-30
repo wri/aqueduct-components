@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 export default class DropdownButton extends React.Component {
@@ -183,13 +184,13 @@ export default class DropdownButton extends React.Component {
 
 DropdownButton.propTypes = {
   // Dropdown options
-  options: React.PropTypes.array,
+  options: PropTypes.array,
   // Callback executed when one option is selected
-  onSelect: React.PropTypes.func,
+  onSelect: PropTypes.func,
   // Classes to append to the element
-  className: React.PropTypes.string,
+  className: PropTypes.string,
   // Classes to append to the dropdown
-  dropdownClassName: React.PropTypes.string,
+  dropdownClassName: PropTypes.string,
   // Actual button used to toggle the menu
-  children: React.PropTypes.object
+  children: PropTypes.object
 };

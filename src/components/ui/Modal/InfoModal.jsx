@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class InfoModal extends React.Component {
   render() {
@@ -29,5 +30,5 @@ export default class InfoModal extends React.Component {
 }
 
 InfoModal.propTypes = {
-  info: React.PropTypes.object
+  info: PropTypes.object
 };

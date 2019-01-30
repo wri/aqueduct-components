@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 export default class Radio extends React.Component {
@@ -47,11 +48,11 @@ export default class Radio extends React.Component {
 }
 
 Radio.propTypes = {
-  name: React.PropTypes.string,
-  value: React.PropTypes.string,
-  label: React.PropTypes.string,
-  selected: React.PropTypes.string,
-  className: React.PropTypes.string,
-  disabled: React.PropTypes.bool,
-  onChange: React.PropTypes.func
+  name: PropTypes.string,
+  value: PropTypes.string,
+  label: PropTypes.string,
+  selected: PropTypes.string,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func
 };

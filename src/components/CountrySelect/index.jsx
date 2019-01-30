@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CustomSelect from '../ui/CustomSelect';
 
 export default function CountrySelect(props) {
@@ -17,6 +18,6 @@ export default function CountrySelect(props) {
 }
 
 CountrySelect.propTypes = {
-  countries: React.PropTypes.object,
-  placeholder: React.PropTypes.string
+  countries: PropTypes.object,
+  placeholder: PropTypes.string
 };

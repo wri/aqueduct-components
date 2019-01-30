@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { format } from 'd3-format';
 import isEqual from 'lodash/isEqual';
 import capitalize from 'lodash/capitalize';
@@ -145,9 +146,9 @@ class LegendItem extends React.Component {
 }
 
 LegendItem.propTypes = {
-  layer: React.PropTypes.object,
-  filters: React.PropTypes.object,
-  onToggleInfo: React.PropTypes.func
+  layer: PropTypes.object,
+  filters: PropTypes.object,
+  onToggleInfo: PropTypes.func
 };
 
 export default LegendItem;

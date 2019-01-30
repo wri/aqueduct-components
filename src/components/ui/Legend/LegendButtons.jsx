@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
 class LegendButtons extends React.Component {
@@ -30,7 +31,7 @@ class LegendButtons extends React.Component {
 
 LegendButtons.propTypes = {
   // PROPS
-  triggerAction: React.PropTypes.func
+  triggerAction: PropTypes.func
 };
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import isEqual from 'lodash/isEqual';
 
 export default class CustomSelect extends React.Component {
@@ -174,9 +175,9 @@ export default class CustomSelect extends React.Component {
 }
 
 CustomSelect.propTypes = {
-  options: React.PropTypes.array,
-  onValueChange: React.PropTypes.func,
-  value: React.PropTypes.string,
-  className: React.PropTypes.string,
-  placeholder: React.PropTypes.string
+  options: PropTypes.array,
+  onValueChange: PropTypes.func,
+  value: PropTypes.string,
+  className: PropTypes.string,
+  placeholder: PropTypes.string
 };

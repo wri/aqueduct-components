@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default class SegmentedUi extends React.Component {
@@ -51,8 +52,8 @@ export default class SegmentedUi extends React.Component {
 }
 
 SegmentedUi.propTypes = {
-  items: React.PropTypes.array,
-  selected: React.PropTypes.string,
-  className: React.PropTypes.string,
-  onChange: React.PropTypes.func
+  items: PropTypes.array,
+  selected: PropTypes.string,
+  className: PropTypes.string,
+  onChange: PropTypes.func
 };

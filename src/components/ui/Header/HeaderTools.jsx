@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from '../Icon';
 
 export default function HeaderToolsMenu(props) {
@@ -30,5 +31,5 @@ export default function HeaderToolsMenu(props) {
 
 HeaderToolsMenu.propTypes = {
   // ACTIONS
-  active: React.PropTypes.bool
+  active: PropTypes.bool
 };
