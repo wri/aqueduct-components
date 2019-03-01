@@ -15,7 +15,8 @@ export default function Timeline(props) {
       <ul className="timeline-list">
         {items.map((item) => {
           const itemClassList = classnames('timeline-list-item', {
-            '-selected': (selected) ? selected.value === item.value : false
+            '-selected': selected && (selected.value === item.value),
+            '-disabled': item.disabled
           });
 
           return (
