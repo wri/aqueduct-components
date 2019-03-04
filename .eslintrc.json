@@ -6,7 +6,8 @@
   },
   "globals": {
     "config": true,
-    "Stats": true
+    "Stats": true,
+    "L": true
   },
   "parserOptions": {
     "ecmaVersion": 2017,

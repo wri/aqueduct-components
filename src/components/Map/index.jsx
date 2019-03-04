@@ -1,9 +1,5 @@
-/* eslint import/no-unresolved: 0 */
-/* eslint import/extensions: 0 */
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import L from 'leaflet';
 import isEqual from 'lodash/isEqual';
 import Spinner from '../ui/Spinner';
 
@@ -28,6 +24,9 @@ class Map extends React.Component {
 
   componentDidMount() {
     this._mounted = true;
+
+    if (typeof L === 'undefined') return;
+
     this.map = L.map(this.mapNode, {
       minZoom: MAP_CONFIG.minZoom,
       zoom: this.props.mapConfig.zoom,
