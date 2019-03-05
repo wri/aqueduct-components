@@ -1,10 +1,6 @@
 {
   "name": "aqueduct-components",
-<<<<<<< HEAD
-  "version": "0.1.11",
-=======
-  "version": "0.1.8",
->>>>>>> parent of 36e6f19... Removes map-related components
+  "version": "0.1.12",
   "description": "A collection of components to use in Aqueduct's project",
   "main": "lib/index.js",
   "scripts": {

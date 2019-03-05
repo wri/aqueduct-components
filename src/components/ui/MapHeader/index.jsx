@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-<<<<<<< HEAD
-=======
-import isEqual from 'lodash/isEqual';
->>>>>>> parent of 36e6f19... Removes map-related components
 import { substitution } from '../../../utils/text';
 
 export default class MapHeader extends React.Component {
