@@ -24,6 +24,7 @@ export { default as CustomSelect } from './components/ui/CustomSelect';
 export { default as DropdownButton } from './components/ui/DropdownButton';
 export { default as Header } from './components/ui/Header';
 export { default as Icon } from './components/ui/Icon';
+export { default as MapHeader } from './components/ui/MapHeader';
 export { default as Legend } from './components/ui/Legend';
 export { default as OnlyOn } from './components/ui/Responsive';
 export { default as Radio } from './components/ui/Radio';
