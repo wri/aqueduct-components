@@ -1,6 +1,6 @@
 {
   "name": "aqueduct-components",
-  "version": "0.1.7-legacy",
+  "version": "0.1.8",
   "description": "A collection of components to use in Aqueduct's project",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/Vizzuality/aqueduct-components"
   },
-  "author": "Óscar Ferrándiz <oscar.ferrandiz@vizzuality.com>",
+  "author": "Vizzuality <hello@vizzuality.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Vizzuality/aqueduct-components"
