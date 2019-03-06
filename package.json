@@ -1,6 +1,6 @@
 {
   "name": "aqueduct-components",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "A collection of components to use in Aqueduct's project",
   "main": "lib/index.js",
   "scripts": {
