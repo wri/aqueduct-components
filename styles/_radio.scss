@@ -144,10 +144,17 @@
 }
 
 .c-radio-box {
-  > * {
-    margin: 0 0 10px;
-    &:last-child {
+  .radio-container {
+    display: flex;
+    margin: 0 0 $space-1;
+
+    > * {
       margin: 0;
+    }
+
+    .icon-container {
+      display: inline-flex;
+      margin: 0 0 0 $space-1;
     }
   }
 
@@ -163,29 +170,14 @@
   &.-inline {
     display: flex;
 
-    > * {
-      margin: 0 ($space-1 * 2) 0 0;
-      &:last-child {
-        margin: 0;
+    .radio-container {
+      &:not(:first-child) {
+        margin: 0 0 0 $space-1 * 2;
       }
     }
   }
 
   &.-filters {
     margin: ($space-1 * 4) 0 0 ($space-1 * 3);
-  }
-
-  .radio-container {
-    display: flex;
-    margin: 0 0 $space-1;
-
-    > * {
-      margin: 0;
-    }
-
-    .icon-container {
-      display: inline-flex;
-      margin: 0 0 0 $space-1;
-    }
   }
 }

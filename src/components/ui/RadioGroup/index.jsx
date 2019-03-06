@@ -52,8 +52,11 @@ export default class RadioGroup extends React.Component {
     return (
       <div className={`c-radio-box ${className}`}>
         {items.map((item, i) => (
-          <div className="radio-container">
-            <div key={i} className={`c-radio ${className}`}>
+          <div
+            key={i}
+            className="radio-container"
+          >
+            <div className={`c-radio ${className}`}>
               <input
                 type="radio"
                 name={name}
