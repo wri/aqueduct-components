@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+// components
+import Icon from '../Icon';
+
 export default class RadioGroup extends React.Component {
 
   constructor(props) {
@@ -17,9 +20,7 @@ export default class RadioGroup extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.selected !== this.props.selected) {
-      this.setState({
-        selected: nextProps.selected
-      });
+      this.setState({ selected: nextProps.selected });
     }
   }
 
@@ -29,41 +30,54 @@ export default class RadioGroup extends React.Component {
   */
   onChange(e) {
     // Set the current selected object
-    const selectedObj = this.props.items.find(item => item.value.toString() === e.currentTarget.value);
+    const selectedObj = this.props.items.find(item =>
+        item.value.toString() === e.currentTarget.value);
 
-    // Set state
-    this.setState({
-      selected: selectedObj.value.toString()
-    });
+    this.setState({ selected: selectedObj.value.toString() });
 
-    // Trigger change selected if it's needed
-    this.props.onChange && this.props.onChange(selectedObj);
+    if (this.props.onChange) this.props.onChange(selectedObj);
   }
 
   render() {
-    const { name, items } = this.props;
+    const { name, items, onInfo, iconClass } = this.props;
     const { selected } = this.state;
-
     const className = classnames({
       [this.props.className]: !!this.props.className
     });
+    const infoIconClass = classnames(
+      '-info',
+      { [iconClass]: !!iconClass }
+    );
 
     return (
       <div className={`c-radio-box ${className}`}>
         {items.map((item, i) => (
-          <div key={i} className={`c-radio ${className}`}>
-            <input
-              type="radio"
-              name={name}
-              id={`radio-${name}-${item.value}`}
-              value={item.value}
-              checked={item.value.toString() === selected}
-              onChange={this.onChange}
-            />
-            <label htmlFor={`radio-${name}-${item.value}`}>
-              <span />
-              {item.label}
-            </label>
+          <div className="radio-container">
+            <div key={i} className={`c-radio ${className}`}>
+              <input
+                type="radio"
+                name={name}
+                id={`radio-${name}-${item.value}`}
+                value={item.value}
+                checked={item.value.toString() === selected}
+                onChange={this.onChange}
+              />
+              <label htmlFor={`radio-${name}-${item.value}`}>
+                <span />
+                {item.label}
+              </label>
+            </div>
+            {onInfo && (
+              <button
+                type="button"
+                className="icon-container"
+                onClick={() => { onInfo(item); }}
+              >
+                <Icon
+                  name="icon-question"
+                  className={infoIconClass}
+                />
+              </button>)}
           </div>
         ))}
       </div>
@@ -76,5 +90,12 @@ RadioGroup.propTypes = {
   name: PropTypes.string.isRequired,
   selected: PropTypes.string,
   className: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onInfo: PropTypes.func,
+  iconClass: PropTypes.oneOf(['-primary', '-secondary'])
+};
+
+RadioGroup.defaultProps = {
+  onInfo: null,
+  iconClass: '-primary'
 };

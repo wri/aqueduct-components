@@ -22,4 +22,34 @@
     width: 65px;
     height: 65px;
   }
+
+  &.-info {
+    width: 20px;
+    height: 20px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    fill: transparent;
+    transition: background-color .1s linear;
+    cursor: pointer;
+
+    &.-primary {
+      border: 1px solid palette(gray);
+      fill: palette(blue);
+
+      &:hover {
+        fill: palette(white);
+        border-color: palette(blue);
+      }
+    }
+
+    &.-secondary {
+      border-color: palette(gray);
+      fill: palette(gray);
+
+      &:hover {
+        fill: palette(sand);
+        background-color: palette(gray, dark);
+      }
+    }
+  }
 }
