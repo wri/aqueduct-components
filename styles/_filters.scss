@@ -82,10 +82,8 @@
     .title-icon {
       width: 20px;
       height: 20px;
-      margin-left: $space-1 * 2;
       fill: palette(blue, light);
       border: 1px solid palette(blue, light);
-      margin-right: $space-1 * 2;
       border-radius: 50%;
       cursor: pointer;
       transition: background-color .1s linear;
