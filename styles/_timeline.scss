@@ -56,15 +56,6 @@
 
     }
 
-    &.-disabled {
-      pointer-events: none;
-      border-color: rgba(palette(blue, light), .5);
-
-      > .timeline-label {
-        color: rgba(palette(blue, light), .5);
-      }
-    }
-
     .timeline-label {
       font-size: $font-size-big;
       line-height: $font-size-big;
@@ -105,6 +96,15 @@
 
       .timeline-label {
         color: palette(white)
+      }
+    }
+
+    &.-disabled {
+      pointer-events: none;
+      border-color: rgba(palette(blue, light), .5);
+
+      > .timeline-label {
+        color: rgba(palette(blue, light), .5);
       }
     }
   }
