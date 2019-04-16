@@ -13,12 +13,10 @@ export default class Accordion extends PureComponent {
   }
 
   toggle() {
-    const { onToggle } = this.props;
-
     this.setState({
       opened: !this.state.opened
     }, () => {
-      if (onToggle) onToggle(this.state.opened);
+      if (this.props.onToggle) this.props.onToggle(this.state.opened);
     });
   }
 
