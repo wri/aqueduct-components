@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default class Accordion extends React.Component {
-
+export default class Accordion extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,8 +13,12 @@ export default class Accordion extends React.Component {
   }
 
   toggle() {
+    const { onToggle } = this.props;
+
     this.setState({
       opened: !this.state.opened
+    }, () => {
+      if (onToggle) onToggle(this.state.opened);
     });
   }
 
@@ -62,5 +65,8 @@ Accordion.propTypes = {
   className: PropTypes.string,
   contentPosition: PropTypes.string,
   children: PropTypes.object,
-  toggleIcon: PropTypes.object
+  toggleIcon: PropTypes.object,
+  onToggle: PropTypes.func
 };
+
+Accordion.defaultProps = { onToggle: null };
