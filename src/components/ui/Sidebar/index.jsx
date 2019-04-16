@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import debounce from 'lodash/debounce';
 import Icon from '../Icon';
 
@@ -32,29 +33,55 @@ export default class Sidebar extends React.Component {
    * - triggerToggle
   */
   triggerToggle() {
-    this.sidebarNode && this.setState({
-      opened: !this.state.opened
-    }, () => {
-      this.props.setSidebarWidth((this.state.opened) ? this.sidebarNode.offsetWidth : 50);
-    });
+    if (this.sidebarNode) {
+      this.setState({
+        opened: !this.state.opened
+      }, () => {
+        this.props.setSidebarWidth((this.state.opened) ? this.sidebarNode.offsetWidth : 50);
+      });
+    }
   }
 
   triggerResize() {
-    this.sidebarNode && this.props.setSidebarWidth((this.state.opened) ? this.sidebarNode.offsetWidth : 50);
+    if (this.sidebarNode) {
+      this.props.setSidebarWidth((this.state.opened) ? this.sidebarNode.offsetWidth : 50);
+    }
   }
 
   render() {
-    const asideCNames = ['l-sidebar', 'c-sidebar'];
-    const btnCNames = ['l-sidebar-toggle', 'btn-toggle'];
-    if (this.state.opened) {
-      asideCNames.push('-opened');
-      btnCNames.push('-opened');
-    }
+    const { className } = this.props;
+    const componentClass = classnames(
+      'l-sidebar',
+      'c-sidebar',
+      {
+        [className]: !!className,
+        '-opened': this.state.opened
+      }
+    );
+    const buttonClass = classnames(
+      'l-sidebar-toggle',
+      'btn-toggle',
+      { '-opened': this.state.opened }
+    );
+    const iconName = classnames({
+      'icon-arrow-left': this.state.opened,
+      'icon-arrow-right': !this.state.opened
+    });
 
     return (
-      <aside ref={(node) => { this.sidebarNode = node; }} className={asideCNames.join(' ')}>
-        <button type="button" className={btnCNames.join(' ')} onClick={this.triggerToggle}>
-          <Icon className="-medium" name={this.state.opened ? 'icon-arrow-left' : 'icon-arrow-right'} />
+      <aside
+        ref={(node) => { this.sidebarNode = node; }}
+        className={componentClass}
+      >
+        <button
+          type="button"
+          className={buttonClass}
+          onClick={this.triggerToggle}
+        >
+          <Icon
+            className="-medium"
+            name={iconName}
+          />
         </button>
         <div className="l-sidebar-content">
           {this.props.children}
@@ -67,5 +94,8 @@ export default class Sidebar extends React.Component {
 Sidebar.propTypes = {
   opened: PropTypes.bool,
   children: PropTypes.array,
+  className: PropTypes.string,
   setSidebarWidth: PropTypes.func
 };
+
+Sidebar.defaultProps = { className: null };
