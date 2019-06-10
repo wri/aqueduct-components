@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import isEqual from 'lodash/isEqual';
 
 export default class CustomSelect extends React.Component {
   constructor(props) {
@@ -55,14 +54,7 @@ export default class CustomSelect extends React.Component {
   }
 
   componentWillReceiveProps({ options, value }) {
-    if (!isEqual(this.props.options, options)) {
-      this.setState({
-        selectedItem: options.find(item => item.value === value)
-      });
-    }
-    if (this.props.value !== value) {
-      this.setState({ selectedItem: this.props.options.find(item => item.value === value) });
-    }
+    this.setState({ selectedItem: options.find(item => item.value === value) });
   }
 
   componentWillUnmount() {
