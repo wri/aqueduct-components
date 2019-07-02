@@ -51,9 +51,9 @@ export default class RadioGroup extends React.Component {
 
     return (
       <div className={`c-radio-box ${className}`}>
-        {items.map((item, i) => (
+        {items.map(item => (
           <div
-            key={i}
+            key={item.value}
             className="radio-container"
           >
             <div className={`c-radio ${className}`}>
@@ -73,11 +73,11 @@ export default class RadioGroup extends React.Component {
             {onInfo && (
               <button
                 type="button"
-                className="icon-container"
+                className="icon-container -info"
                 onClick={() => { onInfo(item); }}
               >
                 <Icon
-                  name="icon-question"
+                  name="icon-info"
                   className={infoIconClass}
                 />
               </button>)}
