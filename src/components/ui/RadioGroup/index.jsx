@@ -95,10 +95,10 @@ RadioGroup.propTypes = {
   className: PropTypes.string,
   onChange: PropTypes.func,
   onInfo: PropTypes.func,
-  iconClass: PropTypes.oneOf(['-primary', '-secondary'])
+  iconClass: PropTypes.string
 };
 
 RadioGroup.defaultProps = {
   onInfo: null,
-  iconClass: '-primary'
+  iconClass: null
 };
