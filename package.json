@@ -1,12 +1,13 @@
 {
   "name": "aqueduct-components",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "description": "A collection of components to use in Aqueduct's project",
   "main": "lib/index.js",
   "scripts": {
     "test": "eslint --ext .js --ext .jsx .",
     "build": "npm run clean && webpack",
     "clean": "rm -rf ./lib",
+    "prepublishOnly": "webpack",
     "dev": "npm run clean && webpack --watch"
   },
   "repository": {
