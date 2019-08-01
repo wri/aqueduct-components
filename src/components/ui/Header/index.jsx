@@ -40,6 +40,7 @@ class Header extends React.Component {
   }
 
   render() {
+    const { currentApp } = this.props;
     const desktopNav = (
       <nav role="navigation">
         {/* RIGHT MENU */}
@@ -61,7 +62,10 @@ class Header extends React.Component {
             <Link className="c-header-button" to="/how-to">How to </Link>
           </li>
           <li>
-            <button data-active="tools" className={`c-header-button ${this.state.active === 'tools' && '-active'}`} onClick={this.onClickBtnAction}>
+            <button
+              data-active="tools"
+              className={`c-header-button ${this.state.active === 'tools' && '-active'}`}
+              onClick={this.onClickBtnAction}>
               <span>Tools</span>
             </button>
           </li>
@@ -91,7 +95,10 @@ class Header extends React.Component {
           {desktopNav}
         </OnlyOn>
         <OnlyOn device="desktop">
-          <HeaderTools active={this.state.active === 'tools'} />
+          <HeaderTools
+            active={this.state.active === 'tools'}
+            activeApp={currentApp}
+          />
         </OnlyOn>
 
       </header>
@@ -100,11 +107,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  title: PropTypes.string
-};
-
-Header.defaultProps = {
-  title: ''
+  title: PropTypes.string.isRequired,
+  currentApp: PropTypes.string.isRequired
 };
 
 export default withRouter(Header);
