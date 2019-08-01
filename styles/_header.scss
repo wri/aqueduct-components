@@ -124,7 +124,7 @@
     }
 
     .item {
-      width: 20%;
+      flex: 1;
       list-style: none;
       display: block;
       padding: ($space-1 * 2);
