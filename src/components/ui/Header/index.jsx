@@ -97,7 +97,7 @@ class Header extends React.Component {
         <OnlyOn device="desktop">
           <HeaderTools
             active={this.state.active === 'tools'}
-            activeApp={currentApp}
+            currentApp={currentApp}
           />
         </OnlyOn>
 
