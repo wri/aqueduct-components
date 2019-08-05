@@ -59,11 +59,6 @@ class Header extends PureComponent {
                 <li>
                   {children}
                 </li>
-                <li>
-                  <a href="/search">
-                    <Icon name="search" />
-                  </a>
-                </li>
               </ul>
             </nav>
             <ToolsMenu

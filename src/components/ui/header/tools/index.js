@@ -32,7 +32,9 @@ class Tools extends PureComponent {
             styleName={classnames('item', { '-active': tool.app === currentApp })}
             href={tool.route}
           >
-            <Icon className="-big" name="plus" />
+            <Icon
+              name="plus"
+            />
             <span>{tool.label}</span>
           </a>
         ))}

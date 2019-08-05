@@ -7,6 +7,11 @@
   flex-shrink: 0;
 
   // themes
+  &.-none {
+    fill: inherit;
+    color: inherit;
+  }
+
   &.-dark {
     fill: palette(gray, dark);
     color: palette(gray, dark);

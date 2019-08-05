@@ -17,7 +17,7 @@ class Icon extends PureComponent {
   static defaultProps = {
     className: null,
     customClass: null,
-    theme: 'light',
+    theme: 'none',
     prefix: 'icon'
   };
 
