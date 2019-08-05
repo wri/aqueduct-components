@@ -44,22 +44,30 @@ class Header extends React.Component {
         {/* RIGHT MENU */}
         <ul className="list">
           <li>
-            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/blog" target="_blank" rel="noopener noreferrer">Blog</a>
+            <button
+              data-active="tools"
+              className={`c-header-button ${this.state.active === 'tools' && '-active'}`}
+              onClick={this.onClickBtnAction}>
+              <span>Tools</span>
+            </button>
           </li>
           <li>
-            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/publications" target="_blank" rel="noopener noreferrer">Publications</a>
+            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/blog" target="_blank" rel="noopener noreferrer">Blog</a>
           </li>
           <li>
-            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/data" target="_blank" rel="noopener noreferrer">Data</a>
+            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/publications" target="_blank" rel="noopener noreferrer">Publications</a>
           </li>
           <li>
-            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/user-stories" target="_blank" rel="noopener noreferrer">User Stories</a>
+            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/data" target="_blank" rel="noopener noreferrer">Data</a>
           </li>
           <li>
-            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/about" target="_blank" rel="noopener noreferrer">About</a>
+            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/user-stories" target="_blank" rel="noopener noreferrer">User Stories</a>
           </li>
           <li>
-            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
+            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/about" target="_blank" rel="noopener noreferrer">About</a>
+          </li>
+          <li>
+            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
           </li>
         </ul>
       </nav>
