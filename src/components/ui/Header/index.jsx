@@ -2,43 +2,10 @@ import { withRouter } from 'react-router';
 import React from 'react';
 import PropTypes from 'prop-types';
 import OnlyOn from '../Responsive';
-import HeaderTools from './HeaderTools';
 
 class Header extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      active: ''
-    };
-
-    // BINDINGS
-    this.onClickBtnAction = this.onClickBtnAction.bind(this);
-    this.onAboutSelect = this.onAboutSelect.bind(this);
-  }
-
-  /**
-   * UI EVENTS
-   * - onClickBtnAction
-  */
-  onClickBtnAction(e) {
-    const current = e.currentTarget.dataset.active;
-
-    this.setState({
-      active: (current !== this.state.active) ? current : ''
-    });
-  }
-
-  onAboutSelect() {
-    const location = {
-      pathname: '/about'
-    };
-    this.props.router.push(location);
-  }
-
   render() {
-    const { currentApp } = this.props;
+    const { appRoute } = this.props;
     const desktopNav = (
       <nav role="navigation">
         {/* RIGHT MENU */}
@@ -72,17 +39,12 @@ class Header extends React.Component {
       <header role="banner" className="l-header c-header">
         {/* LOGO */}
         <h1 className="c-header-logo">
-          <a href="/applications/aqueduct/water-risk-atlas/" className="header-logo"><span>Logo</span></a>
-          <a href="/applications/aqueduct/water-risk-atlas/" className="header-title">{this.props.title}</a>
+          <a href={appRoute} className="header-logo"><span>Logo</span></a>
+          <a href={appRoute} className="header-title">{this.props.title}</a>
         </h1>
         <OnlyOn device="desktop">
-          <HeaderTools
-            active={this.state.active === 'tools'}
-            currentApp={currentApp}
-          />
           {desktopNav}
         </OnlyOn>
-
       </header>
     );
   }
@@ -90,7 +52,7 @@ class Header extends React.Component {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
-  currentApp: PropTypes.string.isRequired
+  appRoute: PropTypes.string.isRequired
 };
 
 export default withRouter(Header);
