@@ -47,22 +47,22 @@ class Header extends React.Component {
             <a className="c-header-button" href="https://www.wri.org/aqueduct#aqueduct-tools" target="_blank" rel="noopener noreferrer">Tools</a>
           </li>
           <li>
-            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/blog" target="_blank" rel="noopener noreferrer">Blog</a>
+            <a className="c-header-button" href="https://wri.org/aqueduct/blog" target="_blank" rel="noopener noreferrer">Blog</a>
           </li>
           <li>
-            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/publications" target="_blank" rel="noopener noreferrer">Publications</a>
+            <a className="c-header-button" href="https://wri.org/aqueduct/publications" target="_blank" rel="noopener noreferrer">Publications</a>
           </li>
           <li>
-            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/data" target="_blank" rel="noopener noreferrer">Data</a>
+            <a className="c-header-button" href="https://wri.org/aqueduct/data" target="_blank" rel="noopener noreferrer">Data</a>
           </li>
           <li>
-            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/user-stories" target="_blank" rel="noopener noreferrer">User Stories</a>
+            <a className="c-header-button" href="https://wri.org/aqueduct/user-stories" target="_blank" rel="noopener noreferrer">User Stories</a>
           </li>
           <li>
-            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/about" target="_blank" rel="noopener noreferrer">About</a>
+            <a className="c-header-button" href="https://wri.org/aqueduct/about" target="_blank" rel="noopener noreferrer">About</a>
           </li>
           <li>
-            <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
+            <a className="c-header-button" href="https://wri.org/aqueduct/subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
           </li>
         </ul>
       </nav>
