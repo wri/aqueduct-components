@@ -44,12 +44,7 @@ class Header extends React.Component {
         {/* RIGHT MENU */}
         <ul className="list">
           <li>
-            <button
-              data-active="tools"
-              className={`c-header-button ${this.state.active === 'tools' && '-active'}`}
-              onClick={this.onClickBtnAction}>
-              <span>Tools</span>
-            </button>
+            <a className="c-header-button" href="https://www.wri.org/aqueduct#aqueduct-tools" target="_blank" rel="noopener noreferrer">Tools</a>
           </li>
           <li>
             <a className="c-header-button" href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/blog" target="_blank" rel="noopener noreferrer">Blog</a>
@@ -77,8 +72,8 @@ class Header extends React.Component {
       <header role="banner" className="l-header c-header">
         {/* LOGO */}
         <h1 className="c-header-logo">
-          <a href="/" className="header-logo"><span>Logo</span></a>
-          <a href="/" className="header-title">{this.props.title}</a>
+          <a href="/applications/aqueduct/water-risk-atlas/" className="header-logo"><span>Logo</span></a>
+          <a href="/applications/aqueduct/water-risk-atlas/" className="header-title">{this.props.title}</a>
         </h1>
         <OnlyOn device="desktop">
           <HeaderTools
