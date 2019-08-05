@@ -10,6 +10,7 @@
     "watch": "webpack --colors --progress --watch",
     "build": "NODE_ENV=production webpack --colors --progress",
     "test": "eslint --ext .js --ext .jsx .",
+    "prepublishOnly": "yarn build",
     "deploy": "yarn run styleguide:build && gh-pages -d styleguide"
   },
   "repository": {
