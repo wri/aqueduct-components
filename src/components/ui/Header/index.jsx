@@ -1,10 +1,8 @@
-import { Link, withRouter } from 'react-router';
+import { withRouter } from 'react-router';
 import React from 'react';
 import PropTypes from 'prop-types';
 import OnlyOn from '../Responsive';
-import Icon from '../Icon';
 import HeaderTools from './HeaderTools';
-import DropdownButton from '../DropdownButton';
 
 class Header extends React.Component {
 
@@ -46,39 +44,22 @@ class Header extends React.Component {
         {/* RIGHT MENU */}
         <ul className="list">
           <li>
-            <DropdownButton
-              options={[
-                { label: 'About Aqueduct Food', value: 'aqueduct-food' }
-              ]}
-              dropdownClassName="-bottom -left"
-              onSelect={selected => this.onAboutSelect(selected.value)}
-            >
-              <button className="c-header-button">
-                About
-              </button>
-            </DropdownButton>
+            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/blog" target="_blank" rel="noopener noreferrer">Blog</a>
           </li>
           <li>
-            <Link className="c-header-button" to="/how-to">How to </Link>
+            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/publications" target="_blank" rel="noopener noreferrer">Publications</a>
           </li>
           <li>
-            <button
-              data-active="tools"
-              className={`c-header-button ${this.state.active === 'tools' && '-active'}`}
-              onClick={this.onClickBtnAction}>
-              <span>Tools</span>
-            </button>
+            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/data" target="_blank" rel="noopener noreferrer">Data</a>
           </li>
           <li>
-            <Link className="c-header-button" to="/resource-library">Resource Library </Link>
+            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/user-stories" target="_blank" rel="noopener noreferrer">User Stories</a>
           </li>
           <li>
-            <Link className="c-header-button" to="/get-involved">Get involved </Link>
+            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/about" target="_blank" rel="noopener noreferrer">About</a>
           </li>
           <li>
-            <Link className="c-header-button" to="/search">
-              <Icon name="icon-search" />
-            </Link>
+            <a href="https://aqueduct-wriorg.pantheonsite.io/aqueduct/subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
           </li>
         </ul>
       </nav>
@@ -92,13 +73,11 @@ class Header extends React.Component {
           <a href="/" className="header-title">{this.props.title}</a>
         </h1>
         <OnlyOn device="desktop">
-          {desktopNav}
-        </OnlyOn>
-        <OnlyOn device="desktop">
           <HeaderTools
             active={this.state.active === 'tools'}
             currentApp={currentApp}
           />
+          {desktopNav}
         </OnlyOn>
 
       </header>

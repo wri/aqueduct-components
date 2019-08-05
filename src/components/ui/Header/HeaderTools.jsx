@@ -8,7 +8,9 @@ export default function HeaderToolsMenu({ active, currentApp }) {
     <div className={`c-header-submenu ${active && '-active'}`}>
       <a
         className={classnames('item', { '-active': currentApp === 'water-and-food-security-analyzer' })}
-        href="http://wri.org/applications/aqueduct/water-food-security/"
+        // disabled temporary until URL is available
+        // href="http://wri.org/applications/aqueduct/water-food-security/"
+        href="https://wri.org/aqueduct"
       >
         <Icon className="c-big" name="icon-plus" />
         <span>Water and Food Security Analyzer</span>
@@ -22,7 +24,9 @@ export default function HeaderToolsMenu({ active, currentApp }) {
       </a>
       <a
         className={classnames('item', { '-active': currentApp === 'flood-risk-analyzer' })}
-        href="https://wri.org/applications/aqueduct/flood"
+        // disabled temporary until URL is available
+        // href="https://wri.org/applications/aqueduct/flood"
+        href="https://wri.org/aqueduct"
       >
         <Icon className="c-big" name="icon-plus" />
         <span>Flood Risk Analyzer</span>
