@@ -28,9 +28,9 @@ class Header extends PureComponent {
 
     return (
       <header styleName={componentClass} role="banner">
-        <h1 className="c-header-logo">
-          <a href={appRoute} className="header-logo"><span>Logo</span></a>
-          <a href={appRoute} className="header-title">{title}</a>
+        <h1 styleName="c-header-logo">
+          <a href={appRoute} styleName="header-logo"><span>Logo</span></a>
+          <a href={appRoute} styleName="header-title">{title}</a>
         </h1>
         {!embed && (
           <nav role="navigation">
