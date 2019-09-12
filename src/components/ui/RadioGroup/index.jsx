@@ -77,7 +77,7 @@ export default class RadioGroup extends React.Component {
                 onClick={() => { onInfo(item); }}
               >
                 <Icon
-                  name="icon-info"
+                  name="icon-question"
                   className={infoIconClass}
                 />
               </button>)}

@@ -21,7 +21,10 @@ class LegendButtons extends React.Component {
       <ul className="c-legend-buttons">
         <li>
           <button data-action="info" className="legend-button" onClick={this.triggerAction}>
-            <Icon name="icon-info" />
+            <Icon
+              name="icon-question"
+              className="-round"
+            />
           </button>
         </li>
       </ul>

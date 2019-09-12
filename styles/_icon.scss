@@ -52,4 +52,9 @@
       }
     }
   }
+
+  &.-round {
+    border: 1px solid palette(gray, dark);
+    border-radius: 50%;
+  }
 }
