@@ -50,6 +50,10 @@
         outline: none;
         background-color: rgba(palette(gray, 'dark'), .05);
       }
+      &.-disabled {
+        opacity: 0.5;
+        cursor: default;
+      }
     }
   }
 }

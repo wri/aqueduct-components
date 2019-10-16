@@ -167,9 +167,9 @@ export default class DropdownButton extends React.Component {
                   }}
                   role="menuitem"
                   tabIndex="-1"
-                  className={className}
+                  className={classnames(className, { '-disabled': !!item.disabled })}
                   onMouseEnter={() => this.setActiveIndex(index)}
-                  onClick={() => this.onSelectItem(item)}
+                  onClick={() => !item.disabled && this.onSelectItem(item)}
                 >
                   {item.component ? <item.component {...item} /> : item.label }
                 </li>
@@ -192,5 +192,5 @@ DropdownButton.propTypes = {
   // Classes to append to the dropdown
   dropdownClassName: PropTypes.string,
   // Actual button used to toggle the menu
-  children: PropTypes.object
+  children: PropTypes.object,
 };
