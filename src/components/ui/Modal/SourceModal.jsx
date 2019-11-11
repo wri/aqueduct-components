@@ -25,17 +25,17 @@ export default function SourceModal(props) {
           {layer.metadata && layer.metadata.info && layer.metadata.info.sources &&
             <dd>
               {layer.metadata.info.sources.map((s, i) => {
-                if (s.sourceUrl) {
+                if (s['source-url']) {
                   return (
                     <span>
                       {i !== 0 && ', '}
                       <a
-                        key={s.sourceName}
+                        key={s['source-name']}
                         rel="noopener noreferrer"
                         target="_blank"
-                        href={s.sourceUrl}
+                        href={s['source-url']}
                       >
-                        {s.sourceName}
+                        {s['source-name']}
                       </a>
                     </span>
                   );
@@ -44,7 +44,7 @@ export default function SourceModal(props) {
                 return (
                   <span>
                     {i !== 0 && ', '}
-                    {s.sourceName}
+                    {s['source-name']}
                   </span>
                 );
               })}
