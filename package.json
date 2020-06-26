@@ -1,6 +1,6 @@
 {
   "name": "aqueduct-components",
-  "version": "0.3.12",
+  "version": "0.3.14",
   "description": "A collection of components to use in Aqueduct's project",
   "main": "lib/index.js",
   "scripts": {
@@ -52,8 +52,5 @@
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0"
-  },
-  "engines": {
-    "node": "8.11.2"
   }
 }
