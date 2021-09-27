@@ -59,5 +59,5 @@ export default class InfoModal extends React.Component {
 InfoModal.propTypes = {
   info: PropTypes.object,
   omitDescription: PropTypes.bool,
-  omitInstructions: PropTypes.bool,
+  omitInstructions: PropTypes.bool
 };
