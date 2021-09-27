@@ -13,15 +13,42 @@ export default class InfoModal extends React.Component {
           </div>
         </div>
         <div className="info-description">
+          {this.props.info.content && (
+            <div
+              {...(this.props.info.contentDivProps || {})}
+              dangerouslySetInnerHTML={{
+                __html: this.props.info.content
+              }}
+            />
+          )}
           <dl>
-            <dt>Instructions:</dt>
-            <dd>{this.props.info.instructions || notAvailable}</dd>
+            {!this.props.omitInstructions && (
+              <React.Fragment>
+                <dt>Instructions:</dt>
+                <dd>{this.props.info.instructions || notAvailable}</dd>
+              </React.Fragment>
+            )}
 
-            <dt>Description:</dt><br />
-            <dd dangerouslySetInnerHTML={{ __html: this.props.info.description || notAvailable }} />
+            {!this.props.omitDescription && (
+              <React.Fragment>
+                <dt>Description:</dt><br />
+                <dd
+                  dangerouslySetInnerHTML={{
+                    __html: this.props.info.description || notAvailable
+                  }}
+                />
+              </React.Fragment>
+            )}
+
 
             {this.props.info.source && <dt>Source:</dt>}
-            {this.props.info.source &&  <dd dangerouslySetInnerHTML={{ __html: this.props.info.source || notAvailable }} />}
+            {this.props.info.source && (
+              <dd
+                dangerouslySetInnerHTML={{
+                  __html: this.props.info.source || notAvailable
+                }}
+              />
+            )}
           </dl>
         </div>
       </div>
@@ -30,5 +57,7 @@ export default class InfoModal extends React.Component {
 }
 
 InfoModal.propTypes = {
-  info: PropTypes.object
+  info: PropTypes.object,
+  omitDescription: PropTypes.bool,
+  omitInstructions: PropTypes.bool,
 };
