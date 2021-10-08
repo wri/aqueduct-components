@@ -36,6 +36,7 @@ export { default as Spinner } from './components/ui/Spinner';
 export { default as Sticky } from './components/ui/Sticky';
 export { default as Timeline } from './components/ui/Timeline';
 export { default as ZoomControl } from './components/ui/ZoomControl';
+export { default as ThresholdSlider } from './components/ui/ThresholdSlider';
 
 // Form components
 export { default as Field } from './components/form/Field';
