@@ -26,7 +26,8 @@ $palettes: (
     error: #de2239
   ),
   sand: (
-    primary: #f5f4f0
+    primary: #f5f4f0,
+    dark: darken(#f5f4f0, 8%)
   ),
   gray: (
     primary: #8a9da6,
