@@ -46,6 +46,7 @@ export { default as TextArea } from './components/form/TextArea';
 
 // Buttons
 export { default as ShareButton } from './components/ui/Buttons/ShareButton';
+export { default as ButtonMenu } from './components/ui/Buttons/ButtonMenu';
 
 // Modal
 export { default as Modal } from './components/ui/Modal';
