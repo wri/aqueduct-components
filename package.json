@@ -62,7 +62,7 @@
     "gh-pages": "^1.2.0",
     "isomorphic-style-loader": "^4.0.0",
     "leaflet": "^1.1.0",
-    "node-sass": "^4.5.3",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^2.0.6",
     "postcss-scss": "^2.0.0",
     "react": "^16.4.2",
