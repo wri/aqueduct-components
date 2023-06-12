@@ -11,7 +11,7 @@ class Header extends React.Component {
         {/* RIGHT MENU */}
         <ul className="list">
           <li>
-            <a className="c-header-button" href="https://www.wri.org/aqueduct#aqueduct-tools" target="_blank" rel="noopener noreferrer">Tools</a>
+            <a className="c-header-button" href="https://www.wri.org/aqueduct/tools" target="_blank" rel="noopener noreferrer">Tools</a>
           </li>
           <li>
             <a className="c-header-button" href="https://wri.org/aqueduct/blog" target="_blank" rel="noopener noreferrer">Blog</a>
@@ -29,7 +29,7 @@ class Header extends React.Component {
             <a className="c-header-button" href="https://wri.org/aqueduct/about" target="_blank" rel="noopener noreferrer">About</a>
           </li>
           <li>
-            <a className="c-header-button" href="https://wri.org/aqueduct/subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
+            <a className="c-header-button" href="https://wri.org/aqueduct/subscribe-water" target="_blank" rel="noopener noreferrer">Subscribe</a>
           </li>
         </ul>
       </nav>
