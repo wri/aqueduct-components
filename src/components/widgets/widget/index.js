@@ -1,14 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Tooltip } from 'wri-api-components/dist/tooltip';
 import isEqual from 'lodash/isEqual';
 
 // components
 import Button from 'components/ui/button';
 import Icon from 'components/ui/icon';
 import Spinner from 'components/ui/spinner';
-import WidgetDownloads from './widget-downloads';
 
 // styles
 import './styles.scss';
@@ -98,16 +96,6 @@ class Widget extends PureComponent {
         <header styleName="widget-header">
           {title &&
             <span styleName="widget-title">{title}</span>}
-          {!hideWidgetOptions &&
-            <div className="widget-options">
-              <ul styleName="widget-options-list">
-                <li styleName="widget-options-item">
-                  <Button onClick={this.onMoreInfo}>
-                    <Icon name="info" className="-small" theme={theme} />
-                  </Button>
-                </li>
-              </ul>
-            </div>}
         </header>
 
         <div styleName="widget-content">
