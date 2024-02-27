@@ -102,20 +102,6 @@ class Widget extends PureComponent {
             <div className="widget-options">
               <ul styleName="widget-options-list">
                 <li styleName="widget-options-item">
-                  <Tooltip
-                    overlay={<WidgetDownloads onDownloadOption={this.onDownloadWidget} />}
-                    overlayClassName="c-rc-tooltip -default aq__widget-download-tooltip"
-                    placement="bottom"
-                    trigger={['click']}
-                    mouseLeaveDelay={0}
-                    destroyTooltipOnHide
-                  >
-                    <Button>
-                      <Icon name="download" className="-small" theme={theme} />
-                    </Button>
-                  </Tooltip>
-                </li>
-                <li styleName="widget-options-item">
                   <Button onClick={this.onMoreInfo}>
                     <Icon name="info" className="-small" theme={theme} />
                   </Button>
