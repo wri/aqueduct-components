@@ -96,6 +96,16 @@ class Widget extends PureComponent {
         <header styleName="widget-header">
           {title &&
             <span styleName="widget-title">{title}</span>}
+          {!hideWidgetOptions &&
+            <div className="widget-options">
+              <ul styleName="widget-options-list">
+                <li styleName="widget-options-item">
+                  <Button onClick={this.onMoreInfo}>
+                    <Icon name="info" className="-small" theme={theme} />
+                  </Button>
+                </li>
+              </ul>
+            </div>}
         </header>
 
         <div styleName="widget-content">
