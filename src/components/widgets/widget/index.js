@@ -1,12 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { Tooltip } from 'wri-api-components/dist/tooltip';
 import isEqual from 'lodash/isEqual';
 
 // components
 import Button from 'components/ui/button';
 import Icon from 'components/ui/icon';
 import Spinner from 'components/ui/spinner';
+import WidgetDownloads from './widget-downloads';
 
 // styles
 import './styles.scss';
@@ -23,8 +25,10 @@ class Widget extends PureComponent {
     theme: PropTypes.string,
     customClass: PropTypes.string,
     hideWidgetOptions: PropTypes.bool,
+    hideShareLink: PropTypes.bool,
     getWidgetData: PropTypes.func.isRequired,
     onDownloadWidget: PropTypes.func,
+    onShareLink: PropTypes.func,
     onMoreInfo: PropTypes.func,
     children: PropTypes.func.isRequired
   };
@@ -37,6 +41,7 @@ class Widget extends PureComponent {
     },
     title: null,
     hideWidgetOptions: false,
+    hideShareLink: false,
     onDownloadWidget: null,
     onMoreInfo: null,
     theme: 'dark',
@@ -69,6 +74,12 @@ class Widget extends PureComponent {
     if (onMoreInfo) onMoreInfo(widget);
   }
 
+  onShareLink = () => {
+    const { onShareLink, widget } = this.props;
+
+    if (onShareLink) onShareLink(widget);
+  }
+
   onRefresh = () => {
     const { params, getWidgetData } = this.props;
 
@@ -82,6 +93,7 @@ class Widget extends PureComponent {
       customClass,
       widget,
       hideWidgetOptions,
+      hideShareLink,
       children
     } = this.props;
     const componentClass = classnames(`c-widget -${theme}`);
@@ -99,6 +111,26 @@ class Widget extends PureComponent {
           {!hideWidgetOptions &&
             <div className="widget-options">
               <ul styleName="widget-options-list">
+                <li styleName="widget-options-item">
+                  <Tooltip
+                    overlay={<WidgetDownloads onDownloadOption={this.onDownloadWidget} />}
+                    overlayClassName="c-rc-tooltip -default aq__widget-download-tooltip"
+                    placement="bottom"
+                    trigger={['click']}
+                    mouseLeaveDelay={0}
+                    destroyTooltipOnHide
+                  >
+                    <Button>
+                      <Icon name="download" className="-small" theme={theme} />
+                    </Button>
+                  </Tooltip>
+                </li>
+                {!hideShareLink ?
+                <li styleName="widget-options-item">
+                  <Button onClick={this.onShareLink}>
+                    <Icon name="share" className="-small" theme={theme} />
+                  </Button>
+                </li>: null}
                 <li styleName="widget-options-item">
                   <Button onClick={this.onMoreInfo}>
                     <Icon name="info" className="-small" theme={theme} />
@@ -144,4 +176,3 @@ class Widget extends PureComponent {
 }
 
 export default Widget;
-
