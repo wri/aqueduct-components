@@ -29,7 +29,7 @@ class Header extends React.Component {
             <a className="c-header-button" href="https://wri.org/aqueduct/about" target="_blank" rel="noopener noreferrer">About</a>
           </li>
           <li>
-            <a className="c-header-button" href="https://wri.org/aqueduct/subscribe-water" target="_blank" rel="noopener noreferrer">Subscribe</a>
+            <a className="c-header-button" href="https://www.wri.org/subscribe-freshwater" target="_blank" rel="noopener noreferrer">Subscribe</a>
           </li>
         </ul>
       </nav>
